@@ -7,7 +7,7 @@ import TextField from '../../Components/TextField';
 import PrimaryButton from '../../Components/PrimaryButton';
 import ProfileScreen from '../ProfileScreen/ProfileScreen';
 
-const PaymentMethod = navigation => {
+const PaymentMethod = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>

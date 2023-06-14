@@ -20,5 +20,18 @@ export const IMG = {
     googlelogo: require('../Assets/googlelogo.png'),
     profilePIc: require('../Assets/profilepic.png'),
     editButton: require('../Assets/editButton.png'),
+    SmallProfilePic: require('../Assets/smallProfilePic.png'),
+    settings: require('../Assets/settings.png'),
+    Filelogo: require('../Assets/filelogo.png'),
+    Camearlogo: require('../Assets/cameralogo.png'),
+    DownArrow: require('../Assets/downarrow2.png'),
+    BankReceipt: require('../Assets/bankReceipt.png'),
+  },
+  BottomIcon: {
+    Budget: require('../Assets/bottomNav/budget.png'),
+    Expense: require('../Assets/bottomNav/expense.png'),
+    Analytics: require('../Assets/bottomNav/analytics.png'),
+    Profile: require('../Assets/bottomNav/profile.png'),
+    Scan: require('../Assets/bottomNav/scan.png'),
   },
 };

@@ -14,7 +14,7 @@ import {IMG} from '../../Constants/ImageConstant';
 import PrimaryButton from '../../Components/PrimaryButton';
 import PaymentMethod from '../PaymentMethod/PaymentMethod';
 
-const PlanSelection = navigation => {
+const PlanSelection = ({navigation}) => {
   const [basic, setBasic] = useState(false);
   const [extended, setExtended] = useState(false);
   const [silver, setSilver] = useState(false);

@@ -10,18 +10,24 @@ import PromoCodeScreen from '../Screens/PromoCodeScreen/PromoCodeScreen';
 import PlanSelection from '../Screens/PlanSelection/PlanSelection';
 import PaymentMethod from '../Screens/PaymentMethod/PaymentMethod';
 import ProfileScreen from '../Screens/ProfileScreen/ProfileScreen';
+import Statistics from '../Screens/Statistics/Statistics';
+import Scanner from '../Screens/Scanner/Scanner';
+import BudgetDetails from '../Screens/BudgetDetails/BudgetDetails';
 
 const StackNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        {/* <Stack.Screen name="IntroScreen" component={IntroScreen} />
+        <Stack.Screen name="IntroScreen" component={IntroScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="SignupScreen" component={SignupScreen} />
         <Stack.Screen name="PromoCodeScreen" component={PromoCodeScreen} />
         <Stack.Screen name="PlanSelection" component={PlanSelection} />
-        <Stack.Screen name="PaymentMethod" component={PaymentMethod} /> */}
+        <Stack.Screen name="PaymentMethod" component={PaymentMethod} />
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+        <Stack.Screen name="Statistics" component={Statistics} />
+        <Stack.Screen name="Scanner" component={Scanner} />
+        <Stack.Screen name="BudgetDetails" component={BudgetDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );
