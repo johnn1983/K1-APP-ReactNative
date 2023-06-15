@@ -130,8 +130,8 @@ const styles = StyleSheet.create({
   //     marginRight: 20,
   //   },
   editImg: {
-    height: 50,
-    width: 45,
+    height: 40,
+    width: 40,
     alignSelf: 'flex-end',
   },
   //   childContainer: {
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
   },
   buttonText: {
-    fontSize: SetFontSize.setDimension.textSizeSmall,
+    fontSize: SetFontSize.setDimension.textSizeRegular,
     color: colors.WHITE,
     fontWeight: '500',
     textAlign: 'center',
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
     marginLeft: wp(5),
   },
   buttonText2: {
-    fontSize: SetFontSize.setDimension.textSizeSmall,
+    fontSize: SetFontSize.setDimension.textSizeRegular,
     color: colors.WHITE,
     fontWeight: '500',
     textAlign: 'center',

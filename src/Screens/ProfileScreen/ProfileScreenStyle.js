@@ -29,11 +29,11 @@ export default StyleSheet.create({
   },
   bodyView: {
     zindex: -1,
-    flex: 2.6,
+    flex: 0.75,
     backgroundColor: '#E5EDEC',
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
-    marginTop: hp(4),
+    marginTop: hp(2),
   },
   bodyChildView: {
     marginHorizontal: wp(10),

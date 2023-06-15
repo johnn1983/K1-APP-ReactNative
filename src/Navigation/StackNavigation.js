@@ -13,6 +13,8 @@ import ProfileScreen from '../Screens/ProfileScreen/ProfileScreen';
 import Statistics from '../Screens/Statistics/Statistics';
 import Scanner from '../Screens/Scanner/Scanner';
 import BudgetDetails from '../Screens/BudgetDetails/BudgetDetails';
+import ExpenseDetails from '../Screens/ExpenseDetails/ExpenseDetails';
+import ExpenseAnalytics from '../Screens/ExpenseAnalytics/ExpenseAnalytics';
 
 const StackNavigation = () => {
   return (
@@ -28,6 +30,8 @@ const StackNavigation = () => {
         <Stack.Screen name="Statistics" component={Statistics} />
         <Stack.Screen name="Scanner" component={Scanner} />
         <Stack.Screen name="BudgetDetails" component={BudgetDetails} />
+        <Stack.Screen name="ExpenseDetails" component={ExpenseDetails} />
+        <Stack.Screen name="ExpenseAnalytics" component={ExpenseAnalytics} />
       </Stack.Navigator>
     </NavigationContainer>
   );

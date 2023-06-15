@@ -1,5 +1,7 @@
+/* eslint-disable react/self-closing-comp */
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable react-native/no-inline-styles */
-import {View, Text} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 
 import styles from './ProfileScreenStyle';
@@ -8,11 +10,14 @@ import TextField from '../../Components/TextField';
 import BottomNavigation from '../../Components/BottomNavigation';
 import Statistics from '../Statistics/Statistics';
 import Scanner from '../Scanner/Scanner';
+import BudgetDetails from '../BudgetDetails/BudgetDetails';
+import ExpenseDetails from '../ExpenseDetails/ExpenseDetails';
+import ExpenseAnalytics from '../ExpenseAnalytics/ExpenseAnalytics';
 
 const ProfileScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <View style={{flex: 1}}>
+      <View style={{flex: 0.25}}>
         <ProfileView onPress={() => navigation.navigate(Statistics)} />
       </View>
 
@@ -42,8 +47,13 @@ const ProfileScreen = ({navigation}) => {
           </View>
         </View>
       </View>
-      <View style={{flex: 0.5}}>
-        <BottomNavigation onPress={() => navigation.navigate(Scanner)} />
+      <View>
+        <BottomNavigation
+          onPress={() => navigation.navigate(Scanner)}
+          onPressBudget={() => navigation.navigate(BudgetDetails)}
+          onPressExpense={() => navigation.navigate(ExpenseDetails)}
+          onPressAnalytics={() => navigation.navigate(ExpenseAnalytics)}
+        />
       </View>
     </View>
   );

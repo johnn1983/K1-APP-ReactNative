@@ -19,6 +19,9 @@ import BottomNavigation from '../../Components/BottomNavigation';
 import Statistics from '../Statistics/Statistics';
 import {IMG} from '../../Constants/ImageConstant';
 import PrimaryButton from '../../Components/PrimaryButton';
+import BudgetDetails from '../BudgetDetails/BudgetDetails';
+import ExpenseDetails from '../ExpenseDetails/ExpenseDetails';
+import ExpenseAnalytics from '../ExpenseAnalytics/ExpenseAnalytics';
 
 const Scanner = ({navigation}) => {
   const [isScan, setIsScan] = useState(false);
@@ -113,7 +116,7 @@ const Scanner = ({navigation}) => {
         onRequestClose={() => {
           setIscategory(!isCategory);
         }}>
-        <View style={{backgroundColor: 'rgba(255,255,255,0.9)'}}>
+        <View style={{backgroundColor: 'rgba(255,255,255,0.5)'}}>
           <View style={styles.categoryModal}>
             <TouchableOpacity
               style={styles.categoryTxtView}
@@ -183,8 +186,8 @@ const Scanner = ({navigation}) => {
           {/* <View style={styles.showDetailsTxt} /> */}
           <TextInput
             style={styles.input}
-            onChangeText={text => setStore(text)}
-            value={store}
+            // onChangeText={text => setStore(text)}
+            // value={store}
           />
         </View>
         <View style={styles.buttonView2}>
@@ -211,8 +214,8 @@ const Scanner = ({navigation}) => {
           <Text style={styles.detailsTxt}>Total Amount</Text>
           <TextInput
             style={styles.input}
-            onChangeText={text => setTotalAmount(text)}
-            value={totalAmount}
+            // onChangeText={text => setTotalAmount(text)}
+            // value={totalAmount}
           />
         </View>
         <View style={styles.buttonView2}>
@@ -239,8 +242,8 @@ const Scanner = ({navigation}) => {
           <Text style={styles.detailsTxt}>Note</Text>
           <TextInput
             style={styles.input}
-            onChangeText={text => setNote(text)}
-            value={note}
+            // onChangeText={text => setNote(text)}
+            // value={note}
           />
         </View>
         <View style={styles.buttonView2}>
@@ -268,8 +271,8 @@ const Scanner = ({navigation}) => {
           <Text style={styles.detailsTxt}>Purchasing Date</Text>
           <TextInput
             style={styles.input}
-            onChangeText={text => setPurchaseDate(text)}
-            value={purchaseDate}
+            // onChangeText={text => setPurchaseDate(text)}
+            // value={purchaseDate}
           />
         </View>
         <View style={styles.buttonView2}>
@@ -292,7 +295,7 @@ const Scanner = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <View style={{flex: 1}}>
+      <View style={{flex: 0.25}}>
         <ProfileView onPress={() => navigation.navigate(Statistics)} />
       </View>
 
@@ -323,8 +326,15 @@ const Scanner = ({navigation}) => {
       <CategoryView />
       <ChooseReceipt />
 
-      <View style={{flex: 0.5}}>
-        {isScan === false ? <BottomNavigation onPress={handleScanner} /> : null}
+      <View>
+        {isScan === false ? (
+          <BottomNavigation
+            onPress={handleScanner}
+            onPressBudget={() => navigation.navigate(BudgetDetails)}
+            onPressExpense={() => navigation.navigate(ExpenseDetails)}
+            onPressAnalytics={() => navigation.navigate(ExpenseAnalytics)}
+          />
+        ) : null}
       </View>
     </View>
   );

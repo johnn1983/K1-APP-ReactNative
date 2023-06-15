@@ -1,4 +1,8 @@
 export const IMG = {
+  Navigation: {
+    BottomNavigation: require('../Assets/BottomNavigation.png'),
+    NavBottom: require('../Assets/navbottom.png'),
+  },
   CompanyLogo: {
     logoSmall: require('../Assets/1xK1Receipt.png'),
     logoMedium: require('../Assets/2xK1Receipt.png'),
@@ -25,7 +29,16 @@ export const IMG = {
     Filelogo: require('../Assets/filelogo.png'),
     Camearlogo: require('../Assets/cameralogo.png'),
     DownArrow: require('../Assets/downarrow2.png'),
+    RightArrow: require('../Assets/rightarrow2.png'),
+    DownArrow3: require('../Assets/downarrow3.png'),
     BankReceipt: require('../Assets/bankReceipt.png'),
+    EditRed: require('../Assets/editred.png'),
+    DeleteRed: require('../Assets/deletered.png'),
+    CloseCategory: require('../Assets/close.png'),
+    RoundChart: require('../Assets/roundChart.png'),
+    Calender: require('../Assets/calender.png'),
+    Hlines: require('../Assets/hLines.png'),
+    Vlines: require('../Assets/vLines.png'),
   },
   BottomIcon: {
     Budget: require('../Assets/bottomNav/budget.png'),

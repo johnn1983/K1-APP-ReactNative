@@ -11,56 +11,57 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 
-import styles from './BudgetDetailsStyle';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
+import styles from './ExpenseDetailsStyle';
+
 import {IMG} from '../../Constants/ImageConstant';
 import PrimaryButton from '../../Components/PrimaryButton';
 import BottomNavigation from '../../Components/BottomNavigation';
 import Scanner from '../Scanner/Scanner';
-import ExpenseDetails from '../ExpenseDetails/ExpenseDetails';
+import BudgetDetails from '../BudgetDetails/BudgetDetails';
 import ExpenseAnalytics from '../ExpenseAnalytics/ExpenseAnalytics';
 
-const BudgetDetails = ({navigation}) => {
-  const [addCategory, setAddCategory] = useState(false);
+const ExpenseDetails = ({navigation}) => {
   const [upCategory, setUpCategory] = useState(false);
 
   const budgetDetails = [
     {
       id: '1',
       categoryName: 'Business Insurance',
-      amount: '$ 450.00',
-      createdBy: 'Nabila Akter Nabila',
+      budget: '$ 450.00',
+      expense: '-161.10',
+      remainingbudget: '238.90',
     },
     {
       id: '2',
       categoryName: 'Business Insurance',
-      amount: '$ 450.00',
-      createdBy: 'Nabila Akter Nabila',
+      budget: '$ 450.00',
+      expense: '-161.10',
+      remainingbudget: '238.90',
     },
     {
       id: '3',
       categoryName: 'Business Insurance',
-      amount: '$ 450.00',
-      createdBy: 'Nabila Akter Nabila',
+      budget: '$ 450.00',
+      expense: '-161.10',
+      remainingbudget: '238.90',
     },
     {
       id: '4',
       categoryName: 'Business Insurance',
-      amount: '$ 450.00',
-      createdBy: 'Nabila Akter Nabila',
+      budget: '$ 450.00',
+      expense: '-161.10',
+      remainingbudget: '238.90',
     },
     {
       id: '5',
       categoryName: 'Business Insurance',
-      amount: '$ 450.00',
-      createdBy: 'Nabila Akter Nabila',
+      budget: '$ 450.00',
+      expense: '-161.10',
+      remainingbudget: '238.90',
     },
   ];
 
-  const CardComponent = ({categoryName, amount, createdBy}) => {
+  const CardComponent = ({categoryName, budget, expense, remainingbudget}) => {
     return (
       <View style={styles.cardComponent}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -90,64 +91,21 @@ const BudgetDetails = ({navigation}) => {
           <Text style={styles.detailsAnstxt}>{categoryName}</Text>
         </View>
         <View style={styles.detailsTxtView}>
-          <Text style={styles.detailsTxt}>Amount</Text>
-          <Text style={styles.detailsAnstxt}>{amount}</Text>
+          <Text style={styles.detailsTxt}>Budget</Text>
+          <Text style={styles.detailsAnstxt}>{budget}</Text>
         </View>
         <View style={styles.detailsTxtView}>
-          <Text style={styles.detailsTxt}>Created By</Text>
-          <Text style={styles.deatilByTxt}>{createdBy}</Text>
+          <Text style={styles.detailsTxt}>Expense</Text>
+          <Text style={styles.deatilByTxtRed}>{expense}</Text>
         </View>
         <View style={styles.detailsTxtView}>
-          <Text style={styles.detailsTxt}>Sub Category</Text>
-          <TouchableOpacity style={styles.detailsButton}>
-            <Text style={styles.detailsButtonTxt}>View</Text>
-          </TouchableOpacity>
+          <Text style={styles.detailsTxt}>Remaining Budget</Text>
+          <Text style={styles.deatilByTxtGreen}>{remainingbudget}</Text>
+        </View>
+        <View style={styles.greenLine}>
+          <View style={styles.redLine} />
         </View>
       </View>
-    );
-  };
-
-  const AddCategory = () => {
-    return (
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={addCategory}
-        onRequestClose={() => {
-          setAddCategory(!addCategory);
-        }}>
-        <View style={styles.modalmainView}>
-          <View style={styles.modalView}>
-            <View style={styles.closeView}>
-              <TouchableOpacity onPress={() => setAddCategory(false)}>
-                <Image
-                  style={styles.closeImg}
-                  source={IMG.ExtraLogo.CloseCategory}
-                  resizeMode="contain"
-                />
-              </TouchableOpacity>
-            </View>
-            <View style={styles.modalChildView}>
-              <Text style={styles.modalTxt}>Add Category </Text>
-              <TextInput
-                style={styles.modalTxtInput}
-                placeholder="Category Name"
-                placeholderTextColor={'#A39E9E'}
-              />
-              <TextInput
-                style={styles.modalTxtInput}
-                placeholder="Category Budget Amount"
-                placeholderTextColor={'#A39E9E'}
-              />
-              <PrimaryButton
-                style={styles.saveButton}
-                text={'Save'}
-                textstyle={styles.saveTxt}
-              />
-            </View>
-          </View>
-        </View>
-      </Modal>
     );
   };
 
@@ -198,7 +156,7 @@ const BudgetDetails = ({navigation}) => {
     <View style={styles.mainContainer}>
       <View style={styles.container}>
         <View style={styles.headerView}>
-          <Text style={styles.headerTxt}>Budget Details</Text>
+          <Text style={styles.headerTxt}>Expense Details</Text>
         </View>
 
         <View style={styles.mainView}>
@@ -224,15 +182,6 @@ const BudgetDetails = ({navigation}) => {
             </TouchableOpacity>
           </View>
 
-          <View style={styles.addButtonView}>
-            <PrimaryButton
-              text={'Add Category'}
-              style={styles.addButtonStyle}
-              textstyle={styles.addButtonTxt}
-              onPress={() => setAddCategory(!addCategory)}
-            />
-          </View>
-
           <View style={styles.flatlistView}>
             <FlatList
               showsVerticalScrollIndicator={false}
@@ -240,8 +189,9 @@ const BudgetDetails = ({navigation}) => {
               renderItem={({item}) => (
                 <CardComponent
                   categoryName={item.categoryName}
-                  amount={item.amount}
-                  createdBy={item.createdBy}
+                  budget={item.budget}
+                  expense={item.expense}
+                  remainingbudget={item.remainingbudget}
                 />
               )}
               keyExtractor={item => item.id}
@@ -249,12 +199,11 @@ const BudgetDetails = ({navigation}) => {
           </View>
         </View>
       </View>
-      <AddCategory />
       <UpdateCategory />
       <View>
         <BottomNavigation
           onPress={() => navigation.navigate(Scanner)}
-          onPressExpense={() => navigation.navigate(ExpenseDetails)}
+          onPressBudget={() => navigation.navigate(BudgetDetails)}
           onPressAnalytics={() => navigation.navigate(ExpenseAnalytics)}
         />
       </View>
@@ -262,4 +211,4 @@ const BudgetDetails = ({navigation}) => {
   );
 };
 
-export default BudgetDetails;
+export default ExpenseDetails;

@@ -17,5 +17,6 @@ export const SetFontSize = {
     textSize11: 11,
     textSizeLargeLarge: 40,
     textHighSize: 45,
+    textSizeTooSmall: 8,
   },
 };

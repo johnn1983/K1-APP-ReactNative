@@ -13,10 +13,10 @@ export default StyleSheet.create({
     backgroundColor: '#FDFDFD',
   },
   bodyView: {
-    zindex: -1,
-    flex: 3,
+    flex: 0.75,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingBottom: hp(5),
   },
   scanView: {
     height: hp(32),
@@ -27,7 +27,7 @@ export default StyleSheet.create({
     borderColor: '#95DCCB',
     borderWidth: 1,
     borderRadius: 15,
-    marginBottom: hp(2),
+    marginBottom: hp(15),
   },
   scanView2: {
     height: hp(30),
@@ -39,7 +39,6 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderRadius: 15,
     marginBottom: hp(2),
-    marginTop: hp(7),
   },
   bankReceiptImg: {
     height: hp(25),

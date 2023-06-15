@@ -22,7 +22,7 @@ export default StyleSheet.create({
     shadowRadius: 1,
     borderRadius: 10,
     paddingVertical: hp(1.5),
-    paddingHorizontal: wp(5),
+    paddingHorizontal: wp(6),
     marginTop: hp(0.5),
     marginHorizontal: wp(3),
     marginBottom: hp(2),
@@ -47,7 +47,7 @@ export default StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: wp(2),
     marginVertical: hp(2.5),
-    marginBottom: hp(25),
+    marginBottom: hp(7),
   },
   topButtonView: {
     flexDirection: 'row',
@@ -91,28 +91,6 @@ export default StyleSheet.create({
     color: colors.BLACK,
     fontWeight: '400',
   },
-  addButtonView: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    marginTop: hp(3),
-    marginHorizontal: wp(5),
-    height: hp(5),
-    marginBottom: hp(1),
-  },
-  addButtonStyle: {
-    height: hp(4.5),
-    width: wp(25),
-    backgroundColor: '#0D8F29',
-    borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingBottom: hp(0.2),
-  },
-  addButtonTxt: {
-    fontSize: SetFontSize.setDimension.textSizeSmall,
-    color: colors.WHITE,
-    fontWeight: '700',
-  },
   editDeleteImg: {
     height: hp(3),
     width: wp(8),
@@ -137,10 +115,29 @@ export default StyleSheet.create({
     color: '#282828',
     fontWeight: '600',
   },
-  deatilByTxt: {
+  deatilByTxtRed: {
     fontSize: SetFontSize.setDimension.textSizeSmall,
-    color: '#ACA500',
+    color: '#D40101',
     fontWeight: '600',
+  },
+  deatilByTxtGreen: {
+    fontSize: SetFontSize.setDimension.textSizeSmall,
+    color: '#0D8F29',
+    fontWeight: '600',
+  },
+  greenLine: {
+    height: hp(1.5),
+    width: '100%',
+    backgroundColor: '#0D8F29',
+    borderRadius: 10,
+    marginTop: hp(3),
+    marginBottom: hp(1),
+  },
+  redLine: {
+    height: hp(1.5),
+    width: wp(15),
+    backgroundColor: '#D40101',
+    borderRadius: 10,
   },
   detailsButton: {
     height: hp(2),
@@ -155,7 +152,7 @@ export default StyleSheet.create({
     color: colors.WHITE,
     fontWeight: '500',
   },
-  flatlistView: {marginBottom: hp(22)},
+  flatlistView: {marginBottom: hp(22), marginTop: hp(4)},
   modalmainView: {
     flex: 1,
     backgroundColor: 'rgba(250,255,252,0.7)',
