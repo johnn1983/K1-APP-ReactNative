@@ -41,7 +41,7 @@ const PromoCodeScreen = ({navigation}) => {
         />
       </View>
       <View style={styles.signupTxt}>
-        <Text styles={styles.text2}>Don't have a promocode?</Text>
+        <Text style={styles.text2}>Don't have a promocode?</Text>
         <TouchableOpacity onPress={() => navigation.navigate(SignupScreen)}>
           <Text style={styles.text}> Sign Up</Text>
         </TouchableOpacity>

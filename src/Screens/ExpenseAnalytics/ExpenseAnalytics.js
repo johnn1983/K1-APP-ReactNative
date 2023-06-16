@@ -15,11 +15,11 @@ import React, {useState} from 'react';
 import styles from './ExpenseAnalyticsStyle';
 
 import {IMG} from '../../Constants/ImageConstant';
-import PrimaryButton from '../../Components/PrimaryButton';
 import BottomNavigation from '../../Components/BottomNavigation';
 import Scanner from '../Scanner/Scanner';
 import BudgetDetails from '../BudgetDetails/BudgetDetails';
 import ExpenseDetails from '../ExpenseDetails/ExpenseDetails';
+import AnalyticsDetails from '../AnalyticsDetails/AnalyticsDetails';
 
 const ExpenseAnalytics = ({navigation}) => {
   const analyticsData = [
@@ -49,23 +49,26 @@ const ExpenseAnalytics = ({navigation}) => {
     },
   ];
 
-  const TableView = () => {
+  const TableView = ({date, reason, amount, subcategory, view}) => {
     return (
       <View style={styles.bodyHeaderView}>
         <View style={styles.bodyHeaderTxtView}>
-          <Text style={styles.bodyHeaderTxt}>Date</Text>
+          <Text style={styles.bodyHeaderTxt}>{date}</Text>
         </View>
         <View style={styles.bodyHeaderTxtView}>
-          <Text style={styles.bodyHeaderTxt}>Expense Reason</Text>
+          <Text style={styles.bodyHeaderTxt}>{reason}</Text>
         </View>
         <View style={styles.bodyHeaderTxtView}>
-          <Text style={styles.bodyHeaderTxt}>Expense Amount</Text>
+          <Text style={styles.bodyHeaderTxt}>{amount}</Text>
         </View>
         <View style={styles.bodyHeaderTxtView}>
-          <Text style={styles.bodyHeaderTxt}>Sub Category Name</Text>
+          <Text style={styles.bodyHeaderTxt}>{subcategory}</Text>
         </View>
         <View style={styles.bodyHeaderTxtView}>
-          <Text style={styles.bodyHeaderTxt}>View Receipt</Text>
+          <TouchableOpacity
+            onPress={() => navigation.navigate(AnalyticsDetails)}>
+            <Text style={styles.bodyHeaderTxt2}>{view}</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -146,7 +149,23 @@ const ExpenseAnalytics = ({navigation}) => {
               <Text style={styles.tableHeadTxt}>View Receipt</Text>
             </View>
           </View>
-          {/* <TableView /> */}
+
+          <View style={styles.flatlistView}>
+            <FlatList
+              showsVerticalScrollIndicator={false}
+              data={analyticsData}
+              renderItem={({item}) => (
+                <TableView
+                  date={item.date}
+                  reason={item.reason}
+                  amount={item.amount}
+                  subcategory={item.subcategory}
+                  view={item.view}
+                />
+              )}
+              keyExtractor={item => item.id}
+            />
+          </View>
         </ScrollView>
       </View>
 

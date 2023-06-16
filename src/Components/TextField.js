@@ -29,10 +29,11 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 30,
     paddingHorizontal: wp(4),
-    paddingVertical: hp(1),
+    paddingVertical: hp(0.7),
     color: colors.BLACK,
     fontSize: SetFontSize.setDimension.textSizeRegular,
-    fontFamily: ConstantKeys.INTER_REGULAR,
+    fontFamily: ConstantKeys.MUKTA,
+    fontWeight: '400',
   },
 });
 

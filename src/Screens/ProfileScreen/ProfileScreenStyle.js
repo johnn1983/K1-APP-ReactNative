@@ -1,12 +1,10 @@
 import {StyleSheet} from 'react-native';
 import {SetFontSize} from '../../Utils/FontSize';
 import {colors} from '../../Utils/colors';
-import {ConstantKeys} from '../../Utils/ConstantKey';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 export default StyleSheet.create({
   container: {

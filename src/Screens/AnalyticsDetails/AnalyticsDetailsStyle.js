@@ -1,0 +1,182 @@
+import {StyleSheet} from 'react-native';
+import {SetFontSize} from '../../Utils/FontSize';
+import {colors} from '../../Utils/colors';
+
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
+
+export default StyleSheet.create({
+  mainContainer: {flex: 1},
+  container: {
+    flex: 1,
+    backgroundColor: '#FDFDFD',
+  },
+  headerView: {
+    height: hp(4),
+    width: wp(100),
+    backgroundColor: '#3461A6',
+    justifyContent: 'center',
+    paddingLeft: wp(7),
+    marginTop: hp(4),
+  },
+  headerTxt: {
+    fontSize: SetFontSize.setDimension.textSizeRegular,
+    color: colors.WHITE,
+    fontWeight: '600',
+  },
+  mainView: {
+    flexDirection: 'row',
+    marginHorizontal: wp(1),
+    marginVertical: hp(2),
+  },
+  mainLeftView: {
+    paddingVertical: hp(0.1),
+    height: '100%',
+    width: '32%',
+    alignItems: 'center',
+    paddingHorizontal: wp(1),
+  },
+  mainRightView: {
+    height: '100%',
+    width: '68%',
+    borderColor: colors.BLACK,
+    borderWidth: 1,
+    alignItems: 'center',
+    backgroundColor: colors.WHITE,
+  },
+  leftChildView: {height: '100%', width: '100%'},
+  rightChildView: {height: '100%', width: '100%'},
+  leftButton: {
+    backgroundColor: '#E7FFFF',
+    height: hp(6.5),
+    width: '100%',
+    marginBottom: hp(1.5),
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: '#8BC7C7',
+    borderRadius: 7,
+  },
+  selleftbutton: {
+    backgroundColor: '#3F51B5',
+    height: hp(6.5),
+    width: '100%',
+    marginBottom: hp(1.5),
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: '#8BC7C7',
+    borderRadius: 7,
+  },
+  buttonTxt: {
+    fontSize: SetFontSize.setDimension.textSizeRegular,
+    color: colors.BLACK,
+    fontWeight: '500',
+  },
+  selbuttonTxt: {
+    fontSize: SetFontSize.setDimension.textSizeRegular,
+    color: colors.WHITE,
+    fontWeight: '500',
+  },
+  rightTopView: {
+    width: '90%',
+    alignItems: 'center',
+  },
+  rightHeadView: {
+    width: '100%',
+    height: hp(4),
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: hp(1),
+    backgroundColor: '#4051B4',
+  },
+  rightHeadTxt: {
+    fontSize: SetFontSize.setDimension.textSizeRegular,
+    color: colors.WHITE,
+    fontWeight: '600',
+  },
+  mainDetailsView: {width: '100%'},
+  detailsView: {
+    height: hp(4.5),
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  leftDetails: {width: '50%'},
+  rightDetails: {width: '50%'},
+  detailsTxt: {
+    fontSize: SetFontSize.setDimension.textSizeSmall,
+    color: colors.BLACK,
+    fontWeight: '500',
+    textAlign: 'center',
+  },
+  verticalLine: {
+    backgroundColor: '#D9D9D9',
+    height: 25,
+    width: 2,
+  },
+  horizontalLine: {
+    backgroundColor: '#D9D9D9',
+    height: 3,
+    width: '100%',
+  },
+  rightBottomView: {
+    width: '100%',
+    marginTop: hp(5),
+    paddingBottom: hp(10),
+  },
+  tableHeaderView: {
+    marginHorizontal: '1%',
+    width: '98%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  tableHeaderTxtView: {
+    height: hp(7),
+    width: '19.5%',
+    backgroundColor: '#776ADE',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: wp(1),
+  },
+  tableHeadTxt: {
+    fontSize: SetFontSize.setDimension.textSize10,
+    color: colors.WHITE,
+    fontWeight: '400',
+    textAlign: 'center',
+  },
+  flatlistView: {
+    width: '100%',
+    marginBottom: hp(12),
+  },
+  bodyHeaderView: {
+    width: '98%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: hp(0.4),
+    marginHorizontal: '1%',
+  },
+  bodyHeaderTxtView: {
+    height: hp(7),
+    width: '19.5%',
+    backgroundColor: '#EEEEEE',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: wp(0.5),
+  },
+  bodyHeaderTxt: {
+    fontSize: SetFontSize.setDimension.textSize10,
+    color: colors.BLACK,
+    fontWeight: '400',
+    textAlign: 'center',
+  },
+  bodyHeaderTxt2: {
+    fontSize: SetFontSize.setDimension.textSize11,
+    color: '#0D8F29',
+    fontWeight: '400',
+    textAlign: 'center',
+  },
+});

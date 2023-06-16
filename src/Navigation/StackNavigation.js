@@ -15,6 +15,8 @@ import Scanner from '../Screens/Scanner/Scanner';
 import BudgetDetails from '../Screens/BudgetDetails/BudgetDetails';
 import ExpenseDetails from '../Screens/ExpenseDetails/ExpenseDetails';
 import ExpenseAnalytics from '../Screens/ExpenseAnalytics/ExpenseAnalytics';
+import CategoryView from '../Screens/CategoryView/CategoryView';
+import AnalyticsDetails from '../Screens/AnalyticsDetails/AnalyticsDetails';
 
 const StackNavigation = () => {
   return (
@@ -32,6 +34,8 @@ const StackNavigation = () => {
         <Stack.Screen name="BudgetDetails" component={BudgetDetails} />
         <Stack.Screen name="ExpenseDetails" component={ExpenseDetails} />
         <Stack.Screen name="ExpenseAnalytics" component={ExpenseAnalytics} />
+        <Stack.Screen name="CategoryView" component={CategoryView} />
+        <Stack.Screen name="AnalyticsDetails" component={AnalyticsDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );

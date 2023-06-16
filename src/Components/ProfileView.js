@@ -9,80 +9,28 @@ import {
 } from 'react-native-responsive-screen';
 import {SetFontSize} from '../Utils/FontSize';
 import PrimaryButton from './PrimaryButton';
-import {ConstantKeys} from '../Utils/ConstantKey';
-import Statistics from '../Screens/Statistics/Statistics';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const ProfileView = ({onPress}) => {
   return (
-    // <View style={styles.container}>
-    //   <TouchableOpacity>
-    //     <Image
-    //       style={styles.editImg}
-    //       source={IMG.ExtraLogo.editButton}
-    //       resizeMode="center"
-    //     />
-    //   </TouchableOpacity>
-
-    //   <View style={styles.childContainer}>
-    //     <View style={styles.imageContainer}>
-    //       <Image
-    //         style={styles.profileImg}
-    //         source={IMG.ExtraLogo.profilePIc}
-    //         resizeMode="center"
-    //       />
-    //     </View>
-
-    //     <View style={styles.textContainer}>
-    //       <View style={styles.profileTxtView}>
-    //         <Text style={styles.nameTxt}>Sabariya Muzumder</Text>
-    //         <Image source={IMG.ValueIcons.Basic} resizeMode="center" />
-    //       </View>
-    //       <View>
-    //         <Text style={styles.userTxt}>sabariyamuzumder9921@gmail.com</Text>
-    //         <Text style={styles.userTxt}>Cell: +1-9947792172</Text>
-    //         <Text style={styles.userTxt}>United States</Text>
-    //       </View>
-    //     </View>
-    //   </View>
-    // </View>
-    <View
-      style={{
-        flex: 1,
-        // backgroundColor: '#FDFDFD',
-        paddingLeft: 20,
-        paddingRight: 10,
-      }}>
-      <TouchableOpacity>
-        <Image
-          style={styles.editImg}
-          source={IMG.ExtraLogo.editButton}
-          resizeMode="center"
-        />
-      </TouchableOpacity>
-      <View style={{flexDirection: 'row'}}>
+    <View style={styles.container}>
+      <View style={styles.editView}>
+        <TouchableOpacity>
+          <Icon style={styles.editImg} name="edit" size={25} color="#D40101" />
+          <View style={styles.editLine} />
+        </TouchableOpacity>
+      </View>
+      <View style={styles.imageContainer}>
         <View>
           <Image
-            style={{height: 100, width: 100}}
-            // style={styles.profileImg}
+            style={styles.profilePic}
             source={IMG.ExtraLogo.profilePIc}
             resizeMode="center"
           />
         </View>
-        <View
-          style={{
-            marginLeft: wp(5),
-            marginTop: hp(0.7),
-          }}>
+        <View style={styles.childContainer}>
           <View style={{flexDirection: 'row'}}>
-            <Text
-              style={{
-                fontSize: SetFontSize.setDimension.textSizeLarge,
-                color: colors.BLACK,
-                marginRight: 5,
-                fontWeight: '500',
-              }}>
-              Sabariya Muzumder
-            </Text>
+            <Text style={styles.nameTxt}>Sabariya Muzumder</Text>
             <Image
               style={{height: 25, width: 25}}
               source={IMG.ValueIcons.Basic}
@@ -94,24 +42,17 @@ const ProfileView = ({onPress}) => {
             <Text style={styles.userTxt}>Cell: +1-9947792172</Text>
             <Text style={styles.userTxt}>United States</Text>
           </View>
-          <View
-            style={{
-              height: hp(4.5),
-              width: wp(58),
-              flexDirection: 'row',
-              justifyContent: 'space-around',
-              marginTop: hp(1),
-            }}>
+          <View style={styles.buttonView}>
             <PrimaryButton
               text={'Statistics'}
-              style={styles.primaryButton}
-              textstyle={styles.buttonText}
+              style={styles.statisticsButton}
+              textstyle={styles.staticticTxt}
               onPress={onPress}
             />
             <PrimaryButton
               text={'Update Plan'}
-              style={styles.primaryButton2}
-              textstyle={styles.buttonText2}
+              style={styles.updatePlanButton}
+              textstyle={styles.updateTxt}
             />
           </View>
         </View>
@@ -121,41 +62,46 @@ const ProfileView = ({onPress}) => {
 };
 
 const styles = StyleSheet.create({
-  //   container: {
-  //     flex: 1,
-  //     backgroundColor: colors.WHITE,
-  //     paddingHorizontal: 15,
-  //   },
-  //   imageContainer: {
-  //     marginRight: 20,
-  //   },
-  editImg: {
-    height: 40,
-    width: 40,
+  container: {
+    flex: 1,
+    paddingLeft: 20,
+    paddingRight: 10,
+  },
+  imageContainer: {flexDirection: 'row'},
+  profilePic: {height: 100, width: 100},
+  editView: {
+    marginTop: hp(1.5),
+    width: wp(8),
     alignSelf: 'flex-end',
   },
-  //   childContainer: {
-  //     justifyContent: 'flex-start',
-  //     flexDirection: 'row',
-  //   },
-  //   profileImg: {
-  //     height: 100,
-  //     width: 100,
-  //   },
-  //   profileTxtView: {
-  //     flexDirection: 'row',
-  //     alignItems: 'center',
-  //   },
-  //   nameTxt: {
-  //     fontSize: SetFontSize.setDimension.testSizeHed,
-  //     color: colors.BLACK,
-  //   },
+  editImg: {alignSelf: 'flex-end'},
+  editLine: {
+    alignSelf: 'flex-end',
+    height: 3,
+    width: 22,
+    backgroundColor: '#D40101',
+    marginRight: 5,
+  },
+  childContainer: {marginLeft: wp(5), marginTop: hp(0.7)},
+  nameTxt: {
+    fontSize: SetFontSize.setDimension.textSizeLarge,
+    color: colors.BLACK,
+    marginRight: 5,
+    fontWeight: '500',
+  },
   userTxt: {
     fontSize: SetFontSize.setDimension.textSizeSmall,
     color: colors.BLACK,
     marginBottom: hp(0.5),
   },
-  primaryButton: {
+  buttonView: {
+    height: hp(4.5),
+    width: wp(58),
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: hp(1),
+  },
+  statisticsButton: {
     height: hp(4),
     width: wp(25),
     backgroundColor: '#0D8F29',
@@ -163,13 +109,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 25,
   },
-  buttonText: {
+  staticticTxt: {
     fontSize: SetFontSize.setDimension.textSizeRegular,
     color: colors.WHITE,
     fontWeight: '500',
     textAlign: 'center',
   },
-  primaryButton2: {
+  updatePlanButton: {
     height: hp(4),
     width: wp(28),
     backgroundColor: '#081C3B',
@@ -178,12 +124,11 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     marginLeft: wp(5),
   },
-  buttonText2: {
+  updateTxt: {
     fontSize: SetFontSize.setDimension.textSizeRegular,
     color: colors.WHITE,
     fontWeight: '500',
     textAlign: 'center',
   },
-  //   textContainer: {},
 });
 export default ProfileView;

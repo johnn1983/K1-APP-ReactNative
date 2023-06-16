@@ -4,6 +4,7 @@ import React from 'react';
 import styles from './StatisticsStyle';
 import {IMG} from '../../Constants/ImageConstant';
 import PrimaryButton from '../../Components/PrimaryButton';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Statistics = ({navigation}) => {
   const StatisticsArr = [
@@ -45,10 +46,11 @@ const Statistics = ({navigation}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity>
-        <Image
+        <Icon
           style={styles.settingsImg}
-          source={IMG.ExtraLogo.settings}
-          resizeMode="center"
+          name="settings-outline"
+          size={25}
+          color="black"
         />
       </TouchableOpacity>
 

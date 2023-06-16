@@ -30,8 +30,8 @@ export default StyleSheet.create({
   },
   text2: {
     fontSize: SetFontSize.setDimension.textSizeMedium,
-    color: colors.GREY,
-    fontFamily: ConstantKeys.INTER_MEDIUM,
+    color: '#BDB8B8',
+    fontFamily: ConstantKeys.MUKTA,
     textAlign: 'center',
     fontWeight: '500',
   },

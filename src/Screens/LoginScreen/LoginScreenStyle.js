@@ -25,9 +25,9 @@ export default StyleSheet.create({
     marginHorizontal: hp(10),
   },
   headerText: {
-    fontSize: SetFontSize.setDimension.testSize22,
+    fontSize: SetFontSize.setDimension.testSizeHed,
     color: '#081588',
-    fontFamily: ConstantKeys.INTER_MEDIUM,
+    fontFamily: ConstantKeys.MUKTA,
     textAlign: 'center',
     fontWeight: '700',
   },
@@ -46,8 +46,9 @@ export default StyleSheet.create({
   bodyTxt: {
     fontSize: SetFontSize.setDimension.textSizeMedium,
     color: '#1E1C1C',
-    fontWeight: '400',
+    fontWeight: '500',
     marginBottom: hp(1),
+    fontFamily: ConstantKeys.MUKTA,
   },
   buttonContainer: {
     marginHorizontal: wp(24),

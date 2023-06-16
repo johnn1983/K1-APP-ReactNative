@@ -19,6 +19,7 @@ import BottomNavigation from '../../Components/BottomNavigation';
 import Scanner from '../Scanner/Scanner';
 import BudgetDetails from '../BudgetDetails/BudgetDetails';
 import ExpenseAnalytics from '../ExpenseAnalytics/ExpenseAnalytics';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const ExpenseDetails = ({navigation}) => {
   const [upCategory, setUpCategory] = useState(false);
@@ -70,18 +71,15 @@ const ExpenseDetails = ({navigation}) => {
           </View>
           <View style={{flexDirection: 'row'}}>
             <TouchableOpacity onPress={() => setUpCategory(!upCategory)}>
-              <Image
+              <Icon
                 style={styles.editDeleteImg}
-                source={IMG.ExtraLogo.EditRed}
-                resizeMode="center"
+                name="edit"
+                size={20}
+                color="red"
               />
             </TouchableOpacity>
             <TouchableOpacity>
-              <Image
-                style={styles.editDeleteImg}
-                source={IMG.ExtraLogo.DeleteRed}
-                resizeMode="center"
-              />
+              <Icon name="delete" size={20} color="red" />
             </TouchableOpacity>
           </View>
         </View>

@@ -47,7 +47,7 @@ export default StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: wp(2),
     marginVertical: hp(2.5),
-    marginBottom: hp(7),
+    marginBottom: hp(5),
     paddingHorizontal: wp(2),
     paddingTop: hp(1),
   },
@@ -132,7 +132,7 @@ export default StyleSheet.create({
   tableHeaderView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginHorizontal: wp(2),
+    marginHorizontal: wp(1),
     marginTop: hp(3),
   },
   tableHeaderTxtView: {
@@ -152,21 +152,28 @@ export default StyleSheet.create({
   bodyHeaderView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginHorizontal: wp(2),
-    marginTop: hp(3),
+    marginHorizontal: wp(1),
+    marginTop: hp(0.4),
   },
   bodyHeaderTxtView: {
     height: hp(7),
     width: wp(17),
-    backgroundColor: '#776ADE',
+    backgroundColor: '#EEEEEE',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: wp(1),
+    paddingHorizontal: wp(0.5),
   },
   bodyHeaderTxt: {
-    fontSize: SetFontSize.setDimension.textSize11,
-    color: colors.WHITE,
+    fontSize: SetFontSize.setDimension.textSize10,
+    color: colors.BLACK,
     fontWeight: '400',
     textAlign: 'center',
   },
+  bodyHeaderTxt2: {
+    fontSize: SetFontSize.setDimension.textSize11,
+    color: '#0D8F29',
+    fontWeight: '400',
+    textAlign: 'center',
+  },
+  flatlistView: {marginBottom: hp(12)},
 });

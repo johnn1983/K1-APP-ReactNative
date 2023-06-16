@@ -12,16 +12,15 @@ import {
 import React, {useState} from 'react';
 
 import styles from './BudgetDetailsStyle';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
+
 import {IMG} from '../../Constants/ImageConstant';
 import PrimaryButton from '../../Components/PrimaryButton';
 import BottomNavigation from '../../Components/BottomNavigation';
 import Scanner from '../Scanner/Scanner';
 import ExpenseDetails from '../ExpenseDetails/ExpenseDetails';
 import ExpenseAnalytics from '../ExpenseAnalytics/ExpenseAnalytics';
+import CategoryView from '../CategoryView/CategoryView';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const BudgetDetails = ({navigation}) => {
   const [addCategory, setAddCategory] = useState(false);
@@ -69,18 +68,15 @@ const BudgetDetails = ({navigation}) => {
           </View>
           <View style={{flexDirection: 'row'}}>
             <TouchableOpacity onPress={() => setUpCategory(!upCategory)}>
-              <Image
+              <Icon
                 style={styles.editDeleteImg}
-                source={IMG.ExtraLogo.EditRed}
-                resizeMode="center"
+                name="edit"
+                size={20}
+                color="red"
               />
             </TouchableOpacity>
             <TouchableOpacity>
-              <Image
-                style={styles.editDeleteImg}
-                source={IMG.ExtraLogo.DeleteRed}
-                resizeMode="center"
-              />
+              <Icon name="delete" size={20} color="red" />
             </TouchableOpacity>
           </View>
         </View>
@@ -99,7 +95,9 @@ const BudgetDetails = ({navigation}) => {
         </View>
         <View style={styles.detailsTxtView}>
           <Text style={styles.detailsTxt}>Sub Category</Text>
-          <TouchableOpacity style={styles.detailsButton}>
+          <TouchableOpacity
+            style={styles.detailsButton}
+            onPress={() => navigation.navigate(CategoryView)}>
             <Text style={styles.detailsButtonTxt}>View</Text>
           </TouchableOpacity>
         </View>

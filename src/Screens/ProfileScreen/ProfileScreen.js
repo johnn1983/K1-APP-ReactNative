@@ -1,7 +1,5 @@
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable react-native/no-inline-styles */
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text} from 'react-native';
 import React from 'react';
 
 import styles from './ProfileScreenStyle';

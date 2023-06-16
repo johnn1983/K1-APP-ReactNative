@@ -14,6 +14,7 @@ export default StyleSheet.create({
     paddingHorizontal: wp(2),
   },
   settingsImg: {
+    marginTop: hp(1),
     height: 30,
     width: 30,
     alignSelf: 'flex-end',
