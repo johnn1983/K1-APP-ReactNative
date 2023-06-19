@@ -6,6 +6,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {ConstantKeys} from '../../Utils/ConstantKey';
 
 export default StyleSheet.create({
   container: {
@@ -18,6 +19,7 @@ export default StyleSheet.create({
     height: 30,
     width: 30,
     alignSelf: 'flex-end',
+    marginBottom: hp(-1),
   },
   profileView: {
     paddingHorizontal: wp(1),
@@ -34,6 +36,7 @@ export default StyleSheet.create({
     color: colors.BLACK,
     fontWeight: '500',
     paddingLeft: wp(1),
+    fontFamily: ConstantKeys.MUKTA,
   },
   buttonView: {
     marginTop: hp(2),
@@ -50,7 +53,8 @@ export default StyleSheet.create({
   buttonTxt: {
     fontSize: SetFontSize.setDimension.textSizeSmall,
     color: colors.WHITE,
-    fontWeight: '600',
+    fontWeight: '700',
+    fontFamily: ConstantKeys.MUKTA,
   },
   headerView: {
     marginTop: hp(2),
@@ -62,6 +66,7 @@ export default StyleSheet.create({
     fontSize: SetFontSize.setDimension.textSizeMedium,
     color: colors.BLACK,
     fontWeight: '500',
+    fontFamily: ConstantKeys.MUKTA,
   },
   line: {
     marginVertical: hp(0.5),
@@ -98,5 +103,7 @@ export default StyleSheet.create({
     fontSize: SetFontSize.setDimension.textSizeSmall,
     color: colors.BLACK,
     fontWeight: '400',
+    fontFamily: ConstantKeys.MUKTA,
   },
+  flatlist: {},
 });

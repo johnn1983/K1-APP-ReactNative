@@ -10,6 +10,7 @@ import Scanner from '../Scanner/Scanner';
 import BudgetDetails from '../BudgetDetails/BudgetDetails';
 import ExpenseDetails from '../ExpenseDetails/ExpenseDetails';
 import PrimaryButton from '../../Components/PrimaryButton';
+import BottomNav from '../../Navigation/BottomNav';
 
 const AnalyticsDetails = ({navigation}) => {
   const [selectedButton, setSelectedButton] = useState('Entertainment');
@@ -148,6 +149,7 @@ const AnalyticsDetails = ({navigation}) => {
       </ScrollView>
     );
   };
+
   return (
     <View style={styles.mainContainer}>
       <View style={styles.container}>
@@ -237,16 +239,6 @@ const AnalyticsDetails = ({navigation}) => {
             </ScrollView>
           </View>
         </View>
-      </View>
-
-      <View>
-        <BottomNavigation
-          onPress={() => navigation.navigate(Scanner)}
-          onPressBudget={() => navigation.navigate(BudgetDetails)}
-          onPressExpense={() => {
-            navigation.navigate(ExpenseDetails);
-          }}
-        />
       </View>
     </View>
   );

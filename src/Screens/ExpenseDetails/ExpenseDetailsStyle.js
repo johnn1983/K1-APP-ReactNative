@@ -6,6 +6,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {ConstantKeys} from '../../Utils/ConstantKey';
 
 export default StyleSheet.create({
   mainContainer: {flex: 1},
@@ -36,9 +37,10 @@ export default StyleSheet.create({
     marginTop: hp(4),
   },
   headerTxt: {
-    fontSize: SetFontSize.setDimension.textSizeRegular,
+    fontSize: SetFontSize.setDimension.textSizeMedium,
     color: colors.WHITE,
     fontWeight: '600',
+    fontFamily: ConstantKeys.MUKTA,
   },
   mainView: {
     borderWidth: 1,
@@ -47,7 +49,6 @@ export default StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: wp(2),
     marginVertical: hp(2.5),
-    marginBottom: hp(7),
   },
   topButtonView: {
     flexDirection: 'row',
@@ -87,9 +88,10 @@ export default StyleSheet.create({
   },
   buttonImg: {marginTop: hp(0.3)},
   upperButtonTxt: {
-    fontSize: SetFontSize.setDimension.textSizeRegular,
+    fontSize: SetFontSize.setDimension.textSize13,
     color: colors.BLACK,
     fontWeight: '400',
+    fontFamily: ConstantKeys.POPPINS,
   },
   editDeleteImg: {
     height: hp(3),
@@ -104,21 +106,25 @@ export default StyleSheet.create({
     fontSize: SetFontSize.setDimension.textSizeRegular,
     color: colors.BLACK,
     fontWeight: '500',
+    fontFamily: ConstantKeys.MUKTA,
   },
   detailsTxt: {
     fontSize: SetFontSize.setDimension.textSizeSmall,
     color: '#514F4F',
     fontWeight: '600',
+    fontFamily: ConstantKeys.INTER,
   },
   detailsAnstxt: {
     fontSize: SetFontSize.setDimension.textSizeSmall,
     color: '#282828',
     fontWeight: '600',
+    fontFamily: ConstantKeys.INTER,
   },
   deatilByTxtRed: {
     fontSize: SetFontSize.setDimension.textSizeSmall,
     color: '#D40101',
     fontWeight: '600',
+    fontFamily: ConstantKeys.INTER,
   },
   deatilByTxtGreen: {
     fontSize: SetFontSize.setDimension.textSizeSmall,
@@ -152,7 +158,7 @@ export default StyleSheet.create({
     color: colors.WHITE,
     fontWeight: '500',
   },
-  flatlistView: {marginBottom: hp(22), marginTop: hp(4)},
+  flatlistView: {marginBottom: hp(10), marginTop: hp(4), paddingBottom: hp(7)},
   modalmainView: {
     flex: 1,
     backgroundColor: 'rgba(250,255,252,0.7)',

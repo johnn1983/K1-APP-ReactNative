@@ -23,9 +23,10 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   headerText: {
-    fontSize: SetFontSize.setDimension.textSizeLarge,
+    fontSize: SetFontSize.setDimension.testSizeHed,
     color: colors.BLACK,
-    fontWeight: '600',
+    fontWeight: '500',
+    fontFamily: ConstantKeys.MUKTA,
   },
   bodyView: {
     alignContent: 'flex-start',
@@ -49,8 +50,9 @@ export default StyleSheet.create({
   mainTxt: {
     fontSize: SetFontSize.setDimension.textSizeMedium,
     color: colors.BLACK,
-    fontWeight: '600',
+    fontWeight: '500',
     marginLeft: wp(2),
+    fontFamily: ConstantKeys.MUKTA,
   },
   arrowImg: {
     alignSelf: 'center',
@@ -71,6 +73,7 @@ export default StyleSheet.create({
     fontWeight: '400',
     marginTop: 2,
     marginLeft: 2,
+    fontFamily: ConstantKeys.MUKTA,
   },
   txtView: {
     flexDirection: 'row',
@@ -83,7 +86,8 @@ export default StyleSheet.create({
   freeTxt: {
     fontSize: SetFontSize.setDimension.textSizeLarge,
     color: colors.BLACK,
-    fontWeight: '600',
+    fontWeight: '500',
+    fontFamily: ConstantKeys.MUKTA,
   },
   purchaseButton: {
     marginTop: hp(1),
@@ -99,9 +103,12 @@ export default StyleSheet.create({
     fontSize: SetFontSize.setDimension.textSizeMedium,
     color: colors.WHITE,
     textAlign: 'center',
-    fontWeight: '600',
+    fontWeight: '700',
+    fontFamily: ConstantKeys.MUKTA,
   },
   priceTxt: {
     color: '#0D8F29',
+    fontWeight: '700',
+    fontFamily: ConstantKeys.MUKTA,
   },
 });

@@ -6,6 +6,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {ConstantKeys} from '../../Utils/ConstantKey';
 
 export default StyleSheet.create({
   mainContainer: {flex: 1},
@@ -46,14 +47,12 @@ export default StyleSheet.create({
     borderColor: '#E8E5E5',
     borderRadius: 10,
     marginHorizontal: wp(2),
-    marginVertical: hp(2.5),
-    marginBottom: hp(5),
+    marginTop: hp(2.5),
+    marginBottom: hp(-1),
     paddingHorizontal: wp(2),
     paddingTop: hp(1),
   },
   calender: {
-    height: hp(5),
-    width: wp(10),
     alignSelf: 'flex-end',
   },
   roundChart: {
@@ -70,11 +69,13 @@ export default StyleSheet.create({
     marginBottom: hp(-4),
   },
   barTxtView: {
+    top: -10,
     flexDirection: 'column',
-    paddingHorizontal: wp(1),
+    paddingRight: wp(1),
   },
   barLinesView: {
-    flexDirection: 'row',
+    position: 'absolute',
+    marginLeft: wp(6),
   },
   barTxt: {
     fontSize: SetFontSize.setDimension.textSizeSmall,
@@ -82,6 +83,8 @@ export default StyleSheet.create({
     fontWeight: '600',
     marginTop: hp(1),
     alignSelf: 'flex-end',
+    fontFamily: ConstantKeys.POPPINS,
+    marginRight: wp(1),
   },
   hlines: {
     top: -50,
@@ -91,14 +94,17 @@ export default StyleSheet.create({
     width: wp(90),
   },
   vlines: {
-    top: -35,
+    top: -15,
     height: hp(22),
     width: wp(25),
+    position: 'absolute',
+    marginLeft: wp(3),
   },
   allTxtView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginHorizontal: wp(5),
+    marginTop: hp(4),
   },
   txtView: {
     flexDirection: 'column',
@@ -107,9 +113,10 @@ export default StyleSheet.create({
   txtStyle: {
     height: hp(4.5),
     width: wp(24),
-    fontSize: SetFontSize.setDimension.textSize13,
+    fontSize: SetFontSize.setDimension.textSizeSmall,
     color: colors.BLACK,
-    fontWeight: '500',
+    fontWeight: '600',
+    fontFamily: ConstantKeys.INTER,
   },
   firstLine: {
     height: hp(1),
@@ -148,6 +155,7 @@ export default StyleSheet.create({
     color: colors.WHITE,
     fontWeight: '400',
     textAlign: 'center',
+    fontFamily: ConstantKeys.MUKTA,
   },
   bodyHeaderView: {
     flexDirection: 'row',
@@ -164,16 +172,29 @@ export default StyleSheet.create({
     paddingHorizontal: wp(0.5),
   },
   bodyHeaderTxt: {
-    fontSize: SetFontSize.setDimension.textSize10,
+    fontSize: SetFontSize.setDimension.textSize11,
     color: colors.BLACK,
     fontWeight: '400',
     textAlign: 'center',
+    fontFamily: ConstantKeys.MUKTA,
   },
   bodyHeaderTxt2: {
-    fontSize: SetFontSize.setDimension.textSize11,
+    fontSize: SetFontSize.setDimension.textSizeSmall,
     color: '#0D8F29',
     fontWeight: '400',
     textAlign: 'center',
+    fontFamily: ConstantKeys.MUKTA,
   },
-  flatlistView: {marginBottom: hp(12)},
+  flatlistView: {marginBottom: hp(10)},
+  hLinesView: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  hImageLines: {
+    height: 3,
+    width: wp(75),
+    backgroundColor: 'lightgrey',
+    marginLeft: wp(1),
+    marginTop: hp(3),
+  },
 });

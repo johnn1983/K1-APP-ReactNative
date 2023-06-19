@@ -74,7 +74,7 @@ const Statistics = ({navigation}) => {
 
       <View style={styles.headerView}>
         <Text style={styles.headerTxt}>Services</Text>
-        <Text style={styles.headerTxt}>{'           '}Used</Text>
+        <Text style={styles.headerTxt}>{'                   '}Used</Text>
         <Text style={styles.headerTxt}>Remaining</Text>
       </View>
       <View style={styles.line} />

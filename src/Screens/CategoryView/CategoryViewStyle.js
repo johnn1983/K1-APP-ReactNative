@@ -6,6 +6,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {ConstantKeys} from '../../Utils/ConstantKey';
 
 export default StyleSheet.create({
   container: {flex: 1},
@@ -20,18 +21,21 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: 'center',
+    flex: 1,
   },
   headerMainTxt: {
-    fontSize: SetFontSize.setDimension.testSizeHed,
+    fontSize: SetFontSize.setDimension.testSize22,
     color: colors.BLACK,
     fontWeight: '600',
     marginHorizontal: wp(4),
+    fontFamily: ConstantKeys.MUKTA,
   },
   headerChildTxt: {
     fontSize: SetFontSize.setDimension.textSizeRegular,
     color: '#4A7CC8',
     fontWeight: '700',
     marginHorizontal: wp(1),
+    fontFamily: ConstantKeys.MUKTA,
   },
   headingView: {
     height: hp(6),
@@ -41,15 +45,17 @@ export default StyleSheet.create({
     paddingHorizontal: wp(5),
   },
   headingTxt: {
-    fontSize: SetFontSize.setDimension.textSizeLarge,
+    fontSize: SetFontSize.setDimension.testSizeHed,
     color: colors.BLACK,
     fontWeight: '600',
+    fontFamily: ConstantKeys.MUKTA,
   },
   noRecordTxt: {
     fontSize: SetFontSize.setDimension.textSizeRegular,
     color: colors.BLACK,
     fontWeight: '400',
     textAlign: 'center',
+    fontFamily: ConstantKeys.INTER,
   },
   modalmainView: {
     flex: 1,
@@ -64,10 +70,11 @@ export default StyleSheet.create({
     backgroundColor: colors.WHITE,
   },
   modalTxt: {
-    fontSize: SetFontSize.setDimension.testSizeHed,
+    fontSize: SetFontSize.setDimension.testSize22,
     color: '#608FD7',
-    fontWeight: '500',
-    marginBottom: hp(5),
+    fontWeight: '600',
+    marginBottom: hp(4),
+    fontFamily: ConstantKeys.MUKTA,
   },
   closeView: {height: hp(4), alignItems: 'flex-end'},
   closeImg: {top: -6, left: 5, height: hp(4), width: wp(8)},
@@ -84,10 +91,11 @@ export default StyleSheet.create({
     borderRadius: 20,
     marginTop: hp(1),
     color: colors.BLACK,
-    fontSize: SetFontSize.setDimension.textSize15,
+    fontSize: SetFontSize.setDimension.textSizeMedium,
     fontWeight: '500',
     paddingVertical: hp(1),
     paddingHorizontal: wp(4),
+    fontFamily: ConstantKeys.MUKTA,
   },
   saveButton: {
     height: hp(4),
@@ -102,7 +110,8 @@ export default StyleSheet.create({
   saveTxt: {
     color: '#EDEDED',
     fontWeight: '600',
-    fontSize: SetFontSize.setDimension.textSizeMedium,
+    fontSize: SetFontSize.setDimension.textSizeLarge,
+    fontFamily: ConstantKeys.MUKTA,
   },
   listView: {alignItems: 'center'},
   listTxtView: {
@@ -146,6 +155,7 @@ export default StyleSheet.create({
     color: colors.BLACK,
     fontWeight: '500',
     textAlign: 'center',
+    fontFamily: ConstantKeys.INTER,
   },
   categoryView: {
     width: wp(51),
@@ -186,5 +196,6 @@ export default StyleSheet.create({
     fontSize: SetFontSize.setDimension.textSizeSmall,
     color: colors.WHITE,
     fontWeight: '500',
+    fontFamily: ConstantKeys.ACME,
   },
 });

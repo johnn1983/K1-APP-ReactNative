@@ -6,7 +6,6 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {CommonActions} from '@react-navigation/native';
 
 export default StyleSheet.create({
   container: {
@@ -60,7 +59,6 @@ export default StyleSheet.create({
     height: hp(6),
     backgroundColor: '#081C3C',
     paddingHorizontal: wp(5),
-    paddingVertical: hp(0.8),
     borderRadius: 30,
     shadowColor: colors.BLACK,
     shadowOffset: {height: 1, width: 1},
@@ -69,19 +67,23 @@ export default StyleSheet.create({
     shadowRadius: 1,
     borderColor: '#9FC0F1',
     borderWidth: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   buttonText: {
-    fontSize: SetFontSize.setDimension.testSizeHed,
-    color: colors.WHITE,
-    fontFamily: ConstantKeys.INTER_MEDIUM,
     textAlign: 'center',
+    color: colors.WHITE,
+    fontSize: SetFontSize.setDimension.textSizeLarge,
+    fontFamily: ConstantKeys.MUKTA,
+    fontWeight: '700',
   },
   forgetTxt: {
     textAlign: 'center',
     color: '#868686',
-    fontSize: SetFontSize.setDimension.textSizeMedium,
-    fontFamily: ConstantKeys.INTER_REGULAR,
+    fontSize: SetFontSize.setDimension.textSizeRegular,
+    fontFamily: ConstantKeys.MUKTA,
     marginBottom: hp(4),
+    fontWeight: '500',
   },
   bottomButton: {alignSelf: 'center'},
   primaryButton3: {
@@ -102,12 +104,12 @@ export default StyleSheet.create({
     borderWidth: 1,
   },
   buttonText3: {
-    fontSize: SetFontSize.setDimension.textSizeLarge,
     color: '#7A7A7A',
-    fontFamily: ConstantKeys.INTER_MEDIUM,
     textAlign: 'center',
-    fontWeight: '700',
     marginLeft: wp(2),
+    fontSize: SetFontSize.setDimension.textSizeLarge,
+    fontFamily: ConstantKeys.MUKTA,
+    fontWeight: '700',
   },
   primaryButton2: {
     height: hp(6),
@@ -124,9 +126,15 @@ export default StyleSheet.create({
     borderWidth: 1,
   },
   buttonText2: {
-    fontSize: SetFontSize.setDimension.textSizeLarge,
     color: colors.WHITE,
-    fontFamily: ConstantKeys.INTER_MEDIUM,
     textAlign: 'center',
+    fontSize: SetFontSize.setDimension.textSizeLarge,
+    fontFamily: ConstantKeys.MUKTA,
+    fontWeight: '700',
+  },
+  showView: {
+    alignSelf: 'flex-end',
+    top: -28,
+    left: -15,
   },
 });

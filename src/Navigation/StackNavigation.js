@@ -17,6 +17,7 @@ import ExpenseDetails from '../Screens/ExpenseDetails/ExpenseDetails';
 import ExpenseAnalytics from '../Screens/ExpenseAnalytics/ExpenseAnalytics';
 import CategoryView from '../Screens/CategoryView/CategoryView';
 import AnalyticsDetails from '../Screens/AnalyticsDetails/AnalyticsDetails';
+import BottomNav from './BottomNav';
 
 const StackNavigation = () => {
   return (
@@ -36,6 +37,7 @@ const StackNavigation = () => {
         <Stack.Screen name="ExpenseAnalytics" component={ExpenseAnalytics} />
         <Stack.Screen name="CategoryView" component={CategoryView} />
         <Stack.Screen name="AnalyticsDetails" component={AnalyticsDetails} />
+        <Stack.Screen name="BottomNav" component={BottomNav} />
       </Stack.Navigator>
     </NavigationContainer>
   );

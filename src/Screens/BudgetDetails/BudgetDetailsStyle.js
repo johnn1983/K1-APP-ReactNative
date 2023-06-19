@@ -6,6 +6,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {ConstantKeys} from '../../Utils/ConstantKey';
 
 export default StyleSheet.create({
   mainContainer: {flex: 1},
@@ -36,9 +37,10 @@ export default StyleSheet.create({
     marginTop: hp(4),
   },
   headerTxt: {
-    fontSize: SetFontSize.setDimension.textSizeRegular,
+    fontSize: SetFontSize.setDimension.textSizeMedium,
     color: colors.WHITE,
     fontWeight: '600',
+    fontFamily: ConstantKeys.MUKTA,
   },
   mainView: {
     borderWidth: 1,
@@ -47,7 +49,7 @@ export default StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: wp(2),
     marginVertical: hp(2.5),
-    marginBottom: hp(25),
+    marginBottom: hp(22),
   },
   topButtonView: {
     flexDirection: 'row',
@@ -85,11 +87,12 @@ export default StyleSheet.create({
     height: hp(3.5),
     width: wp(21),
   },
-  buttonImg: {marginTop: hp(0.3)},
+  buttonImg: {marginTop: hp(0.1)},
   upperButtonTxt: {
-    fontSize: SetFontSize.setDimension.textSizeRegular,
+    fontSize: SetFontSize.setDimension.textSize13,
     color: colors.BLACK,
     fontWeight: '400',
+    fontFamily: ConstantKeys.POPPINS,
   },
   addButtonView: {
     flexDirection: 'row',
@@ -112,6 +115,7 @@ export default StyleSheet.create({
     fontSize: SetFontSize.setDimension.textSizeSmall,
     color: colors.WHITE,
     fontWeight: '700',
+    fontFamily: ConstantKeys.MUKTA,
   },
   editDeleteImg: {
     height: hp(3),
@@ -126,21 +130,25 @@ export default StyleSheet.create({
     fontSize: SetFontSize.setDimension.textSizeRegular,
     color: colors.BLACK,
     fontWeight: '500',
+    fontFamily: ConstantKeys.MUKTA,
   },
   detailsTxt: {
     fontSize: SetFontSize.setDimension.textSizeSmall,
     color: '#514F4F',
     fontWeight: '600',
+    fontFamily: ConstantKeys.INTER,
   },
   detailsAnstxt: {
     fontSize: SetFontSize.setDimension.textSizeSmall,
     color: '#282828',
     fontWeight: '600',
+    fontFamily: ConstantKeys.INTER,
   },
   deatilByTxt: {
     fontSize: SetFontSize.setDimension.textSizeSmall,
     color: '#ACA500',
     fontWeight: '600',
+    fontFamily: ConstantKeys.INTER,
   },
   detailsButton: {
     height: hp(2),
@@ -153,9 +161,10 @@ export default StyleSheet.create({
   detailsButtonTxt: {
     fontSize: SetFontSize.setDimension.textSizeTooSmall,
     color: colors.WHITE,
-    fontWeight: '500',
+    fontWeight: '600',
+    fontFamily: ConstantKeys.INTER,
   },
-  flatlistView: {marginBottom: hp(22)},
+  flatlistView: {marginBottom: hp(15)},
   modalmainView: {
     flex: 1,
     backgroundColor: 'rgba(250,255,252,0.7)',
@@ -175,6 +184,7 @@ export default StyleSheet.create({
     color: '#608FD7',
     fontWeight: '500',
     marginBottom: hp(2),
+    fontFamily: ConstantKeys.POPPINS,
   },
   closeView: {height: hp(6), alignItems: 'flex-end'},
   closeImg: {height: hp(6), width: wp(12)},
@@ -189,8 +199,9 @@ export default StyleSheet.create({
     color: colors.BLACK,
     fontSize: SetFontSize.setDimension.textSizeMedium,
     fontWeight: '500',
-    paddingVertical: hp(1),
+    paddingVertical: hp(0.4),
     textAlign: 'center',
+    fontFamily: ConstantKeys.POPPINS,
   },
   saveButton: {
     height: hp(5.5),
@@ -204,7 +215,8 @@ export default StyleSheet.create({
   },
   saveTxt: {
     color: '#EDEDED',
-    fontWeight: '600',
+    fontWeight: '700',
     fontSize: SetFontSize.setDimension.testSizeHed,
+    fontFamily: ConstantKeys.MUKTA,
   },
 });

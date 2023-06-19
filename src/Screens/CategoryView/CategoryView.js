@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/no-unstable-nested-components */
 import {
   View,
@@ -110,16 +111,11 @@ const CategoryView = ({navigation}) => {
           <TouchableOpacity
             style={styles.deleteView}
             onPress={() => deleteSubCategory(index)}>
-            <Icon
-              style={styles.deleteIcon}
-              name="delete"
-              size={20}
-              color="white"
-            />
+            <Icon name="delete" size={20} color="white" />
             <Text style={styles.deleditTxt}>Delete</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.editView} onPress={handleEditPress}>
-            <Icon style={styles.editIcon} name="edit" size={20} color="white" />
+            <Icon name="edit" size={20} color="white" />
             <Text style={styles.deleditTxt}>Edit</Text>
           </TouchableOpacity>
         </View>
@@ -219,7 +215,9 @@ const CategoryView = ({navigation}) => {
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Icon name="arrow-back" size={25} color="black" />
           </TouchableOpacity>
-          <Text style={styles.headerMainTxt}>Business</Text>
+          <Text style={styles.headerMainTxt} numberOfLines={1}>
+            Business Analytics
+          </Text>
         </View>
         <TouchableOpacity
           style={styles.headerChildView}

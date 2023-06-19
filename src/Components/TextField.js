@@ -7,9 +7,11 @@ import {
 } from 'react-native-responsive-screen';
 import {SetFontSize} from '../Utils/FontSize';
 import {ConstantKeys} from '../Utils/ConstantKey';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const TextField = props => {
-  const {placeholder, value, onChangeText, keyboardType} = props;
+  const {placeholder, value, onChangeText, keyboardType, secureTextEntry} =
+    props;
   return (
     <TextInput
       style={styles.container}
@@ -18,6 +20,7 @@ const TextField = props => {
       placeholderTextColor={'#868686'}
       onChangeText={onChangeText}
       keyboardType={keyboardType}
+      secureTextEntry={secureTextEntry}
     />
   );
 };

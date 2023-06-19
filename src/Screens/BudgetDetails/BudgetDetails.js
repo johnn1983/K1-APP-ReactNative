@@ -249,13 +249,13 @@ const BudgetDetails = ({navigation}) => {
       </View>
       <AddCategory />
       <UpdateCategory />
-      <View>
+      {/* <View>
         <BottomNavigation
           onPress={() => navigation.navigate(Scanner)}
           onPressExpense={() => navigation.navigate(ExpenseDetails)}
           onPressAnalytics={() => navigation.navigate(ExpenseAnalytics)}
         />
-      </View>
+      </View> */}
     </View>
   );
 };

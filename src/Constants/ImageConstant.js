@@ -2,6 +2,8 @@ export const IMG = {
   Navigation: {
     BottomNavigation: require('../Assets/BottomNavigation.png'),
     NavBottom: require('../Assets/navbottom.png'),
+    BackRec: require('../Assets/backRel.png'),
+    BackLogo: require('../Assets/3x.png'),
   },
   CompanyLogo: {
     logoSmall: require('../Assets/1xK1Receipt.png'),

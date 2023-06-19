@@ -5,6 +5,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {ConstantKeys} from '../../Utils/ConstantKey';
 
 export default StyleSheet.create({
   container: {
@@ -13,10 +14,11 @@ export default StyleSheet.create({
   },
   headerTxt: {
     alignSelf: 'center',
-    fontSize: SetFontSize.setDimension.textSizeLarge,
+    fontSize: SetFontSize.setDimension.testSizeHed,
     color: colors.BLACK,
     fontWeight: '500',
     marginTop: hp(2),
+    fontFamily: ConstantKeys.MUKTA,
   },
   line: {
     alignSelf: 'center',
@@ -26,8 +28,7 @@ export default StyleSheet.create({
     backgroundColor: '#645F5F',
   },
   bodyView: {
-    zindex: -1,
-    flex: 0.75,
+    flex: 0.7,
     backgroundColor: '#E5EDEC',
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
@@ -40,9 +41,10 @@ export default StyleSheet.create({
     marginTop: hp(3),
   },
   detailText: {
-    fontSize: SetFontSize.setDimension.textSizeRegular,
+    fontSize: SetFontSize.setDimension.textSizeMedium,
     color: colors.BLACK,
     fontWeight: '500',
-    marginBottom: hp(1),
+    marginBottom: hp(0.5),
+    fontFamily: ConstantKeys.MUKTA,
   },
 });

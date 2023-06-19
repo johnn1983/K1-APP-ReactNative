@@ -13,7 +13,7 @@ export default StyleSheet.create({
     backgroundColor: '#FDFDFD',
   },
   bodyView: {
-    flex: 0.75,
+    flex: 0.7,
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: hp(5),
@@ -27,7 +27,6 @@ export default StyleSheet.create({
     borderColor: '#95DCCB',
     borderWidth: 1,
     borderRadius: 15,
-    marginBottom: hp(15),
   },
   scanView2: {
     height: hp(30),
@@ -38,7 +37,7 @@ export default StyleSheet.create({
     borderColor: '#95DCCB',
     borderWidth: 1,
     borderRadius: 15,
-    marginBottom: hp(2),
+    marginTop: hp(5),
   },
   bankReceiptImg: {
     height: hp(25),
@@ -46,10 +45,11 @@ export default StyleSheet.create({
     marginTop: hp(40),
   },
   scanTxt: {
-    fontSize: SetFontSize.setDimension.textSizeLarge,
+    fontSize: SetFontSize.setDimension.testSizeHed,
     color: colors.BLACK,
     fontWeight: '600',
     marginBottom: hp(1),
+    fontFamily: ConstantKeys.MUKTA,
   },
   scanTxt2: {
     fontSize: SetFontSize.setDimension.textSizeLarge,
@@ -80,9 +80,10 @@ export default StyleSheet.create({
   },
   modalTxt: {
     marginTop: hp(1),
-    fontSize: SetFontSize.setDimension.textSizeLarge,
+    fontSize: SetFontSize.setDimension.textSizeMedium,
     color: colors.BLACK,
     fontWeight: '400',
+    fontFamily: ConstantKeys.INTER,
   },
   selectCategoryView: {
     height: hp(6),
@@ -100,6 +101,7 @@ export default StyleSheet.create({
     fontSize: SetFontSize.setDimension.textSizeLarge,
     color: '#857E7E',
     fontWeight: '600',
+    fontFamily: ConstantKeys.MUKTA,
   },
   buttonView: {
     height: hp(5),
@@ -128,12 +130,13 @@ export default StyleSheet.create({
     paddingBottom: hp(0.4),
   },
   buttonText: {
-    fontSize: SetFontSize.setDimension.textSizeLarge,
+    fontSize: SetFontSize.setDimension.testSizeHed,
     color: colors.BLACK,
     fontWeight: '500',
+    fontFamily: ConstantKeys.MUKTA,
   },
   categoryModal: {
-    height: hp(56),
+    height: hp(55),
     width: wp(100),
     backgroundColor: '#A7D6FB',
     paddingHorizontal: wp(8),
@@ -142,12 +145,13 @@ export default StyleSheet.create({
     marginBottom: hp(10),
   },
   categoryTxtView: {
-    marginBottom: hp(6),
+    marginBottom: hp(5),
   },
   categoryTxt: {
     fontSize: SetFontSize.setDimension.textSizeLarge,
     color: colors.BLACK,
     fontWeight: '500',
+    fontFamily: ConstantKeys.MUKTA,
   },
   showDetailsView: {
     height: hp(7),
@@ -167,9 +171,10 @@ export default StyleSheet.create({
     borderRadius: 15,
   },
   detailsTxt: {
-    fontSize: SetFontSize.setDimension.textSizeLarge,
+    fontSize: SetFontSize.setDimension.testSizeHed,
     color: '#454141',
-    fontWeight: '500',
+    fontWeight: '600',
+    fontFamily: ConstantKeys.MUKTA,
   },
   input: {
     height: hp(6),

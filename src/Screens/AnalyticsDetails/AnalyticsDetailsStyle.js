@@ -6,6 +6,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {ConstantKeys} from '../../Utils/ConstantKey';
 
 export default StyleSheet.create({
   mainContainer: {flex: 1},
@@ -22,9 +23,10 @@ export default StyleSheet.create({
     marginTop: hp(4),
   },
   headerTxt: {
-    fontSize: SetFontSize.setDimension.textSizeRegular,
+    fontSize: SetFontSize.setDimension.textSizeMedium,
     color: colors.WHITE,
     fontWeight: '600',
+    fontFamily: ConstantKeys.MUKTA,
   },
   mainView: {
     flexDirection: 'row',
@@ -74,11 +76,13 @@ export default StyleSheet.create({
     fontSize: SetFontSize.setDimension.textSizeRegular,
     color: colors.BLACK,
     fontWeight: '500',
+    fontFamily: ConstantKeys.MUKTA,
   },
   selbuttonTxt: {
-    fontSize: SetFontSize.setDimension.textSizeRegular,
+    fontSize: SetFontSize.setDimension.textSizeMedium,
     color: colors.WHITE,
     fontWeight: '500',
+    fontFamily: ConstantKeys.MUKTA,
   },
   rightTopView: {
     width: '90%',
@@ -93,13 +97,14 @@ export default StyleSheet.create({
     backgroundColor: '#4051B4',
   },
   rightHeadTxt: {
-    fontSize: SetFontSize.setDimension.textSizeRegular,
+    fontSize: SetFontSize.setDimension.textSizeMedium,
     color: colors.WHITE,
     fontWeight: '600',
+    fontFamily: ConstantKeys.MUKTA,
   },
   mainDetailsView: {width: '100%'},
   detailsView: {
-    height: hp(4.5),
+    height: hp(5),
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
@@ -108,10 +113,11 @@ export default StyleSheet.create({
   leftDetails: {width: '50%'},
   rightDetails: {width: '50%'},
   detailsTxt: {
-    fontSize: SetFontSize.setDimension.textSizeSmall,
+    fontSize: SetFontSize.setDimension.textSize13,
     color: colors.BLACK,
     fontWeight: '500',
     textAlign: 'center',
+    fontFamily: ConstantKeys.MUKTA,
   },
   verticalLine: {
     backgroundColor: '#D9D9D9',
@@ -143,14 +149,15 @@ export default StyleSheet.create({
     paddingHorizontal: wp(1),
   },
   tableHeadTxt: {
-    fontSize: SetFontSize.setDimension.textSize10,
+    fontSize: SetFontSize.setDimension.textSize11,
     color: colors.WHITE,
     fontWeight: '400',
     textAlign: 'center',
+    fontFamily: ConstantKeys.MUKTA,
   },
   flatlistView: {
     width: '100%',
-    marginBottom: hp(12),
+    marginBottom: hp(2),
   },
   bodyHeaderView: {
     width: '98%',
@@ -168,15 +175,17 @@ export default StyleSheet.create({
     paddingHorizontal: wp(0.5),
   },
   bodyHeaderTxt: {
-    fontSize: SetFontSize.setDimension.textSize10,
+    fontSize: SetFontSize.setDimension.textSize11,
     color: colors.BLACK,
     fontWeight: '400',
     textAlign: 'center',
+    fontFamily: ConstantKeys.MUKTA,
   },
   bodyHeaderTxt2: {
     fontSize: SetFontSize.setDimension.textSize11,
     color: '#0D8F29',
     fontWeight: '400',
     textAlign: 'center',
+    fontFamily: ConstantKeys.MUKTA,
   },
 });

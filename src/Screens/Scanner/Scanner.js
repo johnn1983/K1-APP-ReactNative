@@ -295,7 +295,7 @@ const Scanner = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <View style={{flex: 0.25}}>
+      <View style={{flex: 0.3}}>
         <ProfileView onPress={() => navigation.navigate(Statistics)} />
       </View>
 
@@ -308,8 +308,13 @@ const Scanner = ({navigation}) => {
               resizeMode="center"
             />
           ) : null}
-          <Text style={styles.scanTxt}>Scan a Receipt</Text>
+          <TouchableOpacity onPress={handleScanner}>
+            <Text style={styles.scanTxt}>Scan a Receipt</Text>
+          </TouchableOpacity>
         </View>
+
+        <CategoryView />
+        <ChooseReceipt />
 
         {isSelect === true ? <SelectCategory /> : null}
         {isProcess === true && id === 1 ? (
@@ -323,10 +328,7 @@ const Scanner = ({navigation}) => {
         ) : null}
       </View>
 
-      <CategoryView />
-      <ChooseReceipt />
-
-      <View>
+      {/* <View>
         {isScan === false ? (
           <BottomNavigation
             onPress={handleScanner}
@@ -335,7 +337,7 @@ const Scanner = ({navigation}) => {
             onPressAnalytics={() => navigation.navigate(ExpenseAnalytics)}
           />
         ) : null}
-      </View>
+      </View> */}
     </View>
   );
 };

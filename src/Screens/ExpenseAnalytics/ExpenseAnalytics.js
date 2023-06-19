@@ -20,6 +20,7 @@ import Scanner from '../Scanner/Scanner';
 import BudgetDetails from '../BudgetDetails/BudgetDetails';
 import ExpenseDetails from '../ExpenseDetails/ExpenseDetails';
 import AnalyticsDetails from '../AnalyticsDetails/AnalyticsDetails';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
 const ExpenseAnalytics = ({navigation}) => {
   const analyticsData = [
@@ -66,7 +67,9 @@ const ExpenseAnalytics = ({navigation}) => {
         </View>
         <View style={styles.bodyHeaderTxtView}>
           <TouchableOpacity
-            onPress={() => navigation.navigate(AnalyticsDetails)}>
+            onPress={() =>
+              navigation.navigate('AnalyticsDetails', {showBottomTab: true})
+            }>
             <Text style={styles.bodyHeaderTxt2}>{view}</Text>
           </TouchableOpacity>
         </View>
@@ -84,10 +87,11 @@ const ExpenseAnalytics = ({navigation}) => {
           style={styles.mainView}
           showsVerticalScrollIndicator={false}>
           <TouchableOpacity>
-            <Image
+            <Icon
+              name="calendar-day"
+              size={25}
+              color="black"
               style={styles.calender}
-              source={IMG.ExtraLogo.Calender}
-              resizeMode="center"
             />
           </TouchableOpacity>
           <View>
@@ -106,11 +110,12 @@ const ExpenseAnalytics = ({navigation}) => {
               <Text style={styles.barTxt}>0</Text>
             </View>
             <View style={styles.barLinesView}>
-              <Image
-                style={styles.hlines}
-                source={IMG.ExtraLogo.Hlines}
-                resizeMode="center"
-              />
+              <View style={styles.hImageLines} />
+              <View style={styles.hImageLines} />
+              <View style={styles.hImageLines} />
+              <View style={styles.hImageLines} />
+              <View style={styles.hImageLines} />
+
               <Image
                 style={styles.vlines}
                 source={IMG.ExtraLogo.Vlines}
@@ -168,7 +173,7 @@ const ExpenseAnalytics = ({navigation}) => {
           </View>
         </ScrollView>
       </View>
-
+      {/* 
       <View>
         <BottomNavigation
           onPress={() => navigation.navigate(Scanner)}
@@ -177,7 +182,7 @@ const ExpenseAnalytics = ({navigation}) => {
             navigation.navigate(ExpenseDetails);
           }}
         />
-      </View>
+      </View> */}
     </View>
   );
 };

@@ -6,7 +6,6 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 export default StyleSheet.create({
   container: {
@@ -26,7 +25,8 @@ export default StyleSheet.create({
   headerText: {
     fontSize: SetFontSize.setDimension.testSizeHed,
     color: colors.BLACK,
-    fontWeight: '600',
+    fontWeight: '500',
+    fontFamily: ConstantKeys.MUKTA,
   },
   orderView: {
     height: hp(12),
@@ -40,8 +40,9 @@ export default StyleSheet.create({
   },
   orderTxt: {
     color: colors.WHITE,
-    fontSize: SetFontSize.setDimension.testSizeHed,
-    fontWeight: '500',
+    fontSize: SetFontSize.setDimension.textSizeLarge,
+    fontWeight: '600',
+    fontFamily: ConstantKeys.MUKTA,
   },
   textView: {
     marginTop: hp(4),
@@ -49,7 +50,8 @@ export default StyleSheet.create({
   text: {
     color: colors.BLACK,
     fontSize: SetFontSize.setDimension.textSizeLarge,
-    fontWeight: '500',
+    fontWeight: '400',
+    fontFamily: ConstantKeys.MUKTA,
   },
   bankView: {
     flexDirection: 'row',
@@ -60,8 +62,10 @@ export default StyleSheet.create({
     paddingHorizontal: wp(3),
   },
   banklogoView: {
+    width: wp(78),
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
   },
   banklogo: {
     height: hp(7),
@@ -72,6 +76,7 @@ export default StyleSheet.create({
     fontSize: SetFontSize.setDimension.textSize13,
     fontWeight: '600',
     marginLeft: wp(3),
+    fontFamily: ConstantKeys.MUKTA,
   },
   detailsView: {
     marginTop: hp(2),
@@ -82,8 +87,9 @@ export default StyleSheet.create({
   detailsTxt: {
     fontSize: SetFontSize.setDimension.textSizeMedium,
     color: colors.BLACK,
-    fontWeight: '600',
+    fontWeight: '500',
     marginBottom: hp(1),
+    fontFamily: ConstantKeys.MUKTA,
   },
   buttonContainer: {
     justifyContent: 'center',
@@ -93,17 +99,25 @@ export default StyleSheet.create({
   },
   primaryButton: {
     height: hp(6),
+    width: wp(60),
     backgroundColor: '#6D27C6',
     paddingHorizontal: wp(5),
     paddingVertical: hp(1),
     borderRadius: 20,
     borderColor: '#9FC0F1',
     borderWidth: 1,
+    alignSelf: 'center',
   },
   buttonText: {
     fontSize: SetFontSize.setDimension.testSizeHed,
     color: colors.WHITE,
-    fontFamily: ConstantKeys.INTER_MEDIUM,
+    fontFamily: ConstantKeys.MUKTA,
     textAlign: 'center',
+    fontWeight: '500',
   },
+  swithStyle: {
+    justifyContent: 'flex-end',
+    transform: [{scaleX: 0.7}, {scaleY: 0.7}],
+  },
+  banknameView: {flexDirection: 'row', alignItems: 'center'},
 });

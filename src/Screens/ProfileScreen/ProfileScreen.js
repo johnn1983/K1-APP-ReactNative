@@ -15,7 +15,7 @@ import ExpenseAnalytics from '../ExpenseAnalytics/ExpenseAnalytics';
 const ProfileScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <View style={{flex: 0.25}}>
+      <View style={{flex: 0.3}}>
         <ProfileView onPress={() => navigation.navigate(Statistics)} />
       </View>
 
@@ -45,14 +45,14 @@ const ProfileScreen = ({navigation}) => {
           </View>
         </View>
       </View>
-      <View>
+      {/* <View>
         <BottomNavigation
           onPress={() => navigation.navigate(Scanner)}
           onPressBudget={() => navigation.navigate(BudgetDetails)}
           onPressExpense={() => navigation.navigate(ExpenseDetails)}
           onPressAnalytics={() => navigation.navigate(ExpenseAnalytics)}
         />
-      </View>
+      </View> */}
     </View>
   );
 };

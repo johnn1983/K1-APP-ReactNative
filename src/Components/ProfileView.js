@@ -10,6 +10,7 @@ import {
 import {SetFontSize} from '../Utils/FontSize';
 import PrimaryButton from './PrimaryButton';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import {ConstantKeys} from '../Utils/ConstantKey';
 
 const ProfileView = ({onPress}) => {
   return (
@@ -68,11 +69,12 @@ const styles = StyleSheet.create({
     paddingRight: 10,
   },
   imageContainer: {flexDirection: 'row'},
-  profilePic: {height: 100, width: 100},
+  profilePic: {height: 100, width: 100, marginTop: 5},
   editView: {
     marginTop: hp(1.5),
     width: wp(8),
     alignSelf: 'flex-end',
+    marginBottom: hp(1),
   },
   editImg: {alignSelf: 'flex-end'},
   editLine: {
@@ -84,15 +86,18 @@ const styles = StyleSheet.create({
   },
   childContainer: {marginLeft: wp(5), marginTop: hp(0.7)},
   nameTxt: {
-    fontSize: SetFontSize.setDimension.textSizeLarge,
+    fontSize: SetFontSize.setDimension.testSizeHed,
     color: colors.BLACK,
     marginRight: 5,
     fontWeight: '500',
+    fontFamily: ConstantKeys.MUKTA,
   },
   userTxt: {
-    fontSize: SetFontSize.setDimension.textSizeSmall,
+    fontSize: SetFontSize.setDimension.textSizeRegular,
     color: colors.BLACK,
-    marginBottom: hp(0.5),
+    marginBottom: hp(0.1),
+    fontFamily: ConstantKeys.MUKTA,
+    fontWeight: '300',
   },
   buttonView: {
     height: hp(4.5),
@@ -110,10 +115,11 @@ const styles = StyleSheet.create({
     borderRadius: 25,
   },
   staticticTxt: {
-    fontSize: SetFontSize.setDimension.textSizeRegular,
+    fontSize: SetFontSize.setDimension.textSizeSmall,
     color: colors.WHITE,
-    fontWeight: '500',
+    fontWeight: '700',
     textAlign: 'center',
+    fontFamily: ConstantKeys.MUKTA,
   },
   updatePlanButton: {
     height: hp(4),
@@ -125,10 +131,11 @@ const styles = StyleSheet.create({
     marginLeft: wp(5),
   },
   updateTxt: {
-    fontSize: SetFontSize.setDimension.textSizeRegular,
+    fontSize: SetFontSize.setDimension.textSizeSmall,
     color: colors.WHITE,
-    fontWeight: '500',
+    fontWeight: '700',
     textAlign: 'center',
+    fontFamily: ConstantKeys.MUKTA,
   },
 });
 export default ProfileView;
