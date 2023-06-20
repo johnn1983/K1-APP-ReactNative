@@ -41,6 +41,7 @@ export const IMG = {
     Calender: require('../Assets/calender.png'),
     Hlines: require('../Assets/hLines.png'),
     Vlines: require('../Assets/vLines.png'),
+    companyLogo: require('../Assets/companyLogo.png'),
   },
   BottomIcon: {
     Budget: require('../Assets/bottomNav/budget.png'),

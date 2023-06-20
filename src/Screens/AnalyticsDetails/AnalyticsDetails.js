@@ -4,11 +4,6 @@ import {View, Text, TouchableOpacity, FlatList, ScrollView} from 'react-native';
 import React, {useState} from 'react';
 
 import styles from './AnalyticsDetailsStyle';
-
-import BottomNavigation from '../../Components/BottomNavigation';
-import Scanner from '../Scanner/Scanner';
-import BudgetDetails from '../BudgetDetails/BudgetDetails';
-import ExpenseDetails from '../ExpenseDetails/ExpenseDetails';
 import PrimaryButton from '../../Components/PrimaryButton';
 import BottomNav from '../../Navigation/BottomNav';
 
