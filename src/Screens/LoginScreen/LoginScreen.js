@@ -1,13 +1,16 @@
 import {View, Text, Image, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 
 import styles from './LoginScreenStyle';
 import TextField from '../../Components/TextField';
 import PrimaryButton from '../../Components/PrimaryButton';
 import SignupScreen from '../SignupScreen/SignupScreen';
 import PromoCodeScreen from '../PromoCodeScreen/PromoCodeScreen';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const LoginScreen = ({navigation}) => {
+  const [isShow, setIsShow] = useState(false);
+
   return (
     <View style={styles.container}>
       <View style={styles.logo}>
@@ -27,7 +30,19 @@ const LoginScreen = ({navigation}) => {
         </View>
         <View style={styles.bodyPart}>
           <Text style={styles.bodyTxt}>Password</Text>
-          <TextField placeholder={'Enter Your password'} />
+          <TextField
+            placeholder={'Enter Your password'}
+            secureTextEntry={!isShow}
+          />
+          <TouchableOpacity
+            style={styles.showView}
+            onPress={() => setIsShow(!isShow)}>
+            <Icon
+              name={isShow ? 'ios-eye-outline' : 'ios-eye-off-outline'}
+              size={20}
+              color="#868686"
+            />
+          </TouchableOpacity>
         </View>
         <View style={styles.buttonContainer}>
           <PrimaryButton

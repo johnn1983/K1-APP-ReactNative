@@ -1,5 +1,5 @@
-import {View, Text, StyleSheet, Image} from 'react-native';
-import React, {Component} from 'react';
+import {View, Text, Image} from 'react-native';
+import React from 'react';
 
 import styles from './IntroScreenStyle';
 import PrimaryButton from '../../Components/PrimaryButton';

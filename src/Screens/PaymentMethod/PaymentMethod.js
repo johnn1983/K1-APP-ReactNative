@@ -1,13 +1,24 @@
-import {SafeAreaView, View, Text, Image, ScrollView} from 'react-native';
-import React from 'react';
+import {
+  SafeAreaView,
+  View,
+  Text,
+  Image,
+  ScrollView,
+  Switch,
+} from 'react-native';
+import React, {useState} from 'react';
 
 import styles from './PaymentMethodStyle';
 import {IMG} from '../../Constants/ImageConstant';
 import TextField from '../../Components/TextField';
 import PrimaryButton from '../../Components/PrimaryButton';
 import ProfileScreen from '../ProfileScreen/ProfileScreen';
+import BottomNavigation from '../../Components/BottomNavigation';
+import BottomNav from '../../Navigation/BottomNav';
 
-const PaymentMethod = navigation => {
+const PaymentMethod = ({navigation}) => {
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -30,12 +41,22 @@ const PaymentMethod = navigation => {
 
         <View style={styles.bankView}>
           <View style={styles.banklogoView}>
-            <Image
-              style={styles.banklogo}
-              source={IMG.ExtraLogo.paypal}
-              resizeMode="center"
+            <View style={styles.banknameView}>
+              <Image
+                style={styles.banklogo}
+                source={IMG.ExtraLogo.paypal}
+                resizeMode="center"
+              />
+              <Text style={styles.bankTxt}>Paypal</Text>
+            </View>
+            <Switch
+              style={styles.swithStyle}
+              trackColor={{false: 'lightgrey', true: 'lightgrey'}}
+              thumbColor={isEnabled ? 'green' : 'red'}
+              ios_backgroundColor="#3e3e3e"
+              value={isEnabled}
+              onValueChange={toggleSwitch}
             />
-            <Text style={styles.bankTxt}>Paypal</Text>
           </View>
         </View>
 
@@ -63,7 +84,7 @@ const PaymentMethod = navigation => {
             text={'Pay'}
             style={styles.primaryButton}
             textstyle={styles.buttonText}
-            onPress={() => navigation.navigate(ProfileScreen)}
+            onPress={() => navigation.navigate(BottomNav)}
           />
         </View>
       </ScrollView>

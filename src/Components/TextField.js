@@ -7,9 +7,11 @@ import {
 } from 'react-native-responsive-screen';
 import {SetFontSize} from '../Utils/FontSize';
 import {ConstantKeys} from '../Utils/ConstantKey';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const TextField = props => {
-  const {placeholder, value, onChangeText, keyboardType} = props;
+  const {placeholder, value, onChangeText, keyboardType, secureTextEntry} =
+    props;
   return (
     <TextInput
       style={styles.container}
@@ -18,6 +20,7 @@ const TextField = props => {
       placeholderTextColor={'#868686'}
       onChangeText={onChangeText}
       keyboardType={keyboardType}
+      secureTextEntry={secureTextEntry}
     />
   );
 };
@@ -29,10 +32,11 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderRadius: 30,
     paddingHorizontal: wp(4),
-    paddingVertical: hp(1),
+    paddingVertical: hp(0.7),
     color: colors.BLACK,
     fontSize: SetFontSize.setDimension.textSizeRegular,
-    fontFamily: ConstantKeys.INTER_REGULAR,
+    fontFamily: ConstantKeys.MUKTA,
+    fontWeight: '400',
   },
 });
 
