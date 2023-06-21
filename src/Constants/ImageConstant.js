@@ -50,4 +50,9 @@ export const IMG = {
     Profile: require('../Assets/bottomNav/profile.png'),
     Scan: require('../Assets/bottomNav/scan.png'),
   },
+  Chart: {
+    GeneralChart: require('../Assets/chart/generalChart.png'),
+    EmployeeChart: require('../Assets/chart/employeeChart.png'),
+    CompanyChart: require('../Assets/chart/companyChart.png'),
+  },
 };

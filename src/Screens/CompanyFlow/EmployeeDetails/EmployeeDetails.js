@@ -1,16 +1,17 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/no-unstable-nested-components */
-import {View, Text, TouchableOpacity, Image, FlatList} from 'react-native';
+import {View, Text, TouchableOpacity, FlatList} from 'react-native';
 import React, {useState} from 'react';
 import styles from './EmployeeDetailsStyle';
-import {IMG} from '../../../Constants/ImageConstant';
 import ReceiptList from '../ReceiptList/ReceiptList';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icons from 'react-native-vector-icons/AntDesign';
 
 const EmployeeDetails = ({navigation, route}) => {
   const userName = route.params.userName;
 
-  const [isbudget, setIsBudget] = useState(false);
+  const [isbudget, setIsBudget] = useState(true);
+  const [isExpense, setIsExpense] = useState(false);
   const categoryArr = [
     {id: 1, name: 'Business Insurance', expense: '200.00'},
     {id: 2, name: 'Travel', expense: '100.00'},
@@ -52,6 +53,15 @@ const EmployeeDetails = ({navigation, route}) => {
       createdBy: 'Nabila Akter Nabila',
     },
   ];
+
+  const handleBudegtClick = () => {
+    setIsBudget(!isbudget);
+    setIsExpense(false);
+  };
+  const handleExpenseClick = () => {
+    setIsBudget(false);
+    setIsExpense(!isExpense);
+  };
 
   const CardComponent = ({categoryName, amount, createdBy}) => {
     return (
@@ -158,7 +168,8 @@ const EmployeeDetails = ({navigation, route}) => {
     <View style={styles.container}>
       <View style={styles.headerView}>
         <Text style={styles.headerTxt}>
-          {userName}'s {isbudget ? 'Expense' : 'Budget'} Details
+          {userName}'s {isbudget ? 'Expense' : null}
+          {isExpense ? 'Budget' : null} Details
         </Text>
       </View>
 
@@ -166,29 +177,57 @@ const EmployeeDetails = ({navigation, route}) => {
         <View style={styles.topButtonView}>
           <TouchableOpacity
             style={styles.budgetButtonView}
-            onPress={() => setIsBudget(!isbudget)}>
-            <Text style={styles.upperButtonTxt}>
-              {isbudget ? 'Expense' : 'Budget'}
-            </Text>
-            <Image
-              style={styles.buttonImg}
-              source={IMG.ExtraLogo.DownArrow3}
-              resizeMode="center"
-            />
+            onPress={handleBudegtClick}>
+            <Text style={styles.upperButtonTxt}>Budget</Text>
+            {isbudget ? (
+              <Icons
+                style={styles.buttonImg}
+                name="caretdown"
+                size={9}
+                color="#868686"
+              />
+            ) : (
+              <Icons
+                style={styles.buttonImg}
+                name="caretright"
+                size={9}
+                color="#868686"
+              />
+            )}
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.budgetButtonView}
+            onPress={handleExpenseClick}>
+            <Text style={styles.upperButtonTxt}>Expense</Text>
+            {isExpense ? (
+              <Icons
+                style={styles.buttonImg}
+                name="caretdown"
+                size={9}
+                color="#868686"
+              />
+            ) : (
+              <Icons
+                style={styles.buttonImg}
+                name="caretright"
+                size={9}
+                color="#868686"
+              />
+            )}
           </TouchableOpacity>
           <TouchableOpacity style={styles.exportButtonView}>
             <Text style={styles.upperButtonTxt}>Export</Text>
-            <Image
+            <Icons
               style={styles.buttonImg}
-              source={IMG.ExtraLogo.RightArrow}
-              resizeMode="center"
+              name="caretright"
+              size={8}
+              color="#868686"
             />
           </TouchableOpacity>
         </View>
 
-        {isbudget ? ExpenseDetails() : BudgetDetails()}
-        {/* <ExpenseDetails />
-        <BudgetDetails /> */}
+        {isbudget && BudgetDetails()}
+        {isExpense && ExpenseDetails()}
       </View>
     </View>
   );
