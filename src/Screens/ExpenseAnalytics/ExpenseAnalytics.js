@@ -16,8 +16,8 @@ import styles from './ExpenseAnalyticsStyle';
 
 import {IMG} from '../../Constants/ImageConstant';
 import BottomNavigation from '../../Components/BottomNavigation';
-import Scanner from '../Scanner/Scanner';
-import BudgetDetails from '../BudgetDetails/BudgetDetails';
+import Scanner from '../GeneralFlow/Scanner/Scanner';
+import BudgetDetails from '../CommonFlow/BudgetDetails/BudgetDetails';
 import ExpenseDetails from '../ExpenseDetails/ExpenseDetails';
 import AnalyticsDetails from '../AnalyticsDetails/AnalyticsDetails';
 import Icon from 'react-native-vector-icons/FontAwesome5';

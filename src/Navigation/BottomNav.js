@@ -9,11 +9,12 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-import BudgetDetails from '../Screens/BudgetDetails/BudgetDetails';
+import BudgetDetails from '../Screens/CommonFlow/BudgetDetails/BudgetDetails';
 import ExpenseAnalytics from '../Screens/ExpenseAnalytics/ExpenseAnalytics';
-import ProfileScreen from '../Screens/ProfileScreen/ProfileScreen';
+import ProfileScreen from '../Screens/CommonFlow/ProfileScreen/ProfileScreen';
 import ExpenseDetails from '../Screens/ExpenseDetails/ExpenseDetails';
-import Scanner from '../Screens/Scanner/Scanner';
+import Scanner from '../Screens/GeneralFlow/Scanner/Scanner';
+import ScanReceipt from '../Screens/CompanyFlow/ScanReceipt/ScanReceipt';
 
 import {LogBox} from 'react-native';
 import {IMG} from '../Constants/ImageConstant';
@@ -23,8 +24,9 @@ LogBox.ignoreAllLogs();
 
 const Tab = createBottomTabNavigator();
 
-export default function BottomNav({navigation}) {
-  return (
+export default function BottomNav({navigation, route}) {
+  const registerType = route.params.registerType;
+  return registerType === 'General' ? (
     <Tab.Navigator
       initialRouteName="Scanner"
       screenOptions={{
@@ -80,6 +82,96 @@ export default function BottomNav({navigation}) {
       <Tab.Screen
         name="Scanner"
         component={Scanner}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: ({color, size}) => (
+            <View style={{top: hp(-5), borderRadius: 50}}>
+              <Image
+                source={IMG.BottomIcon.Scan}
+                resizeMode="center"
+                style={styles.scanIcon}
+              />
+            </View>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="ExpenseAnalytics"
+        component={ExpenseAnalytics}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: ({color, size}) => (
+            <View style={{backgroundColor: 'transparent'}} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="ProfileScreen"
+        component={ProfileScreen}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: ({color, size}) => (
+            <View style={{backgroundColor: 'transparent'}} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  ) : (
+    <Tab.Navigator
+      initialRouteName="ScanReceipt"
+      screenOptions={{
+        headerShown: false,
+        tabBarBackground: () => (
+          <View
+            style={{
+              flex: 1,
+              alignItems: 'center',
+              height: hp(10),
+              width: wp(100),
+            }}>
+            <Image
+              source={IMG.Navigation.BackLogo}
+              style={{
+                width: wp(100),
+                height: hp(10),
+              }}
+              resizeMode="cover"
+            />
+          </View>
+        ),
+        tabBarStyle: {
+          backgroundColor: '#FDFDFD',
+          height: hp(10),
+          shadowColor: '#FDFDFD',
+          zIndex: 99,
+          shadowOffset: {height: 0, width: 0},
+          borderTopColor: 'transparent',
+          borderTopWidth: 0,
+        },
+      }}>
+      <Tab.Screen
+        name="BudgetDetails"
+        component={BudgetDetails}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: ({color, size}) => (
+            <View style={{backgroundColor: 'transparent'}} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="ExpenseDetails"
+        component={ExpenseDetails}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: ({color, size}) => (
+            <View style={{backgroundColor: 'transparent'}} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="ScanReceipt"
+        component={ScanReceipt}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (

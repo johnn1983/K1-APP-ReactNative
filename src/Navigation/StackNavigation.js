@@ -3,21 +3,25 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 const Stack = createNativeStackNavigator(); //Create Stack Navigation (Variable)
 
-import IntroScreen from '../Screens/IntroScreen/IntroScreen';
-import LoginScreen from '../Screens/LoginScreen/LoginScreen';
-import SignupScreen from '../Screens/SignupScreen/SignupScreen';
-import PromoCodeScreen from '../Screens/PromoCodeScreen/PromoCodeScreen';
-import PlanSelection from '../Screens/PlanSelection/PlanSelection';
-import PaymentMethod from '../Screens/PaymentMethod/PaymentMethod';
-import ProfileScreen from '../Screens/ProfileScreen/ProfileScreen';
-import Statistics from '../Screens/Statistics/Statistics';
-import Scanner from '../Screens/Scanner/Scanner';
-import BudgetDetails from '../Screens/BudgetDetails/BudgetDetails';
+import IntroScreen from '../Screens/CommonFlow/IntroScreen/IntroScreen';
+import LoginScreen from '../Screens/CommonFlow/LoginScreen/LoginScreen';
+import SignupScreen from '../Screens/CommonFlow/SignupScreen/SignupScreen';
+import PromoCodeScreen from '../Screens/CommonFlow/PromoCodeScreen/PromoCodeScreen';
+import PlanSelection from '../Screens/CommonFlow/PlanSelection/PlanSelection';
+import PaymentMethod from '../Screens/CommonFlow/PaymentMethod/PaymentMethod';
+import ProfileScreen from '../Screens/CommonFlow/ProfileScreen/ProfileScreen';
+import Statistics from '../Screens/CommonFlow/Statistics/Statistics';
+import Scanner from '../Screens/GeneralFlow/Scanner/Scanner';
+import BudgetDetails from '../Screens/CommonFlow/BudgetDetails/BudgetDetails';
 import ExpenseDetails from '../Screens/ExpenseDetails/ExpenseDetails';
 import ExpenseAnalytics from '../Screens/ExpenseAnalytics/ExpenseAnalytics';
-import CategoryView from '../Screens/CategoryView/CategoryView';
+import CategoryView from '../Screens/CommonFlow/CategoryView/CategoryView';
 import AnalyticsDetails from '../Screens/AnalyticsDetails/AnalyticsDetails';
 import BottomNav from './BottomNav';
+import ScanReceipt from '../Screens/CompanyFlow/ScanReceipt/ScanReceipt';
+import AddEmployee from '../Screens/CompanyFlow/AddEmployee/AddEmployee';
+import EmployeeDetails from '../Screens/CompanyFlow/EmployeeDetails/EmployeeDetails';
+import ReceiptList from '../Screens/CompanyFlow/ReceiptList/ReceiptList';
 
 const StackNavigation = () => {
   return (
@@ -38,6 +42,10 @@ const StackNavigation = () => {
         <Stack.Screen name="CategoryView" component={CategoryView} />
         <Stack.Screen name="AnalyticsDetails" component={AnalyticsDetails} />
         <Stack.Screen name="BottomNav" component={BottomNav} />
+        <Stack.Screen name="ScanReceipt" component={ScanReceipt} />
+        <Stack.Screen name="AddEmployee" component={AddEmployee} />
+        <Stack.Screen name="EmployeeDetails" component={EmployeeDetails} />
+        <Stack.Screen name="ReceiptList" component={ReceiptList} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -11,58 +11,50 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 
-import styles from './ExpenseDetailsStyle';
-
-import {IMG} from '../../Constants/ImageConstant';
-import PrimaryButton from '../../Components/PrimaryButton';
-import BottomNavigation from '../../Components/BottomNavigation';
-import Scanner from '../GeneralFlow/Scanner/Scanner';
-import BudgetDetails from '../CommonFlow/BudgetDetails/BudgetDetails';
-import ExpenseAnalytics from '../ExpenseAnalytics/ExpenseAnalytics';
+import styles from './BudgetDetailsStyle';
+import {IMG} from '../../../Constants/ImageConstant';
+import PrimaryButton from '../../../Components/PrimaryButton';
+import CategoryView from '../CategoryView/CategoryView';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const ExpenseDetails = ({navigation}) => {
+const BudgetDetails = ({navigation}) => {
+  const [addCategory, setAddCategory] = useState(false);
   const [upCategory, setUpCategory] = useState(false);
 
   const budgetDetails = [
     {
       id: '1',
       categoryName: 'Business Insurance',
-      budget: '$ 450.00',
-      expense: '-161.10',
-      remainingbudget: '238.90',
+      amount: '$ 450.00',
+      createdBy: 'Nabila Akter Nabila',
     },
     {
       id: '2',
       categoryName: 'Business Insurance',
-      budget: '$ 450.00',
-      expense: '-161.10',
-      remainingbudget: '238.90',
+      amount: '$ 450.00',
+      createdBy: 'Nabila Akter Nabila',
     },
     {
       id: '3',
       categoryName: 'Business Insurance',
-      budget: '$ 450.00',
-      expense: '-161.10',
-      remainingbudget: '238.90',
+      amount: '$ 450.00',
+      createdBy: 'Nabila Akter Nabila',
     },
     {
       id: '4',
       categoryName: 'Business Insurance',
-      budget: '$ 450.00',
-      expense: '-161.10',
-      remainingbudget: '238.90',
+      amount: '$ 450.00',
+      createdBy: 'Nabila Akter Nabila',
     },
     {
       id: '5',
       categoryName: 'Business Insurance',
-      budget: '$ 450.00',
-      expense: '-161.10',
-      remainingbudget: '238.90',
+      amount: '$ 450.00',
+      createdBy: 'Nabila Akter Nabila',
     },
   ];
 
-  const CardComponent = ({categoryName, budget, expense, remainingbudget}) => {
+  const CardComponent = ({categoryName, amount, createdBy}) => {
     return (
       <View style={styles.cardComponent}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -89,21 +81,66 @@ const ExpenseDetails = ({navigation}) => {
           <Text style={styles.detailsAnstxt}>{categoryName}</Text>
         </View>
         <View style={styles.detailsTxtView}>
-          <Text style={styles.detailsTxt}>Budget</Text>
-          <Text style={styles.detailsAnstxt}>{budget}</Text>
+          <Text style={styles.detailsTxt}>Amount</Text>
+          <Text style={styles.detailsAnstxt}>{amount}</Text>
         </View>
         <View style={styles.detailsTxtView}>
-          <Text style={styles.detailsTxt}>Expense</Text>
-          <Text style={styles.deatilByTxtRed}>{expense}</Text>
+          <Text style={styles.detailsTxt}>Created By</Text>
+          <Text style={styles.deatilByTxt}>{createdBy}</Text>
         </View>
         <View style={styles.detailsTxtView}>
-          <Text style={styles.detailsTxt}>Remaining Budget</Text>
-          <Text style={styles.deatilByTxtGreen}>{remainingbudget}</Text>
-        </View>
-        <View style={styles.greenLine}>
-          <View style={styles.redLine} />
+          <Text style={styles.detailsTxt}>Sub Category</Text>
+          <TouchableOpacity
+            style={styles.detailsButton}
+            onPress={() => navigation.navigate(CategoryView)}>
+            <Text style={styles.detailsButtonTxt}>View</Text>
+          </TouchableOpacity>
         </View>
       </View>
+    );
+  };
+
+  const AddCategory = () => {
+    return (
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={addCategory}
+        onRequestClose={() => {
+          setAddCategory(!addCategory);
+        }}>
+        <View style={styles.modalmainView}>
+          <View style={styles.modalView}>
+            <View style={styles.closeView}>
+              <TouchableOpacity onPress={() => setAddCategory(false)}>
+                <Image
+                  style={styles.closeImg}
+                  source={IMG.ExtraLogo.CloseCategory}
+                  resizeMode="contain"
+                />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.modalChildView}>
+              <Text style={styles.modalTxt}>Add Category </Text>
+              <TextInput
+                style={styles.modalTxtInput}
+                placeholder="Category Name"
+                placeholderTextColor={'#A39E9E'}
+              />
+              <TextInput
+                style={styles.modalTxtInput}
+                placeholder="Category Budget Amount"
+                placeholderTextColor={'#A39E9E'}
+              />
+              <PrimaryButton
+                style={styles.saveButton}
+                text={'Save'}
+                textstyle={styles.saveTxt}
+              />
+            </View>
+          </View>
+        </View>
+      </Modal>
     );
   };
 
@@ -154,13 +191,13 @@ const ExpenseDetails = ({navigation}) => {
     <View style={styles.mainContainer}>
       <View style={styles.container}>
         <View style={styles.headerView}>
-          <Text style={styles.headerTxt}>Expense Details</Text>
+          <Text style={styles.headerTxt}>Budget Details</Text>
         </View>
 
         <View style={styles.mainView}>
           <View style={styles.topButtonView}>
             <TouchableOpacity style={styles.budgetButtonView}>
-              <Text style={styles.upperButtonTxt}>Expense</Text>
+              <Text style={styles.upperButtonTxt}>Budget</Text>
               <Image
                 style={styles.buttonImg}
                 source={IMG.ExtraLogo.DownArrow3}
@@ -180,6 +217,15 @@ const ExpenseDetails = ({navigation}) => {
             </TouchableOpacity>
           </View>
 
+          <View style={styles.addButtonView}>
+            <PrimaryButton
+              text={'Add Category'}
+              style={styles.addButtonStyle}
+              textstyle={styles.addButtonTxt}
+              onPress={() => setAddCategory(!addCategory)}
+            />
+          </View>
+
           <View style={styles.flatlistView}>
             <FlatList
               showsVerticalScrollIndicator={false}
@@ -187,9 +233,8 @@ const ExpenseDetails = ({navigation}) => {
               renderItem={({item}) => (
                 <CardComponent
                   categoryName={item.categoryName}
-                  budget={item.budget}
-                  expense={item.expense}
-                  remainingbudget={item.remainingbudget}
+                  amount={item.amount}
+                  createdBy={item.createdBy}
                 />
               )}
               keyExtractor={item => item.id}
@@ -197,11 +242,12 @@ const ExpenseDetails = ({navigation}) => {
           </View>
         </View>
       </View>
+      <AddCategory />
       <UpdateCategory />
       {/* <View>
         <BottomNavigation
           onPress={() => navigation.navigate(Scanner)}
-          onPressBudget={() => navigation.navigate(BudgetDetails)}
+          onPressExpense={() => navigation.navigate(ExpenseDetails)}
           onPressAnalytics={() => navigation.navigate(ExpenseAnalytics)}
         />
       </View> */}
@@ -209,4 +255,4 @@ const ExpenseDetails = ({navigation}) => {
   );
 };
 
-export default ExpenseDetails;
+export default BudgetDetails;
