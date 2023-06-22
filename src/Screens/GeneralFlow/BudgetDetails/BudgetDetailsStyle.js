@@ -12,7 +12,7 @@ export default StyleSheet.create({
   mainContainer: {flex: 1},
   container: {
     flex: 1,
-    backgroundColor: '#FDFDFD',
+    backgroundColor: colors.BG_WHITE,
   },
   cardComponent: {
     backgroundColor: colors.WHITE,
@@ -34,7 +34,7 @@ export default StyleSheet.create({
     backgroundColor: '#3461A6',
     justifyContent: 'center',
     paddingLeft: wp(7),
-    marginTop: hp(4),
+    marginTop: hp(2),
   },
   headerTxt: {
     fontSize: SetFontSize.setDimension.textSizeMedium,
@@ -49,7 +49,7 @@ export default StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: wp(2),
     marginVertical: hp(2.5),
-    marginBottom: hp(22),
+    marginBottom: hp(20),
   },
   topButtonView: {
     flexDirection: 'row',
@@ -199,9 +199,9 @@ export default StyleSheet.create({
     color: colors.BLACK,
     fontSize: SetFontSize.setDimension.textSizeMedium,
     fontWeight: '500',
-    paddingVertical: hp(0.4),
-    textAlign: 'center',
+    paddingVertical: hp(0.5),
     fontFamily: ConstantKeys.POPPINS,
+    paddingLeft: wp(3),
   },
   saveButton: {
     height: hp(5.5),
@@ -210,13 +210,13 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30,
-    paddingBottom: 3,
     marginTop: hp(4),
+    paddingBottom: 3,
   },
   saveTxt: {
     color: '#EDEDED',
     fontWeight: '700',
     fontSize: SetFontSize.setDimension.testSizeHed,
-    fontFamily: ConstantKeys.MUKTA,
+    fontFamily: ConstantKeys.POPPINS,
   },
 });

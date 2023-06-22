@@ -14,7 +14,7 @@ import Statistics from '../Screens/CommonFlow/Statistics/Statistics';
 import SubCategoryView from '../Screens/CommonFlow/SubCategoryView/SubCategoryView';
 import Scanner from '../Screens/GeneralFlow/Scanner/Scanner';
 import BudgetDetails from '../Screens/GeneralFlow/BudgetDetails/BudgetDetails';
-import ExpenseAnalytics from '../Screens/GeneralFlow/ExpenseAnalytics/ExpenseAnalytics';
+import ExpenseAnalytics from '../Screens/CommonFlow/ExpenseAnalytics/ExpenseAnalytics';
 import ExpenseDetails from '../Screens/GeneralFlow/ExpenseDetails/ExpenseDetails';
 import BottomNav from './BottomNav';
 import ScanReceipt from '../Screens/CompanyFlow/ScanReceipt/ScanReceipt';

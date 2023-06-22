@@ -10,7 +10,7 @@ import {
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FDFDFD',
+    backgroundColor: colors.BG_WHITE,
   },
   bodyView: {
     flex: 0.7,

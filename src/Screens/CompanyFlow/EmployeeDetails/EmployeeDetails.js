@@ -1,66 +1,72 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/no-unstable-nested-components */
-import {View, Text, TouchableOpacity, FlatList} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  FlatList,
+  SafeAreaView,
+} from 'react-native';
 import React, {useState} from 'react';
 import styles from './EmployeeDetailsStyle';
 import ReceiptList from '../ReceiptList/ReceiptList';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icons from 'react-native-vector-icons/AntDesign';
 
+const categoryArr = [
+  {id: 1, name: 'Business Insurance', expense: '200.00'},
+  {id: 2, name: 'Travel', expense: '100.00'},
+  {id: 3, name: 'Sports', expense: '220.00'},
+  {id: 4, name: 'Vehicle Expense', expense: '290.00'},
+  {id: 5, name: 'Website', expense: '1500.00'},
+  {id: 6, name: 'Software', expense: '1000.00'},
+  {id: 7, name: 'Office Supplie', expense: '80.00'},
+];
+const budgetDetails = [
+  {
+    id: '1',
+    categoryName: 'Business Insurance',
+    amount: '$ 450.00',
+    createdBy: 'Nabila Akter Nabila',
+  },
+  {
+    id: '2',
+    categoryName: 'Business Insurance',
+    amount: '$ 450.00',
+    createdBy: 'Nabila Akter Nabila',
+  },
+  {
+    id: '3',
+    categoryName: 'Business Insurance',
+    amount: '$ 450.00',
+    createdBy: 'Nabila Akter Nabila',
+  },
+  {
+    id: '4',
+    categoryName: 'Business Insurance',
+    amount: '$ 450.00',
+    createdBy: 'Nabila Akter Nabila',
+  },
+  {
+    id: '5',
+    categoryName: 'Business Insurance',
+    amount: '$ 450.00',
+    createdBy: 'Nabila Akter Nabila',
+  },
+];
+
 const EmployeeDetails = ({navigation, route}) => {
-  const userName = route.params.userName;
+  const userName = route?.params?.userName;
+  const [value, setValue] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const [isbudget, setIsBudget] = useState(true);
-  const [isExpense, setIsExpense] = useState(false);
-  const categoryArr = [
-    {id: 1, name: 'Business Insurance', expense: '200.00'},
-    {id: 2, name: 'Travel', expense: '100.00'},
-    {id: 3, name: 'Sports', expense: '220.00'},
-    {id: 4, name: 'Vehicle Expense', expense: '290.00'},
-    {id: 5, name: 'Website', expense: '1500.00'},
-    {id: 6, name: 'Software', expense: '1000.00'},
-    {id: 7, name: 'Office Supplie', expense: '80.00'},
-  ];
-  const budgetDetails = [
-    {
-      id: '1',
-      categoryName: 'Business Insurance',
-      amount: '$ 450.00',
-      createdBy: 'Nabila Akter Nabila',
-    },
-    {
-      id: '2',
-      categoryName: 'Business Insurance',
-      amount: '$ 450.00',
-      createdBy: 'Nabila Akter Nabila',
-    },
-    {
-      id: '3',
-      categoryName: 'Business Insurance',
-      amount: '$ 450.00',
-      createdBy: 'Nabila Akter Nabila',
-    },
-    {
-      id: '4',
-      categoryName: 'Business Insurance',
-      amount: '$ 450.00',
-      createdBy: 'Nabila Akter Nabila',
-    },
-    {
-      id: '5',
-      categoryName: 'Business Insurance',
-      amount: '$ 450.00',
-      createdBy: 'Nabila Akter Nabila',
-    },
-  ];
-
-  const handleBudegtClick = () => {
-    setIsBudget(!isbudget);
-    setIsExpense(false);
+  const handleBudget = () => {
+    setValue('Budget');
+    setIsOpen(false);
   };
-  const handleExpenseClick = () => {
-    setIsBudget(false);
-    setIsExpense(!isExpense);
+  const handleExpense = () => {
+    setValue('Expense');
+    setIsOpen(false);
   };
 
   const CardComponent = ({categoryName, amount, createdBy}) => {
@@ -132,7 +138,9 @@ const EmployeeDetails = ({navigation, route}) => {
                   </Text>
                   <TouchableOpacity
                     style={styles.buttonView}
-                    onPress={() => navigation.navigate(ReceiptList)}>
+                    onPress={() =>
+                      navigation.navigate('ReceiptList', {userName: userName})
+                    }>
                     <Text style={styles.buttonTxt}>View</Text>
                   </TouchableOpacity>
                 </View>
@@ -165,71 +173,75 @@ const EmployeeDetails = ({navigation, route}) => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.headerView}>
         <Text style={styles.headerTxt}>
-          {userName}'s {isbudget ? 'Expense' : null}
-          {isExpense ? 'Budget' : null} Details
+          {userName}{' '}
+          {value === 'Budget'
+            ? 'Budget'
+            : value === 'Expense'
+            ? 'Expense'
+            : null}{' '}
+          Details
         </Text>
       </View>
 
       <View style={styles.mainView}>
         <View style={styles.topButtonView}>
-          <TouchableOpacity
-            style={styles.budgetButtonView}
-            onPress={handleBudegtClick}>
-            <Text style={styles.upperButtonTxt}>Budget</Text>
-            {isbudget ? (
+          <View style={styles.topBTleftView}>
+            <TouchableOpacity
+              style={styles.budgetButtonView}
+              onPress={() => setIsOpen(!isOpen)}>
+              <Text style={styles.upperButtonTxt}>
+                {value === 'Budget'
+                  ? 'Budget'
+                  : value === 'Expense'
+                  ? 'Expense'
+                  : 'Select'}
+              </Text>
               <Icons
+                name={isOpen ? 'caretdown' : 'caretright'}
+                size={8}
                 style={styles.buttonImg}
-                name="caretdown"
-                size={9}
-                color="#868686"
               />
-            ) : (
-              <Icons
-                style={styles.buttonImg}
-                name="caretright"
-                size={9}
-                color="#868686"
-              />
-            )}
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.budgetButtonView}
-            onPress={handleExpenseClick}>
-            <Text style={styles.upperButtonTxt}>Expense</Text>
-            {isExpense ? (
-              <Icons
-                style={styles.buttonImg}
-                name="caretdown"
-                size={9}
-                color="#868686"
-              />
-            ) : (
+            </TouchableOpacity>
+          </View>
+          <View style={styles.topBTrightView}>
+            <TouchableOpacity style={styles.exportButtonView}>
+              <Text style={styles.upperButtonTxt}>Export</Text>
               <Icons
                 style={styles.buttonImg}
                 name="caretright"
-                size={9}
+                size={8}
                 color="#868686"
               />
-            )}
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.exportButtonView}>
-            <Text style={styles.upperButtonTxt}>Export</Text>
-            <Icons
-              style={styles.buttonImg}
-              name="caretright"
-              size={8}
-              color="#868686"
-            />
-          </TouchableOpacity>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.searchButtonView}>
+              <Text style={styles.upperButtonTxt}>Search</Text>
+            </TouchableOpacity>
+          </View>
         </View>
 
-        {isbudget && BudgetDetails()}
-        {isExpense && ExpenseDetails()}
+        {isOpen && (
+          <View style={styles.selectTypeView}>
+            <TouchableOpacity style={styles.selectView} onPress={handleBudget}>
+              <Icons name="caretright" size={8} color="black" />
+              <Text style={styles.selectTypeTxt}>Budget</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.selectView} onPress={handleExpense}>
+              <Icons name="caretright" size={8} color="black" />
+              <Text style={styles.selectTypeTxt}>Expense</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+
+        {value === 'Budget'
+          ? BudgetDetails()
+          : value === 'Expense'
+          ? ExpenseDetails()
+          : null}
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

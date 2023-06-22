@@ -93,8 +93,8 @@ export default StyleSheet.create({
   },
   buttonContainer: {
     justifyContent: 'center',
-    marginBottom: hp(2),
-    marginTop: hp(3),
+    marginBottom: hp(5),
+    marginTop: hp(4),
     marginHorizontal: wp(5),
   },
   primaryButton: {

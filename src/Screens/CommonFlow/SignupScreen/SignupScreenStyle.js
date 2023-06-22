@@ -108,9 +108,9 @@ export default StyleSheet.create({
     flexBasis: 0,
   },
   placeStyle: {
+    flex: 1,
     fontSize: SetFontSize.setDimension.textSizeRegular,
     fontFamily: ConstantKeys.MUKTA,
-    color: colors.BLACK,
     paddingLeft: wp(1),
     fontWeight: '500',
   },
@@ -121,7 +121,7 @@ export default StyleSheet.create({
     paddingLeft: wp(2),
   },
   pickerSize: {
-    height: hp('6%'),
+    height: hp('6'),
     borderWidth: 2,
     borderColor: '#77869D',
     borderRadius: 30,

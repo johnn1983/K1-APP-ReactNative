@@ -48,6 +48,7 @@ export default StyleSheet.create({
     marginRight: wp(1),
     paddingRight: wp(2),
   },
+  companyIMG: {height: hp(8), width: wp(8), marginBottom: hp(0.2)},
   bodyView: {
     flex: 1,
     alignItems: 'center',
@@ -81,9 +82,9 @@ export default StyleSheet.create({
     alignItems: 'flex-end',
   },
   modalView: {
-    marginTop: hp(6),
+    marginTop: hp(7),
     backgroundColor: 'white',
-    paddingRight: wp(5),
+    paddingRight: wp(6),
   },
   modalList: {
     flexDirection: 'row',
@@ -91,7 +92,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   modalTxt: {
-    fontSize: SetFontSize.setDimension.textSizeSmall,
+    fontSize: SetFontSize.setDimension.textSizeRegular,
     color: colors.BLACK,
     fontWeight: '500',
     fontFamily: ConstantKeys.MUKTA,

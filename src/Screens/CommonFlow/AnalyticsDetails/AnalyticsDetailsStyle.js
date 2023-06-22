@@ -12,7 +12,7 @@ export default StyleSheet.create({
   mainContainer: {flex: 1},
   container: {
     flex: 1,
-    backgroundColor: '#FDFDFD',
+    backgroundColor: colors.BG_WHITE,
   },
   headerView: {
     height: hp(4),
@@ -20,7 +20,7 @@ export default StyleSheet.create({
     backgroundColor: '#3461A6',
     justifyContent: 'center',
     paddingLeft: wp(7),
-    marginTop: hp(4),
+    marginTop: hp(2),
   },
   headerTxt: {
     fontSize: SetFontSize.setDimension.textSizeMedium,
@@ -30,21 +30,18 @@ export default StyleSheet.create({
   },
   headerView2: {
     flexDirection: 'row',
-    height: hp(4),
-    width: wp(100),
-    backgroundColor: 'white',
     justifyContent: 'flex-start',
-    paddingLeft: wp(7),
-    marginTop: hp(3),
+    marginTop: hp(2.2),
+    marginHorizontal: wp(5),
     alignItems: 'center',
-    marginBottom: hp(1),
+    marginBottom: hp(2),
   },
   headerTxt2: {
     fontSize: SetFontSize.setDimension.textSizeLarge,
-    color: colors.BLACK,
-    fontWeight: '600',
+    fontWeight: '700',
     fontFamily: ConstantKeys.MUKTA,
-    marginLeft: wp(3),
+    color: colors.BLACK,
+    marginLeft: wp(5),
   },
   leftFlatlist: {
     marginBottom: hp(6),
@@ -215,7 +212,27 @@ export default StyleSheet.create({
   },
   pickerstyle: {
     flex: 1,
-    height: '50%',
     color: 'black',
+    fontSize: SetFontSize.setDimension.textSize10,
+  },
+  filterTxtView: {
+    flexDirection: 'row',
+    width: '40%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  filterView: {
+    height: hp(5),
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  filterTxt: {
+    fontSize: SetFontSize.setDimension.textSizeMedium,
+    color: colors.BLACK,
+    fontWeight: '500',
+    textAlign: 'center',
+    fontFamily: ConstantKeys.MUKTA,
   },
 });

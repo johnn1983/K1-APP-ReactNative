@@ -8,9 +8,10 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {colors} from '../Utils/colors';
 
 import BudgetDetails from '../Screens/GeneralFlow/BudgetDetails/BudgetDetails';
-import ExpenseAnalytics from '../Screens/GeneralFlow/ExpenseAnalytics/ExpenseAnalytics';
+import ExpenseAnalytics from '../Screens/CommonFlow/ExpenseAnalytics/ExpenseAnalytics';
 import ProfileScreen from '../Screens/CommonFlow/ProfileScreen/ProfileScreen';
 import ExpenseDetails from '../Screens/GeneralFlow/ExpenseDetails/ExpenseDetails';
 import Scanner from '../Screens/GeneralFlow/Scanner/Scanner';
@@ -32,6 +33,7 @@ export default function BottomNav({navigation, route}) {
     <Tab.Navigator
       initialRouteName="Scanner"
       screenOptions={{
+        tabBarHideOnKeyboard: true,
         headerShown: false,
         tabBarBackground: () => (
           <View
@@ -52,9 +54,9 @@ export default function BottomNav({navigation, route}) {
           </View>
         ),
         tabBarStyle: {
-          backgroundColor: '#FDFDFD',
+          backgroundColor: colors.BG_WHITE,
           height: hp(10),
-          shadowColor: '#FDFDFD',
+          shadowColor: colors.BG_WHITE,
           zIndex: 99,
           shadowOffset: {height: 0, width: 0},
           borderTopColor: 'transparent',
@@ -112,6 +114,7 @@ export default function BottomNav({navigation, route}) {
         name="ProfileScreen"
         component={ProfileScreen}
         options={{
+          tabBarHideOnKeyboard: true,
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (
             <View style={{backgroundColor: 'transparent'}} />
@@ -123,6 +126,7 @@ export default function BottomNav({navigation, route}) {
     <Tab.Navigator
       initialRouteName="ScanReceipt"
       screenOptions={{
+        tabBarHideOnKeyboard: true,
         headerShown: false,
         tabBarBackground: () => (
           <View
@@ -143,9 +147,9 @@ export default function BottomNav({navigation, route}) {
           </View>
         ),
         tabBarStyle: {
-          backgroundColor: '#FDFDFD',
+          backgroundColor: colors.BG_WHITE,
           height: hp(10),
-          shadowColor: '#FDFDFD',
+          shadowColor: colors.BG_WHITE,
           zIndex: 99,
           shadowOffset: {height: 0, width: 0},
           borderTopColor: 'transparent',
@@ -175,6 +179,7 @@ export default function BottomNav({navigation, route}) {
       <Tab.Screen
         name="ScanReceipt"
         component={ScanReceipt}
+        initialParams={{registerType: registerType}}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (

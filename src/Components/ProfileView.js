@@ -68,10 +68,16 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 10,
   },
-  imageContainer: {flexDirection: 'row'},
-  profilePic: {height: 100, width: 100, marginTop: 5},
+  imageContainer: {
+    flexDirection: 'row',
+  },
+  profilePic: {
+    height: 100,
+    width: 100,
+    marginTop: 5,
+  },
   editView: {
-    marginTop: hp(1.5),
+    marginTop: hp(1),
     width: wp(8),
     alignSelf: 'flex-end',
     marginBottom: hp(1),
@@ -84,7 +90,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#D40101',
     marginRight: 5,
   },
-  childContainer: {marginLeft: wp(5), marginTop: hp(0.7)},
+  childContainer: {marginLeft: wp(4), marginTop: hp(0.7)},
   nameTxt: {
     fontSize: SetFontSize.setDimension.testSizeHed,
     color: colors.BLACK,

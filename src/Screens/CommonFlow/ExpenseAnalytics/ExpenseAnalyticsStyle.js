@@ -12,7 +12,7 @@ export default StyleSheet.create({
   mainContainer: {flex: 1},
   container: {
     flex: 1,
-    backgroundColor: '#FDFDFD',
+    backgroundColor: colors.BG_WHITE,
   },
   cardComponent: {
     backgroundColor: colors.WHITE,
@@ -34,7 +34,7 @@ export default StyleSheet.create({
     backgroundColor: '#3461A6',
     justifyContent: 'center',
     paddingLeft: wp(7),
-    marginTop: hp(4),
+    marginTop: hp(2),
   },
   headerTxt: {
     fontSize: SetFontSize.setDimension.textSizeRegular,

@@ -10,7 +10,7 @@ import {
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FDFDFD',
+    backgroundColor: colors.BG_WHITE,
   },
   headerView: {
     height: hp(4),
@@ -27,17 +27,18 @@ export default StyleSheet.create({
     fontFamily: ConstantKeys.MUKTA,
   },
   mainView: {
+    height: hp(70),
     borderWidth: 1,
     backgroundColor: colors.WHITE,
     borderColor: '#E8E5E5',
     borderRadius: 10,
     marginHorizontal: wp(2),
     marginVertical: hp(2.5),
-    paddingBottom: hp(3),
+    paddingHorizontal: wp(2),
   },
   topButtonView: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
     marginTop: hp(2.5),
     marginHorizontal: wp(4),
   },
@@ -72,7 +73,7 @@ export default StyleSheet.create({
     width: wp(21),
   },
   buttonImg: {
-    marginTop: hp(0.3),
+    marginLeft: wp(1),
   },
   upperButtonTxt: {
     fontSize: SetFontSize.setDimension.textSize13,
@@ -80,39 +81,27 @@ export default StyleSheet.create({
     fontWeight: '400',
     fontFamily: ConstantKeys.POPPINS,
   },
+  listHeaderTxt: {
+    fontSize: SetFontSize.setDimension.textSize15,
+    color: colors.BLACK,
+    fontWeight: '500',
+    fontFamily: ConstantKeys.MUKTA,
+  },
   bodyView: {
     flexDirection: 'row',
     marginTop: hp(5),
     backgroundColor: '#F4F4F4',
     justifyContent: 'space-between',
-    marginHorizontal: wp(1),
-  },
-  categortTxt: {
-    fontSize: SetFontSize.setDimension.textSize15,
-    color: colors.BLACK,
-    fontWeight: '500',
-    fontFamily: ConstantKeys.MUKTA,
-    marginLeft: wp(5),
-  },
-  totalTxt: {
-    fontSize: SetFontSize.setDimension.textSize15,
-    color: colors.BLACK,
-    fontWeight: '500',
-    fontFamily: ConstantKeys.MUKTA,
-    marginLeft: wp(10),
-  },
-  receiptTxt: {
-    fontSize: SetFontSize.setDimension.textSize15,
-    color: colors.BLACK,
-    fontWeight: '500',
-    fontFamily: ConstantKeys.MUKTA,
-    marginRight: wp(5),
+    width: '100%',
+    marginBottom: hp(2),
+    marginRight: wp(10),
+    paddingVertical: hp(0.5),
   },
   flatlistView: {
-    marginTop: hp(2),
+    marginVertical: hp(2),
+    width: wp(140),
   },
   listView: {
-    width: wp(200),
     backgroundColor: colors.WHITE,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -130,12 +119,10 @@ export default StyleSheet.create({
     borderColor: '#EDEDED',
     marginHorizontal: wp(1),
   },
-  listLeftView: {flex: 1},
-  listRightView: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
+  listCategory: {flex: 2, alignItems: 'center'},
+  listExpense: {flex: 1.5, alignItems: 'center'},
+  listReason: {flex: 1, alignItems: 'center'},
+  listDate: {flex: 1, alignItems: 'center'},
   listTxt: {
     fontSize: SetFontSize.setDimension.textSize15,
     color: '#4D4B4B',
@@ -156,5 +143,10 @@ export default StyleSheet.create({
     color: colors.WHITE,
     fontWeight: '500',
     fontFamily: ConstantKeys.MUKTA,
+  },
+  scrollBar: {
+    width: hp(1.3),
+    backgroundColor: '#D9D8D8',
+    borderRadius: 10,
   },
 });

@@ -8,6 +8,7 @@ import {
   FlatList,
   Modal,
   TextInput,
+  SafeAreaView,
 } from 'react-native';
 import React, {useState} from 'react';
 
@@ -121,7 +122,7 @@ const BudgetDetails = ({navigation}) => {
               </TouchableOpacity>
             </View>
             <View style={styles.modalChildView}>
-              <Text style={styles.modalTxt}>Add Category </Text>
+              <Text style={styles.modalTxt}>Add Category</Text>
               <TextInput
                 style={styles.modalTxtInput}
                 placeholder="Category Name"
@@ -188,7 +189,7 @@ const BudgetDetails = ({navigation}) => {
     );
   };
   return (
-    <View style={styles.mainContainer}>
+    <SafeAreaView style={styles.mainContainer}>
       <View style={styles.container}>
         <View style={styles.headerView}>
           <Text style={styles.headerTxt}>Budget Details</Text>
@@ -244,14 +245,7 @@ const BudgetDetails = ({navigation}) => {
       </View>
       <AddCategory />
       <UpdateCategory />
-      {/* <View>
-        <BottomNavigation
-          onPress={() => navigation.navigate(Scanner)}
-          onPressExpense={() => navigation.navigate(ExpenseDetails)}
-          onPressAnalytics={() => navigation.navigate(ExpenseAnalytics)}
-        />
-      </View> */}
-    </View>
+    </SafeAreaView>
   );
 };
 

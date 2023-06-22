@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/no-unstable-nested-components */
-import {View, Text, FlatList} from 'react-native';
+import {View, Text, FlatList, SafeAreaView} from 'react-native';
 import React from 'react';
 import styles from './ExpenseListStyle';
 
@@ -51,7 +51,7 @@ const ExpenseList = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.headerView}>
         <Text style={styles.headerTxt}>Expense List</Text>
       </View>
@@ -70,7 +70,7 @@ const ExpenseList = ({navigation}) => {
           )}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

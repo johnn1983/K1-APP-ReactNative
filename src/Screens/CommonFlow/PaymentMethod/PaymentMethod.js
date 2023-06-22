@@ -12,7 +12,6 @@ import styles from './PaymentMethodStyle';
 import {IMG} from '../../../Constants/ImageConstant';
 import TextField from '../../../Components/TextField';
 import PrimaryButton from '../../../Components/PrimaryButton';
-import BottomNav from '../../../Navigation/BottomNav';
 
 const PaymentMethod = ({navigation, route}) => {
   const registerType = route.params.registerType;
@@ -76,11 +75,19 @@ const PaymentMethod = ({navigation, route}) => {
             <Text style={styles.detailsTxt}>Phone</Text>
             <TextField placeholder={'Enter phone number'} />
           </View>
+          <View style={styles.detailchildView}>
+            <Text style={styles.detailsTxt}>Billing Address</Text>
+            <TextField placeholder={'Enter Billing address'} />
+          </View>
+          <View style={styles.detailchildView}>
+            <Text style={styles.detailsTxt}>State</Text>
+            <TextField placeholder={'Enter state information'} />
+          </View>
         </View>
 
         <View style={styles.buttonContainer}>
           <PrimaryButton
-            text={'Pay'}
+            text={'Proceed to order'}
             style={styles.primaryButton}
             textstyle={styles.buttonText}
             onPress={() =>

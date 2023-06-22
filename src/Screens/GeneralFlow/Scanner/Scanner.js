@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Image,
   TextInput,
+  SafeAreaView,
 } from 'react-native';
 import React, {useState} from 'react';
 
@@ -30,7 +31,7 @@ const Scanner = ({navigation}) => {
   const [id, setId] = useState(1);
 
   const handleScanner = () => {
-    setIsScan(!isScan);
+    setIsScan(true);
   };
   const handleCamera = () => {
     setIsSelect(!isSelect);
@@ -44,7 +45,7 @@ const Scanner = ({navigation}) => {
     setIscategory(false);
     setIsSelect(false);
     setStore(!store);
-    setIsProcess(!isProcess);
+    setIsProcess(true);
   };
   const handleNextSelect = () => {
     setIsSelect(false);
@@ -288,7 +289,7 @@ const Scanner = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={{flex: 0.3}}>
         <ProfileView onPress={() => navigation.navigate(Statistics)} />
       </View>
@@ -302,7 +303,7 @@ const Scanner = ({navigation}) => {
               resizeMode="center"
             />
           ) : null}
-          <TouchableOpacity onPress={handleScanner}>
+          <TouchableOpacity onPress={handleScanner} disabled={isProcess}>
             <Text style={styles.scanTxt}>Scan a Receipt</Text>
           </TouchableOpacity>
         </View>
@@ -321,18 +322,7 @@ const Scanner = ({navigation}) => {
           <PurchasingDate />
         ) : null}
       </View>
-
-      {/* <View>
-        {isScan === false ? (
-          <BottomNavigation
-            onPress={handleScanner}
-            onPressBudget={() => navigation.navigate(BudgetDetails)}
-            onPressExpense={() => navigation.navigate(ExpenseDetails)}
-            onPressAnalytics={() => navigation.navigate(ExpenseAnalytics)}
-          />
-        ) : null}
-      </View> */}
-    </View>
+    </SafeAreaView>
   );
 };
 

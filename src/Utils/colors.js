@@ -27,4 +27,5 @@ export const colors = {
   GREDIENT_LINEAR_COLOR: ['#323232', '#141414'],
   HEADER_TEXT_COLOR: '#F0F1F2',
   ATOMIC_TANGERINE: '#FA9D68',
+  BG_WHITE: '#FDFDFD',
 };

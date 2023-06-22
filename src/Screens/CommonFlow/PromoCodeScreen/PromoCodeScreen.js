@@ -1,4 +1,4 @@
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, SafeAreaView} from 'react-native';
 import React from 'react';
 
 import styles from './PromoCodeStyle';
@@ -9,7 +9,7 @@ import {IMG} from '../../../Constants/ImageConstant';
 
 const PromoCodeScreen = ({navigation}) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.logo}>
         <Image source={IMG.CompanyLogo.logoBig} resizeMode="center" />
       </View>
@@ -31,13 +31,15 @@ const PromoCodeScreen = ({navigation}) => {
           onPress={() => navigation.navigate(PromoCodeScreen)}
         />
       </View>
-      <View style={styles.signupTxt}>
-        <Text style={styles.text2}>Don't have a promocode?</Text>
-        <TouchableOpacity onPress={() => navigation.navigate(SignupScreen)}>
+      <View>
+        <TouchableOpacity
+          style={styles.signupTxt}
+          onPress={() => navigation.navigate(SignupScreen)}>
+          <Text style={styles.text2}>Don't have a promocode?</Text>
           <Text style={styles.text}> Sign Up</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

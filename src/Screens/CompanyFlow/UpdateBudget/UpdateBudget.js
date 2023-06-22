@@ -1,6 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/no-unstable-nested-components */
-import {View, Text, TouchableOpacity, FlatList} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  FlatList,
+  SafeAreaView,
+} from 'react-native';
 import React from 'react';
 import styles from './UpdateBudgetStyle';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -86,8 +92,9 @@ const UpdateBudget = ({navigation, route}) => {
       </View>
     );
   };
+
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.headerView}>
         <Text style={styles.headerTxt}>Update Budget</Text>
         <TouchableOpacity
@@ -112,7 +119,7 @@ const UpdateBudget = ({navigation, route}) => {
           keyExtractor={item => item.id}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
