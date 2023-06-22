@@ -1,5 +1,12 @@
 /* eslint-disable react/no-unstable-nested-components */
-import {View, Text, Image, TouchableOpacity, FlatList} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  FlatList,
+  SafeAreaView,
+} from 'react-native';
 import React from 'react';
 
 import styles from './StatisticsStyle';
@@ -45,7 +52,7 @@ const Statistics = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <TouchableOpacity>
         <Icon
           style={styles.settingsImg}
@@ -91,7 +98,7 @@ const Statistics = ({navigation}) => {
         )}
         keyExtractor={item => item.id}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

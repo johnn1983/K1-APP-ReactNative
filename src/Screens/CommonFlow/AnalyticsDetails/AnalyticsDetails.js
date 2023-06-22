@@ -1,6 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/no-unstable-nested-components */
-import {View, Text, TouchableOpacity, FlatList, ScrollView} from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  FlatList,
+  ScrollView,
+  SafeAreaView,
+} from 'react-native';
 import React, {useRef, useState} from 'react';
 
 import styles from './AnalyticsDetailsStyle';
@@ -199,7 +206,7 @@ const AnalyticsDetails = ({navigation, route}) => {
   };
 
   return (
-    <View style={styles.mainContainer}>
+    <SafeAreaView style={styles.mainContainer}>
       <View style={styles.container}>
         {registerType === 'General' ? (
           <View style={styles.headerView}>
@@ -236,15 +243,17 @@ const AnalyticsDetails = ({navigation, route}) => {
                   </View>
 
                   <View style={styles.mainDetailsView}>
-                    <View style={styles.detailsView}>
-                      <View style={styles.leftDetails}>
-                        <Text numberOfLines={2} style={styles.detailsTxt}>
+                    <View style={styles.filterView}>
+                      <View style={styles.filterTxtView}>
+                        <Text numberOfLines={2} style={styles.filterTxt}>
                           Filter
                         </Text>
                       </View>
                       <View style={styles.verticalLine} />
                       <Picker
                         style={styles.pickerstyle}
+                        dropdownIconColor="grey"
+                        numberOfLines={1}
                         ref={pickerRef}
                         selectedValue={monthType}
                         onValueChange={(itemValue, itemIndex) =>
@@ -301,7 +310,7 @@ const AnalyticsDetails = ({navigation, route}) => {
           </View>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

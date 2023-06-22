@@ -32,7 +32,7 @@ export default StyleSheet.create({
     backgroundColor: '#E5EDEC',
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
-    marginTop: hp(2),
+    marginTop: hp(3),
   },
   bodyChildView: {
     marginHorizontal: wp(10),

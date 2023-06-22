@@ -10,7 +10,7 @@ import {
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FDFDFD',
+    backgroundColor: colors.BG_WHITE,
   },
   headerView: {
     height: hp(4),
@@ -18,7 +18,7 @@ export default StyleSheet.create({
     backgroundColor: '#3461A6',
     justifyContent: 'center',
     paddingLeft: wp(7),
-    marginTop: hp(4),
+    marginTop: hp(2),
   },
   headerTxt: {
     fontSize: SetFontSize.setDimension.textSizeMedium,
@@ -60,7 +60,7 @@ export default StyleSheet.create({
     paddingHorizontal: wp(2),
   },
   buttonTxt: {
-    fontSize: SetFontSize.setDimension.textSizeTooSmall,
+    fontSize: SetFontSize.setDimension.textSize10,
     color: colors.WHITE,
     fontWeight: '600',
     fontFamily: ConstantKeys.INTER,
@@ -107,6 +107,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 15,
+    marginBottom: hp(5),
   },
   submitTxt: {
     fontSize: SetFontSize.setDimension.textSizeLarge,

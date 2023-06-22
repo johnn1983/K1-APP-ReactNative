@@ -12,7 +12,7 @@ export default StyleSheet.create({
   mainContainer: {flex: 1},
   container: {
     flex: 1,
-    backgroundColor: '#FDFDFD',
+    backgroundColor: colors.BG_WHITE,
   },
   cardComponent: {
     backgroundColor: colors.WHITE,
@@ -34,7 +34,7 @@ export default StyleSheet.create({
     backgroundColor: '#3461A6',
     justifyContent: 'center',
     paddingLeft: wp(7),
-    marginTop: hp(4),
+    marginTop: hp(2),
   },
   headerTxt: {
     fontSize: SetFontSize.setDimension.textSizeMedium,
@@ -132,7 +132,7 @@ export default StyleSheet.create({
     fontWeight: '600',
   },
   greenLine: {
-    height: hp(1.5),
+    height: hp(1.2),
     width: '100%',
     backgroundColor: '#0D8F29',
     borderRadius: 10,
@@ -140,8 +140,7 @@ export default StyleSheet.create({
     marginBottom: hp(1),
   },
   redLine: {
-    height: hp(1.5),
-    width: wp(15),
+    height: '100%',
     backgroundColor: '#D40101',
     borderRadius: 10,
   },
@@ -153,12 +152,11 @@ export default StyleSheet.create({
     backgroundColor: '#3461A6',
     borderRadius: 10,
   },
-  detailsButtonTxt: {
-    fontSize: SetFontSize.setDimension.textSizeTooSmall,
-    color: colors.WHITE,
-    fontWeight: '500',
+  flatlistView: {
+    marginBottom: hp(10),
+    marginTop: hp(4),
+    paddingBottom: hp(5),
   },
-  flatlistView: {marginBottom: hp(10), marginTop: hp(4), paddingBottom: hp(7)},
   modalmainView: {
     flex: 1,
     backgroundColor: 'rgba(250,255,252,0.7)',
@@ -178,6 +176,7 @@ export default StyleSheet.create({
     color: '#608FD7',
     fontWeight: '500',
     marginBottom: hp(2),
+    fontFamily: ConstantKeys.POPPINS,
   },
   closeView: {height: hp(6), alignItems: 'flex-end'},
   closeImg: {height: hp(6), width: wp(12)},
@@ -192,8 +191,10 @@ export default StyleSheet.create({
     color: colors.BLACK,
     fontSize: SetFontSize.setDimension.textSizeMedium,
     fontWeight: '500',
-    paddingVertical: hp(1),
-    textAlign: 'center',
+    paddingVertical: hp(0.4),
+    alignItems: 'center',
+    paddingLeft: wp(3),
+    fontFamily: ConstantKeys.POPPINS,
   },
   saveButton: {
     height: hp(5.5),
@@ -202,12 +203,12 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30,
-    paddingBottom: 3,
     marginTop: hp(4),
   },
   saveTxt: {
     color: '#EDEDED',
     fontWeight: '600',
     fontSize: SetFontSize.setDimension.testSizeHed,
+    fontFamily: ConstantKeys.POPPINS,
   },
 });

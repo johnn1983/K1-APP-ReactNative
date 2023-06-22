@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   TextInput,
   ScrollView,
+  SafeAreaView,
 } from 'react-native';
 import React, {useState} from 'react';
 import styles from './AddEmployeeStyle';
@@ -16,7 +17,6 @@ import EmployeeDetails from '../EmployeeDetails/EmployeeDetails';
 
 const AddEmployee = ({navigation, route}) => {
   const [screenType, setScreenType] = useState(route.params.screenType);
-  const [isShow, setIsShow] = useState(true);
 
   const EmployeesList = [
     {id: 1, name: 'Nabila Akther'},
@@ -37,8 +37,10 @@ const AddEmployee = ({navigation, route}) => {
   ];
 
   const AddDetails = () => {
+    const [isShow, setIsShow] = useState(false);
+
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <View style={styles.headerView}>
           <Text style={styles.headerTxt}>Add Employee</Text>
         </View>
@@ -128,13 +130,13 @@ const AddEmployee = ({navigation, route}) => {
             </View>
           </View>
         </ScrollView>
-      </View>
+      </SafeAreaView>
     );
   };
 
   const EmployeeList = () => {
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <View style={styles.headerView}>
           <Text style={styles.headerTxt}>Employee List</Text>
         </View>
@@ -158,7 +160,7 @@ const AddEmployee = ({navigation, route}) => {
             keyExtractor={item => item.id}
           />
         </View>
-      </View>
+      </SafeAreaView>
     );
   };
 

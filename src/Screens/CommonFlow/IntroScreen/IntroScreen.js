@@ -1,4 +1,4 @@
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, SafeAreaView} from 'react-native';
 import React from 'react';
 
 import styles from './IntroScreenStyle';
@@ -8,7 +8,7 @@ import {IMG} from '../../../Constants/ImageConstant';
 
 const IntroScreen = ({navigation}) => {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.logo}>
         <Image source={IMG.CompanyLogo.logoBig} resizeMode="center" />
       </View>
@@ -26,7 +26,7 @@ const IntroScreen = ({navigation}) => {
           onPress={() => navigation.navigate(LoginScreen)}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

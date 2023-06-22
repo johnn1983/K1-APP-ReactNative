@@ -10,7 +10,7 @@ import {
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FDFDFD',
+    backgroundColor: colors.BG_WHITE,
   },
   headerView: {
     height: hp(4),
@@ -18,7 +18,7 @@ export default StyleSheet.create({
     backgroundColor: '#3461A6',
     justifyContent: 'center',
     paddingLeft: wp(7),
-    marginTop: hp(4),
+    marginTop: hp(2),
   },
   headerTxt: {
     fontSize: SetFontSize.setDimension.textSizeMedium,
@@ -41,6 +41,14 @@ export default StyleSheet.create({
     marginTop: hp(2.5),
     marginHorizontal: wp(4),
   },
+  topBTrightView: {
+    flex: 9,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  topBTleftView: {
+    flex: 8,
+  },
   budgetButtonView: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -60,7 +68,6 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderColor: '#C0C0C0',
     borderRadius: 5,
-    marginLeft: wp(15),
   },
   searchButtonView: {
     alignItems: 'center',
@@ -220,5 +227,25 @@ export default StyleSheet.create({
   editDeleteImg: {
     height: hp(3),
     width: wp(8),
+  },
+  selectTypeView: {
+    width: wp(20),
+    height: hp(5),
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    marginLeft: wp(5),
+    marginTop: hp(1),
+  },
+  selectView: {
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  selectTypeTxt: {
+    fontSize: SetFontSize.setDimension.textSize10,
+    color: colors.BLACK,
+    fontWeight: '500',
+    fontFamily: ConstantKeys.MUKTA,
+    marginLeft: wp(2),
   },
 });

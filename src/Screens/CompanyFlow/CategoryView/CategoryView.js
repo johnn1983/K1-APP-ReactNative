@@ -7,6 +7,7 @@ import {
   Modal,
   Image,
   FlatList,
+  SafeAreaView,
 } from 'react-native';
 import React, {useState} from 'react';
 
@@ -215,7 +216,7 @@ const CategoryView = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.headerView}>
         <View style={styles.headerChildView}>
           <Text style={styles.headerMainTxt} numberOfLines={1}>
@@ -254,7 +255,7 @@ const CategoryView = ({navigation}) => {
           />
         </View>
       )}
-    </View>
+    </SafeAreaView>
   );
 };
 

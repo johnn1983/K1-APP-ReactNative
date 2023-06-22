@@ -1,4 +1,4 @@
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, SafeAreaView, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 
 import styles from './LoginScreenStyle';
@@ -13,7 +13,7 @@ const LoginScreen = ({navigation}) => {
   const [isShow, setIsShow] = useState(false);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.logo}>
         <Image source={IMG.CompanyLogo.logoBig} resizeMode="center" />
       </View>
@@ -66,7 +66,7 @@ const LoginScreen = ({navigation}) => {
           />
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -8,6 +8,7 @@ import {
   FlatList,
   Modal,
   TextInput,
+  SafeAreaView,
 } from 'react-native';
 import React, {useState} from 'react';
 
@@ -15,10 +16,6 @@ import styles from './ExpenseDetailsStyle';
 
 import {IMG} from '../../../Constants/ImageConstant';
 import PrimaryButton from '../../../Components/PrimaryButton';
-import BottomNavigation from '../../../Components/BottomNavigation';
-import Scanner from '../Scanner/Scanner';
-import BudgetDetails from '../BudgetDetails/BudgetDetails';
-import ExpenseAnalytics from '../ExpenseAnalytics/ExpenseAnalytics';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const ExpenseDetails = ({navigation}) => {
@@ -28,41 +25,38 @@ const ExpenseDetails = ({navigation}) => {
     {
       id: '1',
       categoryName: 'Business Insurance',
-      budget: '$ 450.00',
-      expense: '-161.10',
-      remainingbudget: '238.90',
+      budget: '450.00',
+      expense: '121.10',
     },
     {
       id: '2',
       categoryName: 'Business Insurance',
-      budget: '$ 450.00',
-      expense: '-161.10',
-      remainingbudget: '238.90',
+      budget: '450.00',
+      expense: '161.10',
     },
     {
       id: '3',
       categoryName: 'Business Insurance',
-      budget: '$ 450.00',
-      expense: '-161.10',
-      remainingbudget: '238.90',
+      budget: '950.00',
+      expense: '161',
     },
     {
       id: '4',
       categoryName: 'Business Insurance',
-      budget: '$ 450.00',
-      expense: '-161.10',
-      remainingbudget: '238.90',
+      budget: '210.5',
+      expense: '131.10',
     },
     {
       id: '5',
       categoryName: 'Business Insurance',
-      budget: '$ 450.00',
-      expense: '-161.10',
-      remainingbudget: '238.90',
+      budget: '450.00',
+      expense: '161.10',
     },
   ];
 
-  const CardComponent = ({categoryName, budget, expense, remainingbudget}) => {
+  const CardComponent = ({categoryName, budget, expense}) => {
+    const expensePercentage = parseFloat(expense / budget) * 100;
+    const width = expensePercentage + '%';
     return (
       <View style={styles.cardComponent}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -94,14 +88,21 @@ const ExpenseDetails = ({navigation}) => {
         </View>
         <View style={styles.detailsTxtView}>
           <Text style={styles.detailsTxt}>Expense</Text>
-          <Text style={styles.deatilByTxtRed}>{expense}</Text>
+          <Text style={styles.deatilByTxtRed}>- {expense}</Text>
         </View>
         <View style={styles.detailsTxtView}>
           <Text style={styles.detailsTxt}>Remaining Budget</Text>
-          <Text style={styles.deatilByTxtGreen}>{remainingbudget}</Text>
+          <Text style={styles.deatilByTxtGreen}>
+            {parseFloat(budget - expense)}
+          </Text>
         </View>
         <View style={styles.greenLine}>
-          <View style={styles.redLine} />
+          <View
+            style={{
+              ...styles.redLine,
+              width: width,
+            }}
+          />
         </View>
       </View>
     );
@@ -150,8 +151,9 @@ const ExpenseDetails = ({navigation}) => {
       </Modal>
     );
   };
+
   return (
-    <View style={styles.mainContainer}>
+    <SafeAreaView style={styles.mainContainer}>
       <View style={styles.container}>
         <View style={styles.headerView}>
           <Text style={styles.headerTxt}>Expense Details</Text>
@@ -189,7 +191,6 @@ const ExpenseDetails = ({navigation}) => {
                   categoryName={item.categoryName}
                   budget={item.budget}
                   expense={item.expense}
-                  remainingbudget={item.remainingbudget}
                 />
               )}
               keyExtractor={item => item.id}
@@ -198,14 +199,7 @@ const ExpenseDetails = ({navigation}) => {
         </View>
       </View>
       <UpdateCategory />
-      {/* <View>
-        <BottomNavigation
-          onPress={() => navigation.navigate(Scanner)}
-          onPressBudget={() => navigation.navigate(BudgetDetails)}
-          onPressAnalytics={() => navigation.navigate(ExpenseAnalytics)}
-        />
-      </View> */}
-    </View>
+    </SafeAreaView>
   );
 };
 

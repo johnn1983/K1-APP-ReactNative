@@ -7,6 +7,7 @@ import {
   Modal,
   Image,
   FlatList,
+  SafeAreaView,
 } from 'react-native';
 import React, {useState} from 'react';
 
@@ -209,7 +210,7 @@ const SubCategoryView = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.headerView}>
         <View style={styles.headerChildView}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -251,7 +252,7 @@ const SubCategoryView = ({navigation}) => {
           />
         </View>
       )}
-    </View>
+    </SafeAreaView>
   );
 };
 

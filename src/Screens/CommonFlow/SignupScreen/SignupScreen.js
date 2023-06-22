@@ -1,5 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
-import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  SafeAreaView,
+  Alert,
+} from 'react-native';
 import React, {useState} from 'react';
 import DropDownPicker from 'react-native-dropdown-picker';
 
@@ -31,8 +39,18 @@ const SignupScreen = ({navigation}) => {
     setRegisterType(value);
   };
 
+  const handleSubmit = () => {
+    if (value) {
+      navigation.navigate('PlanSelection', {
+        registerType: registerType,
+      });
+    } else {
+      Alert.alert('Please select Register as...');
+    }
+  };
+
   return (
-    <View style={{flex: 1}}>
+    <SafeAreaView style={{flex: 1}}>
       <ScrollView style={{flex: 1}}>
         <View style={styles.container}>
           <View style={styles.logo}>
@@ -60,9 +78,15 @@ const SignupScreen = ({navigation}) => {
                   placeholder="Register as a..."
                   placeholderStyle={styles.placeStyle}
                   textStyle={styles.txtStyle}
-                  labelStyle={styles.placeStyle}
+                  labelStyle={{
+                    ...styles.placeStyle,
+                    color: value ? 'white' : 'black',
+                  }}
                   listMode="SCROLLVIEW"
-                  style={styles.pickerSize}
+                  style={{
+                    ...styles.pickerSize,
+                    backgroundColor: value ? '#255A98' : 'white',
+                  }}
                   selectedItemLabelStyle={styles.itemSelect}
                   dropDownContainerStyle={styles.dropdownContainer}
                 />
@@ -112,7 +136,6 @@ const SignupScreen = ({navigation}) => {
                 placeholder={'Enter your confirm password'}
                 style={styles.bodyPart}
                 secureTextEntry={!isShowCon}
-                keyboardAppearnce
               />
               <TouchableOpacity
                 style={styles.showView}
@@ -130,11 +153,7 @@ const SignupScreen = ({navigation}) => {
               text={'Submit'}
               style={styles.primaryButton}
               textstyle={styles.buttonText}
-              onPress={() =>
-                navigation.navigate('PlanSelection', {
-                  registerType: registerType,
-                })
-              }
+              onPress={handleSubmit}
             />
           </View>
           <View style={styles.signupTxt}>
@@ -147,7 +166,7 @@ const SignupScreen = ({navigation}) => {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 

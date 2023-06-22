@@ -12,7 +12,6 @@ import React, {useState} from 'react';
 import styles from './PlanSelectionStyle';
 import {IMG} from '../../../Constants/ImageConstant';
 import PrimaryButton from '../../../Components/PrimaryButton';
-import PaymentMethod from '../PaymentMethod/PaymentMethod';
 
 const PlanSelection = ({navigation, route}) => {
   const registerType = route.params.registerType;

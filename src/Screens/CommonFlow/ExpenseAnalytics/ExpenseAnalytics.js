@@ -6,6 +6,7 @@ import {
   Image,
   FlatList,
   ScrollView,
+  SafeAreaView,
 } from 'react-native';
 import React from 'react';
 
@@ -100,8 +101,9 @@ const ExpenseAnalytics = ({navigation, route}) => {
       </View>
     );
   };
+
   return (
-    <View style={styles.mainContainer}>
+    <SafeAreaView style={styles.mainContainer}>
       <View style={styles.container}>
         {registerType === 'General' ? (
           <View style={styles.headerView}>
@@ -200,7 +202,7 @@ const ExpenseAnalytics = ({navigation, route}) => {
           </View>
         </ScrollView>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
