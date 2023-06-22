@@ -72,7 +72,7 @@ export default StyleSheet.create({
     width: wp(21),
   },
   buttonImg: {
-    marginTop: hp(0.3),
+    marginLeft: wp(1.5),
   },
   upperButtonTxt: {
     fontSize: SetFontSize.setDimension.textSize13,
@@ -111,7 +111,10 @@ export default StyleSheet.create({
   flatlistView: {
     marginTop: hp(5),
   },
-  budgetflatList: {marginTop: hp(5)},
+  budgetflatList: {
+    marginTop: hp(5),
+    paddingBottom: hp(15),
+  },
   listView: {
     backgroundColor: colors.WHITE,
     flexDirection: 'row',

@@ -1529,6 +1529,26 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
+"@ouroboros/clone@^1.0.1":
+  "integrity" "sha512-nvwwe/ChnOEmhl4cAFJ2BcEDR2URH1DGPQfTkgG2Urncds2gfG5vxuX8O2Lu2CQzJCjjAnZcgf4fU/Gntj4wuw=="
+  "resolved" "https://registry.npmjs.org/@ouroboros/clone/-/clone-1.0.1.tgz"
+  "version" "1.0.1"
+
+"@ouroboros/react-native-picker@^0.3.1":
+  "integrity" "sha512-mAJvIk3dcxGNs9N2KvMZTLcWUvHWrjmRVP9hW8akmh2eWKRa3v1IcKATpoqYmMgwCsHngdsbwxbCgBSsB4fHTQ=="
+  "resolved" "https://registry.npmjs.org/@ouroboros/react-native-picker/-/react-native-picker-0.3.1.tgz"
+  "version" "0.3.1"
+  dependencies:
+    "@ouroboros/clone" "^1.0.1"
+    "@ouroboros/tools" "^0.5.0"
+
+"@ouroboros/tools@^0.5.0":
+  "integrity" "sha512-aH2sSYq2g+2s/WZr5rAtsowfHgMgaUNKUtJk9ydO2HZWVpZ7Wwmn/3jwOglYlC7iwKm8b9ZpQamSbgksv2cQ+Q=="
+  "resolved" "https://registry.npmjs.org/@ouroboros/tools/-/tools-0.5.0.tgz"
+  "version" "0.5.0"
+  dependencies:
+    "@ouroboros/clone" "^1.0.1"
+
 "@react-native-community/cli-clean@^10.1.1":
   "integrity" "sha512-iNsrjzjIRv9yb5y309SWJ8NDHdwYtnCpmxZouQDyOljUdC9MwdZ4ChbtA4rwQyAwgOVfS9F/j56ML3Cslmvrxg=="
   "resolved" "https://registry.npmjs.org/@react-native-community/cli-clean/-/cli-clean-10.1.1.tgz"
@@ -1724,6 +1744,11 @@
   "integrity" "sha512-pacdQDX6V6EmjF+HoiIh6u++qx4mTK0WnhgUHRc01B+Qt5eoeUwseBqmqfTSXTx/aHDEd6PiIw7UGvKgFoqgFQ=="
   "resolved" "https://registry.npmjs.org/@react-native-picker/picker/-/picker-1.16.8.tgz"
   "version" "1.16.8"
+
+"@react-native-picker/picker@^2.4.10":
+  "integrity" "sha512-EvAlHmPEPOwvbP6Pjg/gtDV3XJzIjIxr10fXFNlX5r9HeHw582G1Zt2o8FLyB718nOttgj8HYUTGxvhu4N65sQ=="
+  "resolved" "https://registry.npmjs.org/@react-native-picker/picker/-/picker-2.4.10.tgz"
+  "version" "2.4.10"
 
 "@react-native/assets@1.0.0":
   "integrity" "sha512-KrwSpS1tKI70wuKl68DwJZYEvXktDHdZMG0k2AXD/rJVSlB23/X2CB2cutVR0HwNMJIal9HOUOBB2rVfa6UGtQ=="
@@ -6549,7 +6574,7 @@
     "prop-types" "^15.7.2"
     "yargs" "^16.1.1"
 
-"react-native@*", "react-native@>=0.35", "react-native@>=0.57", "react-native@>=0.57.0", "react-native@0.71.10":
+"react-native@*", "react-native@>=0.35", "react-native@>=0.57", "react-native@>=0.57.0", "react-native@>=0.66", "react-native@0.71.10":
   "integrity" "sha512-O+sWH9ln7euxhHdooVL8is2FiVc7CfAp2zsKgIRhbq/8lGbJr5ZyT6QkCQK0M8Sx1zNe9puebr+BE8uBFsartg=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.71.10.tgz"
   "version" "0.71.10"
@@ -6627,7 +6652,7 @@
     "global" "^4.3.0"
     "react-proxy" "^1.1.7"
 
-"react@*", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.2.0", "react@>=16.0", "react@>=16.8", "react@>=17.0.0", "react@18.2.0":
+"react@*", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.2.0", "react@>=16", "react@>=16.0", "react@>=16.8", "react@>=17.0.0", "react@18.2.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"

@@ -9,12 +9,14 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-import BudgetDetails from '../Screens/CommonFlow/BudgetDetails/BudgetDetails';
-import ExpenseAnalytics from '../Screens/ExpenseAnalytics/ExpenseAnalytics';
+import BudgetDetails from '../Screens/GeneralFlow/BudgetDetails/BudgetDetails';
+import ExpenseAnalytics from '../Screens/GeneralFlow/ExpenseAnalytics/ExpenseAnalytics';
 import ProfileScreen from '../Screens/CommonFlow/ProfileScreen/ProfileScreen';
-import ExpenseDetails from '../Screens/ExpenseDetails/ExpenseDetails';
+import ExpenseDetails from '../Screens/GeneralFlow/ExpenseDetails/ExpenseDetails';
 import Scanner from '../Screens/GeneralFlow/Scanner/Scanner';
 import ScanReceipt from '../Screens/CompanyFlow/ScanReceipt/ScanReceipt';
+import UpdateBudget from '../Screens/CompanyFlow/UpdateBudget/UpdateBudget';
+import ExpenseList from '../Screens/CompanyFlow/ExpenseList/ExpenseList';
 
 import {LogBox} from 'react-native';
 import {IMG} from '../Constants/ImageConstant';
@@ -98,6 +100,7 @@ export default function BottomNav({navigation, route}) {
       <Tab.Screen
         name="ExpenseAnalytics"
         component={ExpenseAnalytics}
+        initialParams={{registerType: registerType}}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (
@@ -150,8 +153,8 @@ export default function BottomNav({navigation, route}) {
         },
       }}>
       <Tab.Screen
-        name="BudgetDetails"
-        component={BudgetDetails}
+        name="UpdateBudget"
+        component={UpdateBudget}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (
@@ -160,8 +163,8 @@ export default function BottomNav({navigation, route}) {
         }}
       />
       <Tab.Screen
-        name="ExpenseDetails"
-        component={ExpenseDetails}
+        name="ExpenseList"
+        component={ExpenseList}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (
@@ -188,6 +191,7 @@ export default function BottomNav({navigation, route}) {
       <Tab.Screen
         name="ExpenseAnalytics"
         component={ExpenseAnalytics}
+        initialParams={{registerType: registerType}}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (
