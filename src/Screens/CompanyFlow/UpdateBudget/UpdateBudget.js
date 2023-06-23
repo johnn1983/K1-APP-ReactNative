@@ -6,12 +6,14 @@ import {
   TouchableOpacity,
   FlatList,
   SafeAreaView,
+  Image,
 } from 'react-native';
 import React from 'react';
 import styles from './UpdateBudgetStyle';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import CategoryView from '../CategoryView/CategoryView';
 import SubCategoryView from '../../CommonFlow/SubCategoryView/SubCategoryView';
+import {IMG} from '../../../Constants/ImageConstant';
 
 const UpdateBudget = ({navigation, route}) => {
   const budgetDetails = [
@@ -56,15 +58,18 @@ const UpdateBudget = ({navigation, route}) => {
           </View>
           <View style={{flexDirection: 'row'}}>
             <TouchableOpacity>
-              <Icon
+              <Image
+                source={IMG.ExtraLogo.EditRed}
+                resizeMode="center"
                 style={styles.editDeleteImg}
-                name="edit"
-                size={20}
-                color="red"
               />
             </TouchableOpacity>
             <TouchableOpacity>
-              <Icon name="delete" size={20} color="red" />
+              <Image
+                source={IMG.ExtraLogo.DeleteRed}
+                resizeMode="center"
+                style={styles.editDeleteImg}
+              />
             </TouchableOpacity>
           </View>
         </View>

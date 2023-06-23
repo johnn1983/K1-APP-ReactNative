@@ -118,7 +118,10 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  leftDetails: {width: '50%'},
+  leftDetails: {
+    width: '50%',
+    height: hp(5),
+  },
   rightDetails: {
     flexDirection: 'row',
     width: '50%',

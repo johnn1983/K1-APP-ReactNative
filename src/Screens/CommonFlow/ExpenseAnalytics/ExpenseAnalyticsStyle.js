@@ -37,9 +37,10 @@ export default StyleSheet.create({
     marginTop: hp(2),
   },
   headerTxt: {
-    fontSize: SetFontSize.setDimension.textSizeRegular,
+    fontSize: SetFontSize.setDimension.textSizeMedium,
     color: colors.WHITE,
     fontWeight: '600',
+    fontFamily: ConstantKeys.MUKTA,
   },
   headerView2: {
     flexDirection: 'row',
@@ -65,6 +66,8 @@ export default StyleSheet.create({
     paddingTop: hp(1),
   },
   calender: {
+    height: hp(3),
+    width: wp(7),
     alignSelf: 'flex-end',
   },
   categoryTxtView: {
@@ -97,7 +100,7 @@ export default StyleSheet.create({
     marginTop: hp(3),
   },
   tableHeaderTxtView: {
-    height: hp(7),
+    height: hp(8),
     width: wp(17),
     backgroundColor: '#776ADE',
     justifyContent: 'center',

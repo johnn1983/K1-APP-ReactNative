@@ -27,7 +27,7 @@ export default StyleSheet.create({
     fontFamily: ConstantKeys.MUKTA,
   },
   mainView: {
-    height: hp(70),
+    height: hp(60),
     borderWidth: 1,
     backgroundColor: colors.WHITE,
     borderColor: '#E8E5E5',
@@ -38,9 +38,17 @@ export default StyleSheet.create({
   },
   topButtonView: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
     marginTop: hp(2.5),
     marginHorizontal: wp(4),
+  },
+  topBTleftView: {
+    flex: 6,
+  },
+  topBTrightView: {
+    flex: 7,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   budgetButtonView: {
     flexDirection: 'row',
@@ -61,7 +69,6 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderColor: '#C0C0C0',
     borderRadius: 5,
-    marginLeft: wp(15),
   },
   searchButtonView: {
     alignItems: 'center',
@@ -99,7 +106,7 @@ export default StyleSheet.create({
   },
   flatlistView: {
     marginVertical: hp(2),
-    width: wp(140),
+    width: wp(150),
   },
   listView: {
     backgroundColor: colors.WHITE,
@@ -119,8 +126,8 @@ export default StyleSheet.create({
     borderColor: '#EDEDED',
     marginHorizontal: wp(1),
   },
-  listCategory: {flex: 2, alignItems: 'center'},
-  listExpense: {flex: 1.5, alignItems: 'center'},
+  listCategory: {flex: 1, alignItems: 'center'},
+  listExpense: {flex: 1, alignItems: 'center'},
   listReason: {flex: 1, alignItems: 'center'},
   listDate: {flex: 1, alignItems: 'center'},
   listTxt: {

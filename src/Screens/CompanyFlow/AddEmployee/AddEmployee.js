@@ -33,7 +33,7 @@ const AddEmployee = ({navigation, route}) => {
     {id: 12, name: 'Sabariya Muzumder'},
     {id: 13, name: 'Nabila Akther'},
     {id: 14, name: 'Sabariya Muzumder'},
-    {id: 15, name: 'Nabila Akther'},
+    {id: 15, name: ' Akther'},
   ];
 
   const AddDetails = () => {

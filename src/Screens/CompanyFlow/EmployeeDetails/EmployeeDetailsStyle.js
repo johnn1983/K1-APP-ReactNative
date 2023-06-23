@@ -27,13 +27,14 @@ export default StyleSheet.create({
     fontFamily: ConstantKeys.MUKTA,
   },
   mainView: {
+    flex: 1,
     borderWidth: 1,
     backgroundColor: colors.WHITE,
     borderColor: '#E8E5E5',
     borderRadius: 10,
     marginHorizontal: wp(2),
-    marginVertical: hp(2.5),
-    paddingBottom: hp(3),
+    marginTop: hp(2.5),
+    marginBottom: hp(1),
   },
   topButtonView: {
     flexDirection: 'row',
@@ -44,7 +45,6 @@ export default StyleSheet.create({
   topBTrightView: {
     flex: 9,
     flexDirection: 'row',
-    justifyContent: 'space-between',
   },
   topBTleftView: {
     flex: 8,
@@ -116,11 +116,13 @@ export default StyleSheet.create({
     marginRight: wp(5),
   },
   flatlistView: {
-    marginTop: hp(5),
+    flex: 1,
+    marginTop: hp(1),
+    paddingVertical: hp(1),
   },
   budgetflatList: {
-    marginTop: hp(5),
-    paddingBottom: hp(15),
+    flex: 1,
+    marginTop: hp(4),
   },
   listView: {
     backgroundColor: colors.WHITE,
@@ -181,6 +183,11 @@ export default StyleSheet.create({
     marginHorizontal: wp(3),
     marginBottom: hp(2),
   },
+  cardHeaderView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   detailsHeaderTxt: {
     fontSize: SetFontSize.setDimension.textSizeRegular,
     color: colors.BLACK,
@@ -225,7 +232,7 @@ export default StyleSheet.create({
     marginTop: hp(1.8),
   },
   editDeleteImg: {
-    height: hp(3),
+    height: hp(2),
     width: wp(8),
   },
   selectTypeView: {
@@ -234,7 +241,10 @@ export default StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems: 'center',
     marginLeft: wp(5),
-    marginTop: hp(1),
+    marginTop: hp(6.5),
+    position: 'absolute',
+    backgroundColor: colors.WHITE,
+    zIndex: 99,
   },
   selectView: {
     width: '100%',
@@ -242,7 +252,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   selectTypeTxt: {
-    fontSize: SetFontSize.setDimension.textSize10,
+    fontSize: SetFontSize.setDimension.textSizeSmall,
     color: colors.BLACK,
     fontWeight: '500',
     fontFamily: ConstantKeys.MUKTA,

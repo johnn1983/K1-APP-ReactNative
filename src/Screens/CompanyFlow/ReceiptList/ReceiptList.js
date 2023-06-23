@@ -3,61 +3,53 @@ import {
   Text,
   TouchableOpacity,
   FlatList,
-  ScrollView,
   SafeAreaView,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './ReceiptListStyle';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {ScrollViewIndicator} from '@fanchenbao/react-native-scroll-indicator';
-import {widthPercentageToDP} from 'react-native-responsive-screen';
+
 const categoryArr = [
   {
     id: 1,
-    name: 'Business Insurance',
+    name: 'Life Insurance',
     expense: '200.00',
     reason: 'yes',
     date: '2022-12-30',
   },
   {
     id: 2,
-    name: 'Travel',
+    name: 'Car Insurance',
     expense: '100.00',
     reason: 'yes',
     date: '2022-12-30',
   },
   {
     id: 3,
-    name: 'Sports',
+    name: 'Education Insurance',
     expense: '220.00',
     reason: 'yes',
     date: '2022-12-30',
   },
   {
     id: 4,
-    name: 'Vehicle Expense',
+    name: 'House Insurance',
     expense: '290.00',
     reason: 'yes',
     date: '2022-12-30',
   },
   {
     id: 5,
-    name: 'Website',
+    name: 'Life Insurance',
     expense: '1500.00',
     reason: 'yes',
     date: '2022-12-30',
   },
   {
     id: 6,
-    name: 'Software',
+    name: 'House Insurance',
     expense: '1000.00',
-    reason: 'yes',
-    date: '2022-12-30',
-  },
-  {
-    id: 7,
-    name: 'Office Supplie',
-    expense: '80.00',
     reason: 'yes',
     date: '2022-12-30',
   },
@@ -74,33 +66,31 @@ const ReceiptList = ({navigation, route}) => {
 
       <View style={styles.mainView}>
         <View style={styles.topButtonView}>
-          <TouchableOpacity style={styles.budgetButtonView}>
-            <Text style={styles.upperButtonTxt}>Expense</Text>
-            <Icon
-              style={styles.buttonImg}
-              name="caretdown"
-              size={8}
-              color="#868686"
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.exportButtonView}>
-            <Text style={styles.upperButtonTxt}>Export</Text>
-            <Icon
-              style={styles.buttonImg}
-              name="caretright"
-              size={8}
-              color="#868686"
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.exportButtonView}>
-            <Text style={styles.upperButtonTxt}>Search</Text>
-            <Icon
-              style={styles.buttonImg}
-              name="caretright"
-              size={8}
-              color="#868686"
-            />
-          </TouchableOpacity>
+          <View style={styles.topBTleftView}>
+            <TouchableOpacity style={styles.budgetButtonView}>
+              <Text style={styles.upperButtonTxt}>Expense</Text>
+              <Icon
+                style={styles.buttonImg}
+                name="caretdown"
+                size={8}
+                color="#868686"
+              />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.topBTrightView}>
+            <TouchableOpacity style={styles.exportButtonView}>
+              <Text style={styles.upperButtonTxt}>Export</Text>
+              <Icon
+                style={styles.buttonImg}
+                name="caretright"
+                size={8}
+                color="#868686"
+              />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.exportButtonView}>
+              <Text style={styles.upperButtonTxt}>Search</Text>
+            </TouchableOpacity>
+          </View>
         </View>
 
         <ScrollViewIndicator

@@ -38,7 +38,7 @@ export default StyleSheet.create({
   },
   text: {
     fontSize: SetFontSize.setDimension.textSizeRegular,
-    color: colors.BLACK,
+    color: '#81061C',
     fontFamily: ConstantKeys.MUKTA,
     textAlign: 'center',
     fontWeight: '700',

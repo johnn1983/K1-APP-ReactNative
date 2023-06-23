@@ -10,6 +10,10 @@ import {
   SafeAreaView,
 } from 'react-native';
 import React, {useState} from 'react';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 
 import styles from './ScannerStyle';
 import ProfileView from '../../../Components/ProfileView';
@@ -17,6 +21,7 @@ import ProfileView from '../../../Components/ProfileView';
 import Statistics from '../../CommonFlow/Statistics/Statistics';
 import {IMG} from '../../../Constants/ImageConstant';
 import PrimaryButton from '../../../Components/PrimaryButton';
+import {widthPercentageToDP} from 'react-native-responsive-screen';
 
 const Scanner = ({navigation}) => {
   const [isScan, setIsScan] = useState(false);
@@ -32,11 +37,13 @@ const Scanner = ({navigation}) => {
 
   const handleScanner = () => {
     setIsScan(true);
+    setIsStyle(false);
+    setIsSelect(false);
   };
   const handleCamera = () => {
-    setIsSelect(!isSelect);
+    setIsSelect(true);
     setIsScan(false);
-    setIsStyle(!isStyle);
+    setIsStyle(true);
   };
   const handleCategory = () => {
     setIscategory(!isCategory);
@@ -111,7 +118,7 @@ const Scanner = ({navigation}) => {
         onRequestClose={() => {
           setIscategory(!isCategory);
         }}>
-        <View style={{backgroundColor: 'rgba(255,255,255,0.5)'}}>
+        <View onTouchEnd={() => setIscategory(false)}>
           <View style={styles.categoryModal}>
             <TouchableOpacity
               style={styles.categoryTxtView}
@@ -180,7 +187,7 @@ const Scanner = ({navigation}) => {
           <Text style={styles.detailsTxt}>Store Name</Text>
           {/* <View style={styles.showDetailsTxt} /> */}
           <TextInput
-            style={styles.input}
+            style={{...styles.input, marginLeft: wp(7)}}
             // onChangeText={text => setStore(text)}
             // value={store}
           />
@@ -202,13 +209,14 @@ const Scanner = ({navigation}) => {
       </>
     );
   };
+
   const TotalAmount = () => {
     return (
       <>
         <View style={styles.showDetailsView}>
           <Text style={styles.detailsTxt}>Total Amount</Text>
           <TextInput
-            style={styles.input}
+            style={{...styles.input, marginLeft: wp(5)}}
             // onChangeText={text => setTotalAmount(text)}
             // value={totalAmount}
           />
@@ -236,7 +244,7 @@ const Scanner = ({navigation}) => {
         <View style={styles.showDetailsView}>
           <Text style={styles.detailsTxt}>Note</Text>
           <TextInput
-            style={styles.input}
+            style={{...styles.input, marginLeft: wp(15)}}
             // onChangeText={text => setNote(text)}
             // value={note}
           />
@@ -265,7 +273,7 @@ const Scanner = ({navigation}) => {
         <View style={styles.showDetailsView}>
           <Text style={styles.detailsTxt}>Purchasing Date</Text>
           <TextInput
-            style={styles.input}
+            style={{...styles.input, marginLeft: wp(3)}}
             // onChangeText={text => setPurchaseDate(text)}
             // value={purchaseDate}
           />
@@ -290,7 +298,7 @@ const Scanner = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{flex: 0.3}}>
+      <View style={{flex: 0.3, zIndex: 99}}>
         <ProfileView onPress={() => navigation.navigate(Statistics)} />
       </View>
 

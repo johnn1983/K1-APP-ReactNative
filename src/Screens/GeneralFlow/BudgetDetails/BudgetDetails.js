@@ -16,7 +16,6 @@ import styles from './BudgetDetailsStyle';
 import {IMG} from '../../../Constants/ImageConstant';
 import PrimaryButton from '../../../Components/PrimaryButton';
 import SubCategoryView from '../../CommonFlow/SubCategoryView/SubCategoryView';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const BudgetDetails = ({navigation}) => {
   const [addCategory, setAddCategory] = useState(false);
@@ -58,21 +57,29 @@ const BudgetDetails = ({navigation}) => {
   const CardComponent = ({categoryName, amount, createdBy}) => {
     return (
       <View style={styles.cardComponent}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}>
           <View>
             <Text style={styles.detailsHeaderTxt}>Budget Details</Text>
           </View>
           <View style={{flexDirection: 'row'}}>
             <TouchableOpacity onPress={() => setUpCategory(!upCategory)}>
-              <Icon
+              <Image
+                source={IMG.ExtraLogo.EditRed}
+                resizeMode="center"
                 style={styles.editDeleteImg}
-                name="edit"
-                size={20}
-                color="red"
               />
             </TouchableOpacity>
             <TouchableOpacity>
-              <Icon name="delete" size={20} color="red" />
+              <Image
+                source={IMG.ExtraLogo.DeleteRed}
+                resizeMode="center"
+                style={styles.editDeleteImg}
+              />
             </TouchableOpacity>
           </View>
         </View>

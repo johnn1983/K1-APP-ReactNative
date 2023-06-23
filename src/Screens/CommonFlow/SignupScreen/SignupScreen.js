@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable react-native/no-inline-styles */
 import {
   View,
@@ -22,21 +23,29 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Icons from 'react-native-vector-icons/Entypo';
 
 const SignupScreen = ({navigation}) => {
   const [isShow, setIsshow] = useState(false);
   const [isShowCon, setIsshowCon] = useState(false);
-
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
-  const [items, setItems] = useState([
-    {label: 'General', value: 'General'},
-    {label: 'Company', value: 'Company'},
-    {label: 'Employee', value: 'Employee'},
-  ]);
   const [registerType, setRegisterType] = useState('General');
-  const handleValueChange = value => {
-    setRegisterType(value);
+
+  const handleGeneral = () => {
+    setValue('General');
+    setRegisterType('General');
+    setOpen(false);
+  };
+  const handleCompany = () => {
+    setValue('Company');
+    setRegisterType('Company');
+    setOpen(false);
+  };
+  const handleEmployee = () => {
+    setValue('Employee');
+    setRegisterType('Employee');
+    setOpen(false);
   };
 
   const handleSubmit = () => {
@@ -47,6 +56,55 @@ const SignupScreen = ({navigation}) => {
     } else {
       Alert.alert('Please select Register as...');
     }
+  };
+
+  const RegisterModal = () => {
+    return (
+      <View style={styles.selectModalView}>
+        <TouchableOpacity style={styles.modalView} onPress={handleGeneral}>
+          <Icons
+            name="triangle-right"
+            size={14}
+            color={value === 'General' ? 'black' : '#868686'}
+          />
+          <Text
+            style={{
+              ...styles.selectModalTxt,
+              color: value === 'General' ? 'black' : '#868686',
+            }}>
+            General
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.modalView} onPress={handleCompany}>
+          <Icons
+            name="triangle-right"
+            size={14}
+            color={value === 'Company' ? 'black' : '#868686'}
+          />
+          <Text
+            style={{
+              ...styles.selectModalTxt,
+              color: value === 'Company' ? 'black' : '#868686',
+            }}>
+            Company
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.modalView} onPress={handleEmployee}>
+          <Icons
+            name="triangle-right"
+            size={14}
+            color={value === 'Employee' ? 'black' : '#868686'}
+          />
+          <Text
+            style={{
+              ...styles.selectModalTxt,
+              color: value === 'Employee' ? 'black' : '#868686',
+            }}>
+            Employee
+          </Text>
+        </TouchableOpacity>
+      </View>
+    );
   };
 
   return (
@@ -60,36 +118,34 @@ const SignupScreen = ({navigation}) => {
           <View>
             <View style={styles.childcontainer}>
               <Text style={styles.bodyTxt}>Registration As</Text>
-              <View
-                style={{
-                  width: wp(80),
-                  height: hp(7),
-                  marginBottom: open ? hp(15) : hp(0.5),
-                }}>
-                <DropDownPicker
-                  open={open}
-                  value={value}
-                  items={items}
-                  onChangeValue={handleValueChange}
-                  setOpen={setOpen}
-                  setValue={setValue}
-                  setItems={setItems}
-                  containerStyle={styles.pickerStyle}
-                  placeholder="Register as a..."
-                  placeholderStyle={styles.placeStyle}
-                  textStyle={styles.txtStyle}
-                  labelStyle={{
-                    ...styles.placeStyle,
-                    color: value ? 'white' : 'black',
-                  }}
-                  listMode="SCROLLVIEW"
+              <View>
+                <TouchableOpacity
                   style={{
-                    ...styles.pickerSize,
-                    backgroundColor: value ? '#255A98' : 'white',
+                    ...styles.registerField,
+                    backgroundColor: value ? '#255A98' : null,
+                    borderWidth: value ? 0 : 2,
                   }}
-                  selectedItemLabelStyle={styles.itemSelect}
-                  dropDownContainerStyle={styles.dropdownContainer}
-                />
+                  onPress={() => setOpen(!open)}>
+                  <Text
+                    style={{
+                      ...styles.registerTxt,
+                      color: value ? 'white' : '#868686',
+                    }}>
+                    {value === 'General'
+                      ? 'General'
+                      : value === 'Company'
+                      ? 'Company'
+                      : value === 'Employee'
+                      ? 'Employee'
+                      : 'Register as a..'}
+                  </Text>
+                  <Icons
+                    name="triangle-down"
+                    size={14}
+                    color={value ? 'white' : '#B2ADAD'}
+                  />
+                </TouchableOpacity>
+                {open ? RegisterModal() : null}
               </View>
             </View>
             <View style={styles.childcontainer}>
@@ -160,7 +216,7 @@ const SignupScreen = ({navigation}) => {
             <TouchableOpacity
               onPress={() => navigation.navigate(LoginScreen)}
               style={{flexDirection: 'row'}}>
-              <Text style={styles.text1}>Alerady have an account? </Text>
+              <Text style={styles.text1}>Already have an account? </Text>
               <Text style={styles.text2}>Log in</Text>
             </TouchableOpacity>
           </View>

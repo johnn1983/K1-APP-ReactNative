@@ -26,8 +26,7 @@ export default StyleSheet.create({
   },
   expenseFlatList: {
     marginTop: hp(1),
-    marginBottom: hp(1),
-    paddingBottom: hp(7),
+    paddingBottom: hp(7.5),
   },
   cardComponent: {
     backgroundColor: colors.WHITE,

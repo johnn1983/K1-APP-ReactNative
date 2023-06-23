@@ -6,12 +6,13 @@ import {
   TouchableOpacity,
   FlatList,
   SafeAreaView,
+  Image,
 } from 'react-native';
 import React, {useState} from 'react';
 import styles from './EmployeeDetailsStyle';
 import ReceiptList from '../ReceiptList/ReceiptList';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icons from 'react-native-vector-icons/AntDesign';
+import {IMG} from '../../../Constants/ImageConstant';
 
 const categoryArr = [
   {id: 1, name: 'Business Insurance', expense: '200.00'},
@@ -72,21 +73,24 @@ const EmployeeDetails = ({navigation, route}) => {
   const CardComponent = ({categoryName, amount, createdBy}) => {
     return (
       <View style={styles.cardComponent}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={styles.cardHeaderView}>
           <View>
             <Text style={styles.detailsHeaderTxt}>Budget Details</Text>
           </View>
           <View style={{flexDirection: 'row'}}>
             <TouchableOpacity>
-              <Icon
+              <Image
+                source={IMG.ExtraLogo.EditRed}
+                resizeMode="center"
                 style={styles.editDeleteImg}
-                name="edit"
-                size={20}
-                color="red"
               />
             </TouchableOpacity>
             <TouchableOpacity>
-              <Icon name="delete" size={20} color="red" />
+              <Image
+                source={IMG.ExtraLogo.DeleteRed}
+                resizeMode="center"
+                style={styles.editDeleteImg}
+              />
             </TouchableOpacity>
           </View>
         </View>
@@ -202,11 +206,17 @@ const EmployeeDetails = ({navigation, route}) => {
               <Icons
                 name={isOpen ? 'caretdown' : 'caretright'}
                 size={8}
+                color="#868686"
                 style={styles.buttonImg}
               />
             </TouchableOpacity>
           </View>
-          <View style={styles.topBTrightView}>
+          <View
+            style={{
+              ...styles.topBTrightView,
+              justifyContent:
+                value === 'Expense' ? 'flex-end' : 'space-between',
+            }}>
             <TouchableOpacity style={styles.exportButtonView}>
               <Text style={styles.upperButtonTxt}>Export</Text>
               <Icons
@@ -216,9 +226,11 @@ const EmployeeDetails = ({navigation, route}) => {
                 color="#868686"
               />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.searchButtonView}>
-              <Text style={styles.upperButtonTxt}>Search</Text>
-            </TouchableOpacity>
+            {value === 'Expense' ? null : (
+              <TouchableOpacity style={styles.searchButtonView}>
+                <Text style={styles.upperButtonTxt}>Search</Text>
+              </TouchableOpacity>
+            )}
           </View>
         </View>
 

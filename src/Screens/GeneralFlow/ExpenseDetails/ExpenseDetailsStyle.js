@@ -28,6 +28,11 @@ export default StyleSheet.create({
     marginHorizontal: wp(3),
     marginBottom: hp(2),
   },
+  cardHeaderView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   headerView: {
     height: hp(4),
     width: wp(100),
@@ -86,7 +91,16 @@ export default StyleSheet.create({
     height: hp(3.5),
     width: wp(21),
   },
-  buttonImg: {marginTop: hp(0.3)},
+  buttonImg: {
+    marginTop: hp(-0.1),
+    height: hp(1),
+    width: wp(4),
+  },
+  buttonImg2: {
+    marginTop: hp(-0.3),
+    height: hp(1),
+    width: wp(4),
+  },
   upperButtonTxt: {
     fontSize: SetFontSize.setDimension.textSize13,
     color: colors.BLACK,
@@ -94,7 +108,7 @@ export default StyleSheet.create({
     fontFamily: ConstantKeys.POPPINS,
   },
   editDeleteImg: {
-    height: hp(3),
+    height: hp(2),
     width: wp(8),
   },
   detailsTxtView: {
