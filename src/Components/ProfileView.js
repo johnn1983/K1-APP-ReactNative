@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {IMG} from '../Constants/ImageConstant';
@@ -9,7 +8,6 @@ import {
 } from 'react-native-responsive-screen';
 import {SetFontSize} from '../Utils/FontSize';
 import PrimaryButton from './PrimaryButton';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import {ConstantKeys} from '../Utils/ConstantKey';
 
 const ProfileView = ({onPress}) => {
@@ -17,8 +15,11 @@ const ProfileView = ({onPress}) => {
     <View style={styles.container}>
       <View style={styles.editView}>
         <TouchableOpacity>
-          <Icon style={styles.editImg} name="edit" size={25} color="#D40101" />
-          <View style={styles.editLine} />
+          <Image
+            source={IMG.ExtraLogo.editButton}
+            resizeMode="center"
+            style={styles.editImg}
+          />
         </TouchableOpacity>
       </View>
       <View style={styles.imageContainer}>
@@ -30,10 +31,10 @@ const ProfileView = ({onPress}) => {
           />
         </View>
         <View style={styles.childContainer}>
-          <View style={{flexDirection: 'row'}}>
+          <View style={styles.nameView}>
             <Text style={styles.nameTxt}>Sabariya Muzumder</Text>
             <Image
-              style={{height: 25, width: 25}}
+              style={styles.valueIcons}
               source={IMG.ValueIcons.Basic}
               resizeMode="center"
             />
@@ -67,6 +68,8 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingLeft: 20,
     paddingRight: 10,
+    backgroundColor: '#FDFDFD',
+    position: 'absolute',
   },
   imageContainer: {
     flexDirection: 'row',
@@ -80,9 +83,12 @@ const styles = StyleSheet.create({
     marginTop: hp(1),
     width: wp(8),
     alignSelf: 'flex-end',
-    marginBottom: hp(1),
   },
-  editImg: {alignSelf: 'flex-end'},
+  editImg: {
+    height: hp(4),
+    width: wp(6.5),
+    alignSelf: 'flex-end',
+  },
   editLine: {
     alignSelf: 'flex-end',
     height: 3,
@@ -142,6 +148,14 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textAlign: 'center',
     fontFamily: ConstantKeys.MUKTA,
+  },
+  nameView: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  valueIcons: {
+    height: hp(3),
+    width: wp(6),
   },
 });
 export default ProfileView;

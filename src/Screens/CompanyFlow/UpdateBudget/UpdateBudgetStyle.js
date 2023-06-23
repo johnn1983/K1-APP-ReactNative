@@ -53,6 +53,7 @@ export default StyleSheet.create({
   cardHeaderView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
   detailsHeaderTxt: {
     fontSize: SetFontSize.setDimension.textSizeRegular,
@@ -98,7 +99,7 @@ export default StyleSheet.create({
     marginTop: hp(1.8),
   },
   editDeleteImg: {
-    height: hp(3),
+    height: hp(2),
     width: wp(8),
   },
 });

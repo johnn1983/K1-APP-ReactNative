@@ -59,21 +59,24 @@ const ExpenseDetails = ({navigation}) => {
     const width = expensePercentage + '%';
     return (
       <View style={styles.cardComponent}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <View style={styles.cardHeaderView}>
           <View>
             <Text style={styles.detailsHeaderTxt}>Budget Details</Text>
           </View>
           <View style={{flexDirection: 'row'}}>
             <TouchableOpacity onPress={() => setUpCategory(!upCategory)}>
-              <Icon
+              <Image
+                source={IMG.ExtraLogo.EditRed}
+                resizeMode="center"
                 style={styles.editDeleteImg}
-                name="edit"
-                size={20}
-                color="red"
               />
             </TouchableOpacity>
             <TouchableOpacity>
-              <Icon name="delete" size={20} color="red" />
+              <Image
+                source={IMG.ExtraLogo.DeleteRed}
+                resizeMode="center"
+                style={styles.editDeleteImg}
+              />
             </TouchableOpacity>
           </View>
         </View>
@@ -172,7 +175,7 @@ const ExpenseDetails = ({navigation}) => {
             <TouchableOpacity style={styles.exportButtonView}>
               <Text style={styles.upperButtonTxt}>Export</Text>
               <Image
-                style={styles.buttonImg}
+                style={styles.buttonImg2}
                 source={IMG.ExtraLogo.RightArrow}
                 resizeMode="center"
               />

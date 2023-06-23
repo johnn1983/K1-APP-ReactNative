@@ -35,7 +35,7 @@ const ExpenseList = ({navigation}) => {
         <View style={{flexDirection: 'row'}}>
           <Text style={styles.cardMainTxt}>Remaining Budget</Text>
           <Text style={styles.cardChildGreenTxt}>
-            {parseFloat(budget - expense)}
+            {(budget - expense).toFixed(2)}
           </Text>
         </View>
         <View style={styles.greenLine}>

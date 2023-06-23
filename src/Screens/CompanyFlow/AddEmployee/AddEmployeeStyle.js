@@ -29,6 +29,7 @@ export default StyleSheet.create({
   bodyView: {flex: 1, marginTop: hp(2)},
   bodyView2: {flex: 1, marginTop: hp(4), marginHorizontal: wp(6)},
   listTxtView: {
+    height: hp(5),
     backgroundColor: colors.WHITE,
     marginHorizontal: wp(6),
     flexDirection: 'row',

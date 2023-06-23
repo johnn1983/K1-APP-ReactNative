@@ -33,9 +33,11 @@ export default StyleSheet.create({
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     marginTop: hp(3),
+    zindex: -99,
   },
   bodyChildView: {
     marginHorizontal: wp(10),
+    marginBottom: hp(5),
   },
   detailView: {
     marginTop: hp(3),

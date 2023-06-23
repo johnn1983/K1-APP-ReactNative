@@ -11,7 +11,6 @@ import {
 import React from 'react';
 
 import styles from './ExpenseAnalyticsStyle';
-
 import {IMG} from '../../../Constants/ImageConstant';
 import AnalyticsDetails from '../../CommonFlow/AnalyticsDetails/AnalyticsDetails';
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -119,10 +118,9 @@ const ExpenseAnalytics = ({navigation, route}) => {
           style={styles.mainView}
           showsVerticalScrollIndicator={false}>
           <TouchableOpacity>
-            <Icon
-              name="calendar-day"
-              size={25}
-              color="black"
+            <Image
+              source={IMG.ExtraLogo.Calender}
+              resizeMode="center"
               style={styles.calender}
             />
           </TouchableOpacity>

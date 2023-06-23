@@ -69,7 +69,11 @@ const Statistics = ({navigation}) => {
           resizeMode="center"
         />
         <Text style={styles.profileTxt}>Sabariya Muzumeder</Text>
-        <Image source={IMG.ValueIcons.Basic} resizeMode="center" />
+        <Image
+          source={IMG.ValueIcons.Basic}
+          resizeMode="center"
+          style={styles.valueIcon}
+        />
       </View>
 
       <View style={styles.buttonView}>

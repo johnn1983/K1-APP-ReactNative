@@ -126,12 +126,12 @@ const SubCategoryView = ({navigation}) => {
         style={styles.listTxtView}
         onPress={handleCategoryPress}>
         <View style={styles.categoryView}>
-          <Text numberOfLines={2} style={styles.listTxt}>
+          <Text numberOfLines={2} style={styles.listTxt2}>
             {Name}
           </Text>
         </View>
         <View style={styles.amountView}>
-          <Text numberOfLines={1} style={styles.listTxt}>
+          <Text numberOfLines={1} style={styles.listTxt2}>
             {Amount}$
           </Text>
         </View>

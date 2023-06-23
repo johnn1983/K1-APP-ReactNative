@@ -30,6 +30,7 @@ export default StyleSheet.create({
     flex: 1,
   },
   headerMainTxt: {
+    width: wp(25),
     fontSize: SetFontSize.setDimension.testSize22,
     color: colors.BLACK,
     fontWeight: '600',
@@ -102,6 +103,7 @@ export default StyleSheet.create({
     paddingVertical: hp(1),
     paddingHorizontal: wp(4),
     fontFamily: ConstantKeys.MUKTA,
+    textAlign: 'center',
   },
   saveButton: {
     height: hp(4),
@@ -119,7 +121,11 @@ export default StyleSheet.create({
     fontSize: SetFontSize.setDimension.textSizeLarge,
     fontFamily: ConstantKeys.MUKTA,
   },
-  listView: {alignItems: 'center'},
+  listView: {
+    alignItems: 'center',
+    height: hp(90),
+    paddingBottom: hp(4),
+  },
   listTxtView: {
     height: hp(6),
     width: wp(90),
@@ -163,6 +169,13 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontFamily: ConstantKeys.INTER,
   },
+  listTxt2: {
+    fontSize: SetFontSize.setDimension.textSizeRegular,
+    color: colors.BLACK,
+    fontWeight: '500',
+    textAlign: 'center',
+    fontFamily: ConstantKeys.INTER,
+  },
   categoryView: {
     width: wp(51),
     alignItems: 'flex-start',
@@ -177,12 +190,14 @@ export default StyleSheet.create({
     width: wp(41),
     alignItems: 'center',
     justifyContent: 'space-between',
+    flex: 1,
   },
   editAmountView: {
     height: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     width: wp(41),
+    flex: 1,
   },
   deleteView: {
     height: '100%',
@@ -202,6 +217,6 @@ export default StyleSheet.create({
     fontSize: SetFontSize.setDimension.textSizeSmall,
     color: colors.WHITE,
     fontWeight: '500',
-    fontFamily: ConstantKeys.ACME,
+    fontFamily: ConstantKeys.POPPINS,
   },
 });

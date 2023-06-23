@@ -27,6 +27,7 @@ export default StyleSheet.create({
     borderColor: '#95DCCB',
     borderWidth: 1,
     borderRadius: 15,
+    zIndex: -99,
   },
   scanView2: {
     height: hp(30),
@@ -38,11 +39,11 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderRadius: 15,
     marginTop: hp(5),
+    zIndex: -99,
   },
   bankReceiptImg: {
-    height: hp(25),
-    width: wp(35),
-    marginTop: hp(40),
+    height: hp(24),
+    width: wp(38),
   },
   scanTxt: {
     fontSize: SetFontSize.setDimension.testSizeHed,
@@ -105,7 +106,7 @@ export default StyleSheet.create({
   },
   buttonView: {
     height: hp(5),
-    width: wp(90),
+    width: wp(85),
     justifyContent: 'center',
     alignItems: 'flex-end',
     marginTop: hp(4),
@@ -113,10 +114,10 @@ export default StyleSheet.create({
   },
   buttonView2: {
     height: hp(5),
-    width: wp(80),
+    width: wp(85),
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     marginTop: hp(4),
     paddingBottom: hp(1),
   },
@@ -127,7 +128,6 @@ export default StyleSheet.create({
     borderRadius: 7,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingBottom: hp(0.4),
   },
   buttonText: {
     fontSize: SetFontSize.setDimension.testSizeHed,
@@ -177,12 +177,13 @@ export default StyleSheet.create({
     fontFamily: ConstantKeys.MUKTA,
   },
   input: {
+    flex: 1,
     height: hp(6),
-    width: wp(50),
-    borderWidth: 1,
+    borderWidth: 1.2,
     borderColor: colors.BLACK,
     borderRadius: 10,
     backgroundColor: colors.WHITE,
     color: colors.BLACK,
+    marginRight: wp(1.5),
   },
 });

@@ -118,7 +118,7 @@ export default StyleSheet.create({
     fontFamily: ConstantKeys.MUKTA,
   },
   editDeleteImg: {
-    height: hp(3),
+    height: hp(2),
     width: wp(8),
   },
   detailsTxtView: {
@@ -202,6 +202,7 @@ export default StyleSheet.create({
     paddingVertical: hp(0.5),
     fontFamily: ConstantKeys.POPPINS,
     paddingLeft: wp(3),
+    textAlign: 'center',
   },
   saveButton: {
     height: hp(5.5),

@@ -50,7 +50,7 @@ export default StyleSheet.create({
   mainTxt: {
     fontSize: SetFontSize.setDimension.textSizeMedium,
     color: colors.BLACK,
-    fontWeight: '500',
+    fontWeight: '700',
     marginLeft: wp(2),
     fontFamily: ConstantKeys.MUKTA,
   },

@@ -32,7 +32,7 @@ export default StyleSheet.create({
     width: 50,
   },
   profileTxt: {
-    fontSize: SetFontSize.setDimension.textSizeRegular,
+    fontSize: SetFontSize.setDimension.textSize15,
     color: colors.BLACK,
     fontWeight: '500',
     paddingLeft: wp(1),
@@ -106,4 +106,8 @@ export default StyleSheet.create({
     fontFamily: ConstantKeys.MUKTA,
   },
   flatlist: {},
+  valueIcon: {
+    height: hp(2.5),
+    width: wp(8),
+  },
 });
