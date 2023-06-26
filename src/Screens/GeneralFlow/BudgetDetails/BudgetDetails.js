@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 
+import Icon from 'react-native-vector-icons/AntDesign';
 import styles from './BudgetDetailsStyle';
 import {IMG} from '../../../Constants/ImageConstant';
 import PrimaryButton from '../../../Components/PrimaryButton';
@@ -20,6 +21,7 @@ import SubCategoryView from '../../CommonFlow/SubCategoryView/SubCategoryView';
 const BudgetDetails = ({navigation}) => {
   const [addCategory, setAddCategory] = useState(false);
   const [upCategory, setUpCategory] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const budgetDetails = [
     {
@@ -204,20 +206,24 @@ const BudgetDetails = ({navigation}) => {
 
         <View style={styles.mainView}>
           <View style={styles.topButtonView}>
-            <TouchableOpacity style={styles.budgetButtonView}>
+            <TouchableOpacity
+              style={styles.budgetButtonView}
+              onPress={() => setIsOpen(!isOpen)}>
               <Text style={styles.upperButtonTxt}>Budget</Text>
-              <Image
+              <Icon
+                name={isOpen ? 'caretdown' : 'caretright'}
+                size={8}
+                color="#868686"
                 style={styles.buttonImg}
-                source={IMG.ExtraLogo.DownArrow3}
-                resizeMode="center"
               />
             </TouchableOpacity>
             <TouchableOpacity style={styles.exportButtonView}>
               <Text style={styles.upperButtonTxt}>Export</Text>
-              <Image
+              <Icon
+                name="caretright"
+                size={8}
+                color="#868686"
                 style={styles.buttonImg}
-                source={IMG.ExtraLogo.RightArrow}
-                resizeMode="center"
               />
             </TouchableOpacity>
             <TouchableOpacity style={styles.searchButtonView}>
@@ -234,20 +240,22 @@ const BudgetDetails = ({navigation}) => {
             />
           </View>
 
-          <View style={styles.flatlistView}>
-            <FlatList
-              showsVerticalScrollIndicator={false}
-              data={budgetDetails}
-              renderItem={({item}) => (
-                <CardComponent
-                  categoryName={item.categoryName}
-                  amount={item.amount}
-                  createdBy={item.createdBy}
-                />
-              )}
-              keyExtractor={item => item.id}
-            />
-          </View>
+          {isOpen && (
+            <View style={styles.flatlistView}>
+              <FlatList
+                showsVerticalScrollIndicator={false}
+                data={budgetDetails}
+                renderItem={({item}) => (
+                  <CardComponent
+                    categoryName={item.categoryName}
+                    amount={item.amount}
+                    createdBy={item.createdBy}
+                  />
+                )}
+                keyExtractor={item => item.id}
+              />
+            </View>
+          )}
         </View>
       </View>
       <AddCategory />

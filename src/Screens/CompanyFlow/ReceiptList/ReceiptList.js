@@ -57,6 +57,7 @@ const categoryArr = [
 
 const ReceiptList = ({navigation, route}) => {
   const userName = route?.params?.userName;
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -67,13 +68,15 @@ const ReceiptList = ({navigation, route}) => {
       <View style={styles.mainView}>
         <View style={styles.topButtonView}>
           <View style={styles.topBTleftView}>
-            <TouchableOpacity style={styles.budgetButtonView}>
+            <TouchableOpacity
+              style={styles.budgetButtonView}
+              onPress={() => setIsOpen(!isOpen)}>
               <Text style={styles.upperButtonTxt}>Expense</Text>
               <Icon
-                style={styles.buttonImg}
-                name="caretdown"
+                name={isOpen ? 'caretdown' : 'caretright'}
                 size={8}
                 color="#868686"
+                style={styles.buttonImg}
               />
             </TouchableOpacity>
           </View>
@@ -93,60 +96,62 @@ const ReceiptList = ({navigation, route}) => {
           </View>
         </View>
 
-        <ScrollViewIndicator
-          horizontal={true}
-          indStyle={styles.scrollBar}
-          nestedScrollEnabled={true}>
-          <View style={styles.flatlistView}>
-            <View style={styles.bodyView}>
-              <View style={styles.listCategory}>
-                <Text style={styles.listHeaderTxt}>Sub Category</Text>
+        {isOpen && (
+          <ScrollViewIndicator
+            horizontal={true}
+            indStyle={styles.scrollBar}
+            nestedScrollEnabled={true}>
+            <View style={styles.flatlistView}>
+              <View style={styles.bodyView}>
+                <View style={styles.listCategory}>
+                  <Text style={styles.listHeaderTxt}>Sub Category</Text>
+                </View>
+                <View style={styles.listExpense}>
+                  <Text style={styles.listHeaderTxt}>Expense</Text>
+                </View>
+                <View style={styles.listReason}>
+                  <Text style={styles.listHeaderTxt}>Reason</Text>
+                </View>
+                <View style={styles.listDate}>
+                  <Text style={styles.listHeaderTxt}>Date</Text>
+                </View>
               </View>
-              <View style={styles.listExpense}>
-                <Text style={styles.listHeaderTxt}>Expense</Text>
-              </View>
-              <View style={styles.listReason}>
-                <Text style={styles.listHeaderTxt}>Reason</Text>
-              </View>
-              <View style={styles.listDate}>
-                <Text style={styles.listHeaderTxt}>Date</Text>
-              </View>
-            </View>
 
-            <FlatList
-              showsVerticalScrollIndicator={false}
-              data={categoryArr}
-              renderItem={({item}) => (
-                <View style={styles.listView}>
-                  <View style={styles.listCategory}>
-                    <Text style={styles.listTxt} numberOfLines={1}>
-                      {item.name}
-                    </Text>
-                  </View>
-                  <View style={styles.listExpense}>
-                    <Text style={styles.listTxt} numberOfLines={1}>
-                      ${item.expense}
-                    </Text>
-                  </View>
-                  <View style={styles.listReason}>
-                    <Text style={styles.listTxt} numberOfLines={1}>
-                      {item.reason}
-                    </Text>
-                  </View>
-                  <View style={styles.listDate}>
-                    <Text style={styles.listTxt} numberOfLines={1}>
-                      {item.date}
-                    </Text>
-                  </View>
-                  {/* <TouchableOpacity style={styles.buttonView}>
+              <FlatList
+                showsVerticalScrollIndicator={false}
+                data={categoryArr}
+                renderItem={({item}) => (
+                  <View style={styles.listView}>
+                    <View style={styles.listCategory}>
+                      <Text style={styles.listTxt} numberOfLines={1}>
+                        {item.name}
+                      </Text>
+                    </View>
+                    <View style={styles.listExpense}>
+                      <Text style={styles.listTxt} numberOfLines={1}>
+                        ${item.expense}
+                      </Text>
+                    </View>
+                    <View style={styles.listReason}>
+                      <Text style={styles.listTxt} numberOfLines={1}>
+                        {item.reason}
+                      </Text>
+                    </View>
+                    <View style={styles.listDate}>
+                      <Text style={styles.listTxt} numberOfLines={1}>
+                        {item.date}
+                      </Text>
+                    </View>
+                    {/* <TouchableOpacity style={styles.buttonView}>
                     <Text style={styles.buttonTxt}>View</Text>
                   </TouchableOpacity> */}
-                </View>
-              )}
-              keyExtractor={item => item.id}
-            />
-          </View>
-        </ScrollViewIndicator>
+                  </View>
+                )}
+                keyExtractor={item => item.id}
+              />
+            </View>
+          </ScrollViewIndicator>
+        )}
       </View>
     </SafeAreaView>
   );

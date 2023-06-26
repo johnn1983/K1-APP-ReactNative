@@ -87,7 +87,9 @@ export default StyleSheet.create({
     height: hp(3.5),
     width: wp(21),
   },
-  buttonImg: {marginTop: hp(0.1)},
+  buttonImg: {
+    marginLeft: wp(1),
+  },
   upperButtonTxt: {
     fontSize: SetFontSize.setDimension.textSize13,
     color: colors.BLACK,
@@ -201,7 +203,6 @@ export default StyleSheet.create({
     fontWeight: '500',
     paddingVertical: hp(0.5),
     fontFamily: ConstantKeys.POPPINS,
-    paddingLeft: wp(3),
     textAlign: 'center',
   },
   saveButton: {

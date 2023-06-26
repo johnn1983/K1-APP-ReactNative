@@ -53,7 +53,8 @@ export default StyleSheet.create({
     borderColor: '#E8E5E5',
     borderRadius: 10,
     marginHorizontal: wp(2),
-    marginVertical: hp(2.5),
+    marginTop: hp(2.5),
+    paddingBottom: hp(2.5),
   },
   topButtonView: {
     flexDirection: 'row',
@@ -92,14 +93,7 @@ export default StyleSheet.create({
     width: wp(21),
   },
   buttonImg: {
-    marginTop: hp(-0.1),
-    height: hp(1),
-    width: wp(4),
-  },
-  buttonImg2: {
-    marginTop: hp(-0.3),
-    height: hp(1),
-    width: wp(4),
+    marginLeft: wp(1),
   },
   upperButtonTxt: {
     fontSize: SetFontSize.setDimension.textSize13,
@@ -207,8 +201,8 @@ export default StyleSheet.create({
     fontWeight: '500',
     paddingVertical: hp(0.4),
     alignItems: 'center',
-    paddingLeft: wp(3),
     fontFamily: ConstantKeys.POPPINS,
+    textAlign: 'center',
   },
   saveButton: {
     height: hp(5.5),

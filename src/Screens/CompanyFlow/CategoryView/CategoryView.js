@@ -230,10 +230,12 @@ const CategoryView = ({navigation}) => {
           <Text style={styles.headerChildTxt}>new Category</Text>
         </TouchableOpacity>
       </View>
+
       <View style={styles.headingView}>
         <Text style={styles.headingTxt}>Category Name</Text>
         <Text style={styles.headingTxt}>Amount</Text>
       </View>
+
       {AddCategory()}
       {UpdateCategory()}
 

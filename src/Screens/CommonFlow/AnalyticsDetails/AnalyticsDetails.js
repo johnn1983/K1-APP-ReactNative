@@ -31,6 +31,7 @@ const categoryName = [
   {id: 13, name: 'Advertising and Marketing ', type: 'Employee'},
   {id: 14, name: 'Business Insurance', type: 'Employee'},
 ];
+
 const analyticsData = [
   {
     id: 1,

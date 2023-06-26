@@ -24,6 +24,7 @@ import ReceiptList from '../Screens/CompanyFlow/ReceiptList/ReceiptList';
 import AnalyticsDetails from '../Screens/CommonFlow/AnalyticsDetails/AnalyticsDetails';
 import CategoryView from '../Screens/CompanyFlow/CategoryView/CategoryView';
 import ExpenseList from '../Screens/CompanyFlow/ExpenseList/ExpenseList';
+import EmployeeList from '../Screens/CompanyFlow/EmployeeList/EmployeeList';
 
 const StackNavigation = () => {
   return (
@@ -50,8 +51,59 @@ const StackNavigation = () => {
         <Stack.Screen name="ReceiptList" component={ReceiptList} />
         <Stack.Screen name="CategoryView" component={CategoryView} />
         <Stack.Screen name="ExpenseList" component={ExpenseList} />
+        <Stack.Screen name="EmployeeList" component={EmployeeList} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 export default StackNavigation;
+
+export const AnalyticsStack = ({navigation, route}) => {
+  const registerType = route?.params?.registerType;
+  return (
+    <Stack.Navigator
+      initialRouteName="ExpenseAnalytics"
+      screenOptions={{headerShown: false}}>
+      <Stack.Screen
+        name="ExpenseAnalytics"
+        component={ExpenseAnalytics}
+        initialParams={{registerType: registerType}}
+      />
+      <Stack.Screen
+        name="AnalyticsDetails"
+        component={AnalyticsDetails}
+        initialParams={{registerType: registerType}}
+      />
+    </Stack.Navigator>
+  );
+};
+
+export const EmployeeDetailsStack = ({navigation, route}) => {
+  const registerType = route?.params?.registerType;
+  return (
+    <Stack.Navigator
+      initialRouteName="ScanReceipt"
+      screenOptions={{headerShown: false}}>
+      <Stack.Screen
+        name="ScanReceipt"
+        component={ScanReceipt}
+        initialParams={{registerType: registerType}}
+      />
+      <Stack.Screen
+        name="EmployeeList"
+        component={EmployeeList}
+        initialParams={{registerType: registerType}}
+      />
+      <Stack.Screen
+        name="EmployeeDetails"
+        component={EmployeeDetails}
+        initialParams={{registerType: registerType}}
+      />
+      <Stack.Screen
+        name="ReceiptList"
+        component={ReceiptList}
+        initialParams={{registerType: registerType}}
+      />
+    </Stack.Navigator>
+  );
+};

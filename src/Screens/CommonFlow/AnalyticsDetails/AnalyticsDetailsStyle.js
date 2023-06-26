@@ -112,7 +112,6 @@ export default StyleSheet.create({
   },
   mainDetailsView: {width: '100%'},
   detailsView: {
-    height: hp(5),
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
@@ -120,7 +119,8 @@ export default StyleSheet.create({
   },
   leftDetails: {
     width: '50%',
-    height: hp(5),
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   rightDetails: {
     flexDirection: 'row',

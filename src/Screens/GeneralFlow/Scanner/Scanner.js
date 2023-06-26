@@ -21,7 +21,7 @@ import ProfileView from '../../../Components/ProfileView';
 import Statistics from '../../CommonFlow/Statistics/Statistics';
 import {IMG} from '../../../Constants/ImageConstant';
 import PrimaryButton from '../../../Components/PrimaryButton';
-import {widthPercentageToDP} from 'react-native-responsive-screen';
+import HideWithKeyboard from 'react-native-hide-with-keyboard';
 
 const Scanner = ({navigation}) => {
   const [isScan, setIsScan] = useState(false);
@@ -298,7 +298,7 @@ const Scanner = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{flex: 0.3, zIndex: 99}}>
+      <View>
         <ProfileView onPress={() => navigation.navigate(Statistics)} />
       </View>
 
@@ -316,8 +316,10 @@ const Scanner = ({navigation}) => {
           </TouchableOpacity>
         </View>
 
-        <CategoryView />
-        <ChooseReceipt />
+        {/* <CategoryView /> */}
+        {/* <ChooseReceipt /> */}
+        {CategoryView()}
+        {ChooseReceipt()}
 
         {isSelect === true ? <SelectCategory /> : null}
         {isProcess === true && id === 1 ? (

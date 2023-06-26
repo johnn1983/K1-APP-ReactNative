@@ -27,7 +27,7 @@ export default StyleSheet.create({
     fontFamily: ConstantKeys.MUKTA,
   },
   mainView: {
-    height: hp(60),
+    // height: hp(50),
     borderWidth: 1,
     backgroundColor: colors.WHITE,
     borderColor: '#E8E5E5',
@@ -35,6 +35,8 @@ export default StyleSheet.create({
     marginHorizontal: wp(2),
     marginVertical: hp(2.5),
     paddingHorizontal: wp(2),
+    marginBottom: hp(18),
+    paddingBottom: hp(2),
   },
   topButtonView: {
     flexDirection: 'row',
@@ -105,7 +107,7 @@ export default StyleSheet.create({
     paddingVertical: hp(0.5),
   },
   flatlistView: {
-    marginVertical: hp(2),
+    // marginVertical: hp(2),
     width: wp(150),
   },
   listView: {

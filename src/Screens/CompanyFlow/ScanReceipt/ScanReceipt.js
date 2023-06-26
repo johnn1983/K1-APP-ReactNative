@@ -13,6 +13,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {IMG} from '../../../Constants/ImageConstant';
 import AddEmployee from '../AddEmployee/AddEmployee';
 import EmployeeDetails from '../EmployeeDetails/EmployeeDetails';
+import EmployeeList from '../EmployeeList/EmployeeList';
 
 const ScanReceipt = ({navigation, route}) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,21 +35,13 @@ const ScanReceipt = ({navigation, route}) => {
                 <View style={styles.modalView}>
                   <TouchableOpacity
                     style={styles.modalList}
-                    onPress={() =>
-                      navigation.navigate('AddEmployee', {
-                        screenType: 'AddEmployee',
-                      })
-                    }>
+                    onPress={() => navigation.navigate(AddEmployee)}>
                     <Icon name="play-arrow" size={15} color="black" />
                     <Text style={styles.modalTxt}>Add New Employee</Text>
                   </TouchableOpacity>
                   <TouchableOpacity
                     style={styles.modalList}
-                    onPress={() =>
-                      navigation.navigate('AddEmployee', {
-                        screenType: 'EmployeeList',
-                      })
-                    }>
+                    onPress={() => navigation.navigate(EmployeeList)}>
                     <Icon name="play-arrow" size={15} color="black" />
                     <Text style={styles.modalTxt}>Employee List</Text>
                   </TouchableOpacity>
