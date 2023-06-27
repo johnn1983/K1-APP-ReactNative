@@ -34,7 +34,7 @@ export default StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: wp(2),
     marginVertical: hp(2.5),
-    paddingHorizontal: wp(2),
+    // paddingHorizontal: wp(1),
     marginBottom: hp(18),
     paddingBottom: hp(2),
   },

@@ -32,12 +32,12 @@ const PromoCodeScreen = ({navigation}) => {
         />
       </View>
       <View>
-        <TouchableOpacity
-          style={styles.signupTxt}
-          onPress={() => navigation.navigate(SignupScreen)}>
+        <View style={styles.signupTxt}>
           <Text style={styles.text2}>Don't have a promocode?</Text>
-          <Text style={styles.text}> Sign Up</Text>
-        </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate(SignupScreen)}>
+            <Text style={styles.text}> Sign Up</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   );

@@ -50,7 +50,7 @@ export default StyleSheet.create({
     fontSize: SetFontSize.setDimension.textSizeRegular,
     fontWeight: '600',
     fontFamily: ConstantKeys.MUKTA,
-    color: colors.BLACK,
+    color: colors.DARK_GREY,
   },
   cardChildTxt: {
     flex: 2,

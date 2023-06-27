@@ -10,7 +10,6 @@ import {
   Alert,
 } from 'react-native';
 import React, {useState} from 'react';
-import DropDownPicker from 'react-native-dropdown-picker';
 
 import styles from './SignupScreenStyle';
 import {IMG} from '../../../Constants/ImageConstant';
@@ -18,10 +17,6 @@ import PrimaryButton from '../../../Components/PrimaryButton';
 import TextField from '../../../Components/TextField';
 import LoginScreen from '../LoginScreen/LoginScreen';
 import PlanSelection from '../PlanSelection/PlanSelection';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Icons from 'react-native-vector-icons/Entypo';
 
@@ -54,7 +49,7 @@ const SignupScreen = ({navigation}) => {
         registerType: registerType,
       });
     } else {
-      Alert.alert('Please select Register as...');
+      Alert.alert('Select RegisterType', 'Please choose Register Type...');
     }
   };
 

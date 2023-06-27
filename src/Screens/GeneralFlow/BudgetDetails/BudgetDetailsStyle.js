@@ -175,7 +175,7 @@ export default StyleSheet.create({
   },
   modalView: {
     height: hp(40),
-    width: wp(80),
+    width: wp(90),
     borderRadius: 25,
     backgroundColor: colors.WHITE,
     borderWidth: 2,
@@ -193,7 +193,7 @@ export default StyleSheet.create({
   modalChildView: {justifyContent: 'center', alignItems: 'center'},
   modalTxtInput: {
     height: hp(5),
-    width: wp(60),
+    width: wp(70),
     borderWidth: 2,
     borderColor: '#A39E9E',
     borderRadius: 10,

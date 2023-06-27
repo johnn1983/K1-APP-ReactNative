@@ -53,6 +53,35 @@ const categoryArr = [
     reason: 'yes',
     date: '2022-12-30',
   },
+  {
+    id: 7,
+    name: 'Education Insurance',
+    expense: '1000.00',
+    reason: 'yes',
+    date: '2022-12-30',
+  },
+
+  {
+    id: 8,
+    name: 'House Insurance',
+    expense: '1000.00',
+    reason: 'yes',
+    date: '2022-12-30',
+  },
+  {
+    id: 9,
+    name: 'Insurance',
+    expense: '1000.00',
+    reason: 'yes',
+    date: '2022-12-30',
+  },
+  {
+    id: 10,
+    name: 'Life Insurance',
+    expense: '1000.00',
+    reason: 'yes',
+    date: '2022-12-30',
+  },
 ];
 
 const ReceiptList = ({navigation, route}) => {

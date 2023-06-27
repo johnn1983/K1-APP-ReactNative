@@ -17,6 +17,12 @@ export default StyleSheet.create({
     alignItems: 'center',
     paddingBottom: hp(5),
   },
+  bodyView2: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: hp(5),
+  },
   scanView: {
     height: hp(32),
     width: wp(68),

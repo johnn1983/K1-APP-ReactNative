@@ -49,7 +49,7 @@ export default StyleSheet.create({
     borderColor: '#EDEDED',
   },
   listTxt: {
-    fontSize: SetFontSize.setDimension.textSizeRegular,
+    fontSize: SetFontSize.setDimension.textSizeMedium,
     color: colors.BLACK,
     fontWeight: '400',
     fontFamily: ConstantKeys.MUKTA,
