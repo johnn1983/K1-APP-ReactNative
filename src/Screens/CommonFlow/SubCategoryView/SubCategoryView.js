@@ -104,7 +104,7 @@ const SubCategoryView = ({navigation}) => {
           <Text numberOfLines={1} style={styles.listTxt}>
             {Name}
           </Text>
-          <Text numberOfLines={1} style={styles.listTxt}>
+          <Text numberOfLines={1} style={styles.listTxt2}>
             {Amount}$
           </Text>
         </TouchableOpacity>
@@ -126,12 +126,12 @@ const SubCategoryView = ({navigation}) => {
         style={styles.listTxtView}
         onPress={handleCategoryPress}>
         <View style={styles.categoryView}>
-          <Text numberOfLines={2} style={styles.listTxt2}>
+          <Text numberOfLines={2} style={styles.listTxt3}>
             {Name}
           </Text>
         </View>
         <View style={styles.amountView}>
-          <Text numberOfLines={1} style={styles.listTxt2}>
+          <Text numberOfLines={1} style={styles.listTxt3}>
             {Amount}$
           </Text>
         </View>

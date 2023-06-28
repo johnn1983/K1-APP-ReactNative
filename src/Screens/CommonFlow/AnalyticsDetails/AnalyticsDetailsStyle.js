@@ -110,9 +110,10 @@ export default StyleSheet.create({
     fontWeight: '600',
     fontFamily: ConstantKeys.MUKTA,
   },
-  mainDetailsView: {width: '100%'},
+  mainDetailsView: {
+    width: '100%',
+  },
   detailsView: {
-    height: hp(5),
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
@@ -120,7 +121,13 @@ export default StyleSheet.create({
   },
   leftDetails: {
     width: '50%',
-    height: hp(5),
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  leftDetails2: {
+    width: '50%',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
   },
   rightDetails: {
     flexDirection: 'row',
@@ -134,6 +141,12 @@ export default StyleSheet.create({
     color: colors.BLACK,
     fontWeight: '500',
     textAlign: 'center',
+    fontFamily: ConstantKeys.MUKTA,
+  },
+  detailsTxt2: {
+    fontSize: SetFontSize.setDimension.textSize13,
+    color: colors.BLACK,
+    fontWeight: '500',
     fontFamily: ConstantKeys.MUKTA,
   },
   monthTypeTxt: {
@@ -166,7 +179,7 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   tableHeaderTxtView: {
-    height: hp(7),
+    // height: hp(7),
     width: '19.5%',
     backgroundColor: '#776ADE',
     justifyContent: 'center',
@@ -216,11 +229,15 @@ export default StyleSheet.create({
   pickerstyle: {
     flex: 1,
     color: 'black',
-    fontSize: SetFontSize.setDimension.textSize10,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: 'lightgrey',
   },
   filterTxtView: {
     flexDirection: 'row',
-    width: '40%',
+    width: '50%',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -233,6 +250,25 @@ export default StyleSheet.create({
   },
   filterTxt: {
     fontSize: SetFontSize.setDimension.textSizeMedium,
+    color: colors.BLACK,
+    fontWeight: '500',
+    textAlign: 'center',
+    fontFamily: ConstantKeys.MUKTA,
+  },
+  selectMonthView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    // paddingTop: hp(5),
+    paddingRight: wp(4),
+  },
+  selectMonth: {
+    height: hp(22),
+    width: wp(30),
+    backgroundColor: '#EEEEEE',
+  },
+  selectMonthTxt: {
+    fontSize: SetFontSize.setDimension.textSizeRegular,
     color: colors.BLACK,
     fontWeight: '500',
     textAlign: 'center',

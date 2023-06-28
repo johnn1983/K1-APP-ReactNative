@@ -13,13 +13,13 @@ import {
 import React, {useState} from 'react';
 
 import styles from './ExpenseDetailsStyle';
-
 import {IMG} from '../../../Constants/ImageConstant';
 import PrimaryButton from '../../../Components/PrimaryButton';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 const ExpenseDetails = ({navigation}) => {
   const [upCategory, setUpCategory] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const budgetDetails = [
     {
@@ -43,7 +43,7 @@ const ExpenseDetails = ({navigation}) => {
     {
       id: '4',
       categoryName: 'Business Insurance',
-      budget: '210.5',
+      budget: '210.50',
       expense: '131.10',
     },
     {
@@ -96,7 +96,7 @@ const ExpenseDetails = ({navigation}) => {
         <View style={styles.detailsTxtView}>
           <Text style={styles.detailsTxt}>Remaining Budget</Text>
           <Text style={styles.deatilByTxtGreen}>
-            {parseFloat(budget - expense)}
+            {(budget - expense).toFixed(2)}
           </Text>
         </View>
         <View style={styles.greenLine}>
@@ -164,20 +164,24 @@ const ExpenseDetails = ({navigation}) => {
 
         <View style={styles.mainView}>
           <View style={styles.topButtonView}>
-            <TouchableOpacity style={styles.budgetButtonView}>
+            <TouchableOpacity
+              style={styles.budgetButtonView}
+              onPress={() => setIsOpen(!isOpen)}>
               <Text style={styles.upperButtonTxt}>Expense</Text>
-              <Image
+              <Icon
+                name={isOpen ? 'caretdown' : 'caretright'}
+                size={8}
+                color="#868686"
                 style={styles.buttonImg}
-                source={IMG.ExtraLogo.DownArrow3}
-                resizeMode="center"
               />
             </TouchableOpacity>
             <TouchableOpacity style={styles.exportButtonView}>
               <Text style={styles.upperButtonTxt}>Export</Text>
-              <Image
-                style={styles.buttonImg2}
-                source={IMG.ExtraLogo.RightArrow}
-                resizeMode="center"
+              <Icon
+                name="caretright"
+                size={8}
+                color="#868686"
+                style={styles.buttonImg}
               />
             </TouchableOpacity>
             <TouchableOpacity style={styles.searchButtonView}>
@@ -185,20 +189,22 @@ const ExpenseDetails = ({navigation}) => {
             </TouchableOpacity>
           </View>
 
-          <View style={styles.flatlistView}>
-            <FlatList
-              showsVerticalScrollIndicator={false}
-              data={budgetDetails}
-              renderItem={({item}) => (
-                <CardComponent
-                  categoryName={item.categoryName}
-                  budget={item.budget}
-                  expense={item.expense}
-                />
-              )}
-              keyExtractor={item => item.id}
-            />
-          </View>
+          {isOpen && (
+            <View style={styles.flatlistView}>
+              <FlatList
+                showsVerticalScrollIndicator={false}
+                data={budgetDetails}
+                renderItem={({item}) => (
+                  <CardComponent
+                    categoryName={item.categoryName}
+                    budget={item.budget}
+                    expense={item.expense}
+                  />
+                )}
+                keyExtractor={item => item.id}
+              />
+            </View>
+          )}
         </View>
       </View>
       <UpdateCategory />

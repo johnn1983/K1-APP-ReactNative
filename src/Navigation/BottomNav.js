@@ -9,6 +9,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {colors} from '../Utils/colors';
+import HideWithKeyboard from 'react-native-hide-with-keyboard';
 
 import BudgetDetails from '../Screens/GeneralFlow/BudgetDetails/BudgetDetails';
 import ExpenseAnalytics from '../Screens/CommonFlow/ExpenseAnalytics/ExpenseAnalytics';
@@ -18,6 +19,8 @@ import Scanner from '../Screens/GeneralFlow/Scanner/Scanner';
 import ScanReceipt from '../Screens/CompanyFlow/ScanReceipt/ScanReceipt';
 import UpdateBudget from '../Screens/CompanyFlow/UpdateBudget/UpdateBudget';
 import ExpenseList from '../Screens/CompanyFlow/ExpenseList/ExpenseList';
+import {AnalyticsStack} from './StackNavigation';
+import {EmployeeDetailsStack} from './StackNavigation';
 
 import {LogBox} from 'react-native';
 import {IMG} from '../Constants/ImageConstant';
@@ -28,7 +31,7 @@ LogBox.ignoreAllLogs();
 const Tab = createBottomTabNavigator();
 
 export default function BottomNav({navigation, route}) {
-  const registerType = route.params.registerType;
+  const registerType = route?.params?.registerType;
   return registerType === 'General' ? (
     <Tab.Navigator
       initialRouteName="Scanner"
@@ -36,19 +39,10 @@ export default function BottomNav({navigation, route}) {
         tabBarHideOnKeyboard: true,
         headerShown: false,
         tabBarBackground: () => (
-          <View
-            style={{
-              flex: 1,
-              alignItems: 'center',
-              height: hp(10),
-              width: wp(100),
-            }}>
+          <View style={styles.logoContainer}>
             <Image
               source={IMG.Navigation.BackLogo}
-              style={{
-                width: wp(100),
-                height: hp(10),
-              }}
+              style={styles.backgImage}
               resizeMode="cover"
             />
           </View>
@@ -68,9 +62,7 @@ export default function BottomNav({navigation, route}) {
         component={BudgetDetails}
         options={{
           tabBarLabel: '',
-          tabBarIcon: ({color, size}) => (
-            <View style={{backgroundColor: 'transparent'}} />
-          ),
+          tabBarIcon: () => <View style={{backgroundColor: 'transparent'}} />,
         }}
       />
       <Tab.Screen
@@ -78,9 +70,7 @@ export default function BottomNav({navigation, route}) {
         component={ExpenseDetails}
         options={{
           tabBarLabel: '',
-          tabBarIcon: ({color, size}) => (
-            <View style={{backgroundColor: 'transparent'}} />
-          ),
+          tabBarIcon: () => <View style={{backgroundColor: 'transparent'}} />,
         }}
       />
       <Tab.Screen
@@ -88,26 +78,26 @@ export default function BottomNav({navigation, route}) {
         component={Scanner}
         options={{
           tabBarLabel: '',
-          tabBarIcon: ({color, size}) => (
-            <View style={{top: hp(-5), borderRadius: 50}}>
-              <Image
-                source={IMG.BottomIcon.Scan}
-                resizeMode="center"
-                style={styles.scanIcon}
-              />
-            </View>
+          tabBarIcon: () => (
+            <HideWithKeyboard>
+              <View style={{top: hp(-5), borderRadius: 50}}>
+                <Image
+                  source={IMG.BottomIcon.Scan}
+                  resizeMode="center"
+                  style={styles.scanIcon}
+                />
+              </View>
+            </HideWithKeyboard>
           ),
         }}
       />
       <Tab.Screen
-        name="ExpenseAnalytics"
-        component={ExpenseAnalytics}
+        name="AnalyticsStack"
+        component={AnalyticsStack}
         initialParams={{registerType: registerType}}
         options={{
           tabBarLabel: '',
-          tabBarIcon: ({color, size}) => (
-            <View style={{backgroundColor: 'transparent'}} />
-          ),
+          tabBarIcon: () => <View style={{backgroundColor: 'transparent'}} />,
         }}
       />
       <Tab.Screen
@@ -116,32 +106,21 @@ export default function BottomNav({navigation, route}) {
         options={{
           tabBarHideOnKeyboard: true,
           tabBarLabel: '',
-          tabBarIcon: ({color, size}) => (
-            <View style={{backgroundColor: 'transparent'}} />
-          ),
+          tabBarIcon: () => <View style={{backgroundColor: 'transparent'}} />,
         }}
       />
     </Tab.Navigator>
   ) : (
     <Tab.Navigator
-      initialRouteName="ScanReceipt"
+      initialRouteName="EmployeeDetailsStack"
       screenOptions={{
         tabBarHideOnKeyboard: true,
         headerShown: false,
         tabBarBackground: () => (
-          <View
-            style={{
-              flex: 1,
-              alignItems: 'center',
-              height: hp(10),
-              width: wp(100),
-            }}>
+          <View style={styles.logoContainer}>
             <Image
               source={IMG.Navigation.BackLogo}
-              style={{
-                width: wp(100),
-                height: hp(10),
-              }}
+              style={styles.backgImage}
               resizeMode="cover"
             />
           </View>
@@ -161,9 +140,7 @@ export default function BottomNav({navigation, route}) {
         component={UpdateBudget}
         options={{
           tabBarLabel: '',
-          tabBarIcon: ({color, size}) => (
-            <View style={{backgroundColor: 'transparent'}} />
-          ),
+          tabBarIcon: () => <View style={{backgroundColor: 'transparent'}} />,
         }}
       />
       <Tab.Screen
@@ -171,37 +148,35 @@ export default function BottomNav({navigation, route}) {
         component={ExpenseList}
         options={{
           tabBarLabel: '',
-          tabBarIcon: ({color, size}) => (
-            <View style={{backgroundColor: 'transparent'}} />
+          tabBarIcon: () => <View style={{backgroundColor: 'transparent'}} />,
+        }}
+      />
+      <Tab.Screen
+        name="EmployeeDetailsStack"
+        component={EmployeeDetailsStack}
+        initialParams={{registerType: registerType}}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: () => (
+            <HideWithKeyboard>
+              <View style={{top: hp(-5), borderRadius: 50}}>
+                <Image
+                  source={IMG.BottomIcon.Scan}
+                  resizeMode="center"
+                  style={styles.scanIcon}
+                />
+              </View>
+            </HideWithKeyboard>
           ),
         }}
       />
       <Tab.Screen
-        name="ScanReceipt"
-        component={ScanReceipt}
+        name="AnalyticsStack"
+        component={AnalyticsStack}
         initialParams={{registerType: registerType}}
         options={{
           tabBarLabel: '',
-          tabBarIcon: ({color, size}) => (
-            <View style={{top: hp(-5), borderRadius: 50}}>
-              <Image
-                source={IMG.BottomIcon.Scan}
-                resizeMode="center"
-                style={styles.scanIcon}
-              />
-            </View>
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="ExpenseAnalytics"
-        component={ExpenseAnalytics}
-        initialParams={{registerType: registerType}}
-        options={{
-          tabBarLabel: '',
-          tabBarIcon: ({color, size}) => (
-            <View style={{backgroundColor: 'transparent'}} />
-          ),
+          tabBarIcon: () => <View style={{backgroundColor: 'transparent'}} />,
         }}
       />
       <Tab.Screen
@@ -209,9 +184,7 @@ export default function BottomNav({navigation, route}) {
         component={ProfileScreen}
         options={{
           tabBarLabel: '',
-          tabBarIcon: ({color, size}) => (
-            <View style={{backgroundColor: 'transparent'}} />
-          ),
+          tabBarIcon: () => <View style={{backgroundColor: 'transparent'}} />,
         }}
       />
     </Tab.Navigator>
@@ -227,4 +200,14 @@ const styles = StyleSheet.create({
     width: wp(18),
   },
   txtStyle: {},
+  logoContainer: {
+    flex: 1,
+    alignItems: 'center',
+    height: hp(10),
+    width: wp(100),
+  },
+  backgImage: {
+    width: wp(100),
+    height: hp(10),
+  },
 });

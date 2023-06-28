@@ -87,7 +87,9 @@ export default StyleSheet.create({
     height: hp(3.5),
     width: wp(21),
   },
-  buttonImg: {marginTop: hp(0.1)},
+  buttonImg: {
+    marginLeft: wp(1),
+  },
   upperButtonTxt: {
     fontSize: SetFontSize.setDimension.textSize13,
     color: colors.BLACK,
@@ -173,7 +175,7 @@ export default StyleSheet.create({
   },
   modalView: {
     height: hp(40),
-    width: wp(80),
+    width: wp(90),
     borderRadius: 25,
     backgroundColor: colors.WHITE,
     borderWidth: 2,
@@ -191,7 +193,7 @@ export default StyleSheet.create({
   modalChildView: {justifyContent: 'center', alignItems: 'center'},
   modalTxtInput: {
     height: hp(5),
-    width: wp(60),
+    width: wp(70),
     borderWidth: 2,
     borderColor: '#A39E9E',
     borderRadius: 10,
@@ -201,7 +203,6 @@ export default StyleSheet.create({
     fontWeight: '500',
     paddingVertical: hp(0.5),
     fontFamily: ConstantKeys.POPPINS,
-    paddingLeft: wp(3),
     textAlign: 'center',
   },
   saveButton: {

@@ -10,7 +10,7 @@ import Statistics from '../Statistics/Statistics';
 const ProfileScreen = ({navigation}) => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{flex: 0.3}}>
+      <View>
         <ProfileView onPress={() => navigation.navigate(Statistics)} />
       </View>
 

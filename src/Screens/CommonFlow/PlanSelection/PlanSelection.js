@@ -156,7 +156,7 @@ const PlanSelection = ({navigation, route}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.imageView}>
           <Image source={IMG.CompanyLogo.logoBig} resizeMode="center" />
         </View>

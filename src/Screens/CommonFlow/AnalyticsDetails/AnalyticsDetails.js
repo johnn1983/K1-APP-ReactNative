@@ -7,13 +7,13 @@ import {
   FlatList,
   ScrollView,
   SafeAreaView,
+  Modal,
 } from 'react-native';
-import React, {useRef, useState} from 'react';
+import React, {useState} from 'react';
 
 import styles from './AnalyticsDetailsStyle';
 import PrimaryButton from '../../../Components/PrimaryButton';
 import Icon from 'react-native-vector-icons/AntDesign';
-import {Picker} from '@react-native-picker/picker';
 
 const categoryName = [
   {id: 1, name: 'Business Insurance', type: 'General'},
@@ -31,6 +31,7 @@ const categoryName = [
   {id: 13, name: 'Advertising and Marketing ', type: 'Employee'},
   {id: 14, name: 'Business Insurance', type: 'Employee'},
 ];
+
 const analyticsData = [
   {
     id: 1,
@@ -88,12 +89,26 @@ const monthlyanalytics = [
   },
 ];
 
+const allMonth = [
+  {id: 1, month: 'January'},
+  {id: 2, month: 'February'},
+  {id: 3, month: 'March'},
+  {id: 4, month: 'April'},
+  {id: 5, month: 'May'},
+  {id: 6, month: 'June'},
+  {id: 7, month: 'July'},
+  {id: 8, month: 'August'},
+  {id: 9, month: 'September'},
+  {id: 10, month: 'Octomber'},
+  {id: 11, month: 'November'},
+  {id: 12, month: 'December'},
+];
+
 const AnalyticsDetails = ({navigation, route}) => {
   const registerType = route.params.registerType;
-  const [monthType, setMothType] = useState('April');
+  const [monthType, setMonthType] = useState('April');
   const [selectedButton, setSelectedButton] = useState(categoryName[0].id);
-
-  const pickerRef = useRef();
+  const [isOpen, setIsOpen] = useState(false);
 
   const LeftButtonView = () => {
     return (
@@ -131,12 +146,12 @@ const AnalyticsDetails = ({navigation, route}) => {
     );
   };
 
-  const Details = ({category, amount}) => {
+  const Details = ({category, amount, style, TxtStyle}) => {
     return (
       <>
         <View style={styles.detailsView}>
-          <View style={styles.leftDetails}>
-            <Text numberOfLines={2} style={styles.detailsTxt}>
+          <View style={style}>
+            <Text numberOfLines={2} style={TxtStyle}>
               {category}
             </Text>
           </View>
@@ -158,7 +173,12 @@ const AnalyticsDetails = ({navigation, route}) => {
         showsVerticalScrollIndicator={false}
         data={overallanalytics}
         renderItem={({item}) => (
-          <Details category={item.category} amount={item.amount} />
+          <Details
+            category={item.category}
+            amount={item.amount}
+            style={styles.leftDetails}
+            TxtStyle={styles.detailsTxt}
+          />
         )}
         keyExtractor={item => item.id}
       />
@@ -174,7 +194,14 @@ const AnalyticsDetails = ({navigation, route}) => {
           if (item.month !== monthType) {
             return null;
           }
-          return <Details category={item.category} amount={item.amount} />;
+          return (
+            <Details
+              category={item.category}
+              amount={item.amount}
+              style={styles.leftDetails2}
+              TxtStyle={styles.detailsTxt2}
+            />
+          );
         }}
         keyExtractor={item => item.id}
       />
@@ -202,6 +229,35 @@ const AnalyticsDetails = ({navigation, route}) => {
           </TouchableOpacity>
         </View>
       </View>
+    );
+  };
+
+  const SelectMonth = () => {
+    return (
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={isOpen}
+        onRequestClose={() => {
+          setIsOpen(!isOpen);
+        }}>
+        <View
+          style={styles.selectMonthView}
+          onTouchEnd={() => setIsOpen(false)}>
+          <View style={styles.selectMonth}>
+            <FlatList
+              showsVerticalScrollIndicator={false}
+              data={allMonth}
+              keyExtractor={item => item.id}
+              renderItem={({item}) => (
+                <TouchableOpacity onPress={() => setMonthType(item.month)}>
+                  <Text style={styles.selectMonthTxt}>{item.month}</Text>
+                </TouchableOpacity>
+              )}
+            />
+          </View>
+        </View>
+      </Modal>
     );
   };
 
@@ -250,20 +306,15 @@ const AnalyticsDetails = ({navigation, route}) => {
                         </Text>
                       </View>
                       <View style={styles.verticalLine} />
-                      <Picker
+                      <TouchableOpacity
                         style={styles.pickerstyle}
-                        dropdownIconColor="grey"
-                        numberOfLines={1}
-                        ref={pickerRef}
-                        selectedValue={monthType}
-                        onValueChange={(itemValue, itemIndex) =>
-                          setMothType(itemValue)
-                        }>
-                        <Picker.Item label="April" value="April" />
-                        <Picker.Item label="May" value="May" />
-                        <Picker.Item label="June" value="June" />
-                      </Picker>
+                        onPress={() => setIsOpen(!isOpen)}>
+                        <Text style={styles.filterTxt}>{monthType}</Text>
+                        <Icon name="caretdown" size={10} color="#868686" />
+                      </TouchableOpacity>
                     </View>
+
+                    {SelectMonth()}
                     <View style={styles.horizontalLine} />
                     {MonthlyView()}
                   </View>

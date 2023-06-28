@@ -30,7 +30,7 @@ export default StyleSheet.create({
     flex: 1,
   },
   headerMainTxt: {
-    width: wp(25),
+    width: wp(35),
     fontSize: SetFontSize.setDimension.testSize22,
     color: colors.BLACK,
     fontWeight: '600',
@@ -163,13 +163,22 @@ export default StyleSheet.create({
     marginBottom: hp(0.8),
   },
   listTxt: {
+    flex: 1,
+    fontSize: SetFontSize.setDimension.textSizeRegular,
+    color: colors.BLACK,
+    fontWeight: '500',
+    // textAlign: 'center',
+    fontFamily: ConstantKeys.INTER,
+  },
+  listTxt2: {
+    flex: 1,
     fontSize: SetFontSize.setDimension.textSizeRegular,
     color: colors.BLACK,
     fontWeight: '500',
     textAlign: 'center',
     fontFamily: ConstantKeys.INTER,
   },
-  listTxt2: {
+  listTxt3: {
     fontSize: SetFontSize.setDimension.textSizeRegular,
     color: colors.BLACK,
     fontWeight: '500',

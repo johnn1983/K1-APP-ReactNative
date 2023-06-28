@@ -94,6 +94,7 @@ export default StyleSheet.create({
     paddingVertical: hp(1),
     paddingHorizontal: wp(4),
     fontFamily: ConstantKeys.MUKTA,
+    textAlign: 'center',
   },
   saveButton: {
     height: hp(4),
@@ -111,7 +112,10 @@ export default StyleSheet.create({
     fontSize: SetFontSize.setDimension.textSizeLarge,
     fontFamily: ConstantKeys.MUKTA,
   },
-  listView: {alignItems: 'center'},
+  listView: {
+    alignItems: 'center',
+    flex: 1,
+  },
   listTxtView: {
     height: hp(6),
     width: wp(90),

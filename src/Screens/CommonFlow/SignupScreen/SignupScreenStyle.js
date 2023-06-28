@@ -148,6 +148,7 @@ export default StyleSheet.create({
   modalView: {
     flexDirection: 'row',
     alignItems: 'center',
+    marginTop: hp(1),
   },
   selectModalTxt: {
     fontSize: SetFontSize.setDimension.textSizeRegular,

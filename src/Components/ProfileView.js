@@ -65,11 +65,10 @@ const ProfileView = ({onPress}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     paddingLeft: 20,
     paddingRight: 10,
     backgroundColor: '#FDFDFD',
-    position: 'absolute',
+    position: 'relative',
   },
   imageContainer: {
     flexDirection: 'row',
@@ -89,14 +88,10 @@ const styles = StyleSheet.create({
     width: wp(6.5),
     alignSelf: 'flex-end',
   },
-  editLine: {
-    alignSelf: 'flex-end',
-    height: 3,
-    width: 22,
-    backgroundColor: '#D40101',
-    marginRight: 5,
+  childContainer: {
+    marginLeft: wp(4),
+    marginTop: hp(0.7),
   },
-  childContainer: {marginLeft: wp(4), marginTop: hp(0.7)},
   nameTxt: {
     fontSize: SetFontSize.setDimension.testSizeHed,
     color: colors.BLACK,

@@ -10,10 +10,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import React, {useState} from 'react';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
+import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 
 import styles from './ScannerStyle';
 import ProfileView from '../../../Components/ProfileView';
@@ -21,7 +18,6 @@ import ProfileView from '../../../Components/ProfileView';
 import Statistics from '../../CommonFlow/Statistics/Statistics';
 import {IMG} from '../../../Constants/ImageConstant';
 import PrimaryButton from '../../../Components/PrimaryButton';
-import {widthPercentageToDP} from 'react-native-responsive-screen';
 
 const Scanner = ({navigation}) => {
   const [isScan, setIsScan] = useState(false);
@@ -30,9 +26,9 @@ const Scanner = ({navigation}) => {
   const [isStyle, setIsStyle] = useState(false);
   const [isProcess, setIsProcess] = useState(false);
   const [store, setStore] = useState();
-  const [totalAmount, setTotalAmount] = useState();
-  const [note, setNote] = useState();
-  const [purchaseDate, setPurchaseDate] = useState();
+  // const [totalAmount, setTotalAmount] = useState();
+  // const [note, setNote] = useState();
+  // const [purchaseDate, setPurchaseDate] = useState();
   const [id, setId] = useState(1);
 
   const handleScanner = () => {
@@ -298,11 +294,11 @@ const Scanner = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{flex: 0.3, zIndex: 99}}>
+      <View>
         <ProfileView onPress={() => navigation.navigate(Statistics)} />
       </View>
 
-      <View style={styles.bodyView}>
+      <View style={isStyle === true ? styles.bodyView : styles.bodyView2}>
         <View style={isStyle === false ? styles.scanView : styles.scanView2}>
           {isStyle === true ? (
             <Image
@@ -316,8 +312,8 @@ const Scanner = ({navigation}) => {
           </TouchableOpacity>
         </View>
 
-        <CategoryView />
-        <ChooseReceipt />
+        {CategoryView()}
+        {ChooseReceipt()}
 
         {isSelect === true ? <SelectCategory /> : null}
         {isProcess === true && id === 1 ? (

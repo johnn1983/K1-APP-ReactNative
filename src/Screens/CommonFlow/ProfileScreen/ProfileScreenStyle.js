@@ -28,16 +28,15 @@ export default StyleSheet.create({
     backgroundColor: '#645F5F',
   },
   bodyView: {
-    flex: 0.7,
+    flex: 1,
     backgroundColor: '#E5EDEC',
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     marginTop: hp(3),
-    zindex: -99,
   },
   bodyChildView: {
     marginHorizontal: wp(10),
-    marginBottom: hp(5),
+    marginBottom: hp(2),
   },
   detailView: {
     marginTop: hp(3),

@@ -89,7 +89,7 @@ export default StyleSheet.create({
   },
   thirdLine: {
     height: hp(1),
-    width: '100%',
+    width: '75%',
     borderRadius: 5,
     marginTop: hp(1),
   },
